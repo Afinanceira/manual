@@ -514,4 +514,1382 @@
       "caminho_sistema": "Aplicativo do Cliente → Área de Cupons da Conta / Tela de Pagamento",
       "o_que_verificar": "Verificar se há campanhas ou cupons vinculados ao perfil (lembrando que os cupons são disponibilizados conforme regras do sistema).",
       "o_que_fazer": "• Se o cliente não encontrar cupom, orientá-lo a consultar a área de cupons dentro da conta no aplicativo.\n• Explicar que os cupons podem ser disponibilizados em etapas pelo sistema.\n• Se houver cupom ativo, orientar o cliente a selecioná-lo na tela de pagamento antes de finalizar, observando as condições apresentadas.",
-      "msg_pronta
+      "msg_pronta": "Olá! Para verificar se há algum cupom disponível para você, acesse a área de 'Cupons' dentro do seu perfil no aplicativo.\n\nOs cupons são liberados em etapas pelo sistema. Caso você possua um cupom ativo, basta selecioná-lo na tela de pagamento antes de concluir a operação, verificando as regras e a validade exibidas no próprio cupom.",
+      "encaminhar_supervisor": "Não aplicável, salvo falha na aplicação de cupom válido.",
+      "encaminhar_operacoes": "Se um cupom válido selecionado pelo cliente não aplicar o desconto no momento do pagamento.",
+      "observacoes": "Não prometer envio manual de cupons se o sistema não tiver disponibilizado."
+    },
+    {
+      "ref": "SOP-13",
+      "categoria": "Pagamentos",
+      "problema": "13. Solicitação de redução de juros",
+      "keywords": "reduzir juros, baixar juros, desconto nos juros, juros altos, 5%, revisão de juros",
+      "status_validacao": "Validar redução de 5% do principal",
+      "quando_utilizar": "Quando o cliente solicita desconto ou redução nos juros do empréstimo.",
+      "como_consultar": "Consultar o valor principal (本金), juros e condições do contrato no CRM.",
+      "caminho_sistema": "CRM → Repayment Plan (Plano de pagamento) / Order List",
+      "o_que_verificar": "Verificar o saldo devedor atual, valor principal e situação do contrato (em dia ou em atraso).",
+      "o_que_fazer": "• Acolher a solicitação sem prometer nenhum desconto.\n• Registrar o UID do cliente, o número do pedido e a justificativa apresentada.\n• Encaminhar a solicitação para análise e aprovação do supervisor/responsável.",
+      "msg_pronta": "Olá! Registrei a sua solicitação de análise para redução de encargos/juros do seu contrato.\n\nComo qualquer alteração de valores depende de avaliação e aprovação interna, encaminhei o seu pedido e a sua justificativa para o setor responsável. Assim que houver um parecer, retornaremos o contato com você.",
+      "encaminhar_supervisor": "OBRIGATÓRIO: Encaminhar UID, pedido e justificativa para aprovação.",
+      "encaminhar_operacoes": "Caso aprovado pelo supervisor, Operações aplica o ajuste no sistema.",
+      "observacoes": "PONTO PARA VALIDAR: O material original menciona possibilidade de solicitar redução de 5% do principal em casos específicos, mediante análise e aprovação. NÃO prometer esse percentual antes da validação e aprovação."
+    },
+    {
+      "ref": "SOP-14",
+      "categoria": "Pagamentos",
+      "problema": "14. Solicitação de redução de multa por atraso",
+      "keywords": "multa por atraso, mora, reduzir multa, desconto na multa, encargos de atraso, vencido",
+      "status_validacao": "Validar política de desconto de multa",
+      "quando_utilizar": "Quando o cliente está em atraso e pede isenção ou redução da multa/encargos moratórios para quitar o débito.",
+      "como_consultar": "Consultar o plano de pagamento, dias de atraso e composição da dívida no CRM.",
+      "caminho_sistema": "CRM → Repayment Plan (Plano de pagamento)",
+      "o_que_verificar": "Conferir os dias em atraso, valor principal, multa acumulada e condições previstas no contrato.",
+      "o_que_fazer": "• Consultar as condições da conta e do contrato.\n• Não garantir nenhum desconto ou isenção de multa sem autorização formal.\n• Registrar a proposta/justificativa do cliente e submeter à aprovação do supervisor.",
+      "msg_pronta": "Olá! Verifiquei as condições atuais do seu contrato em atraso.\n\nNo momento, não posso garantir automaticamente a redução da multa, pois qualquer desconto nos encargos precisa passar por análise e autorização do setor responsável. Vou registrar o seu pedido e sua intenção de pagamento para avaliação e retorno assim que possível.",
+      "encaminhar_supervisor": "OBRIGATÓRIO: Encaminhar solicitação de redução de multa/encargos para aprovação.",
+      "encaminhar_operacoes": "Para atualização do valor a pagar no sistema caso o desconto seja aprovado.",
+      "observacoes": "PONTO PARA VALIDAR: Validar a política oficial de descontos/negociação de multa por atraso com a supervisão e financeiro."
+    },
+    {
+      "ref": "SOP-15",
+      "categoria": "Pagamentos",
+      "problema": "15. Cliente com dificuldades financeiras",
+      "keywords": "sem dinheiro, desempregado, dificuldade financeira, não tenho como pagar, crise, empatia",
+      "status_validacao": "Fluxo padrão (revisar termos locais)",
+      "quando_utilizar": "Quando o cliente relata estar passando por dificuldades financeiras, desemprego ou problemas pessoais que o impedem de pagar no momento.",
+      "como_consultar": "Consultar a situação atual do contrato no CRM.",
+      "caminho_sistema": "CRM → Repayment Plan (Plano de pagamento)",
+      "o_que_verificar": "Verificar a data de vencimento, o valor atual e se há opções oficiais disponíveis no sistema.",
+      "o_que_fazer": "• Atender com total empatia, respeito e profissionalismo, sem constranger, julgar ou pressionar o cliente.\n• Explicar com clareza os valores e encargos de acordo com o contrato e as informações oficiais.\n• PROIBIDO: Nunca orientar o cliente a contrair outra dívida ou pedir dinheiro emprestado a familiares/amigos para quitar este empréstimo.",
+      "msg_pronta": "Olá! Sinto muito pelo momento difícil que você está enfrentando e agradeço por entrar em contato conosco com transparência.\n\nConforme previsto em seu contrato, o valor atual do pedido é de [VALOR] com vencimento em [DATA]. Caso tenha interesse em verificar se há alguma alternativa oficial disponível para o seu caso (como análise de extensão), posso registrar sua solicitação para avaliação da equipe responsável.\n\nConte com o nosso respeito para buscar as informações oficiais do seu contrato.",
+      "encaminhar_supervisor": "Encaminhar caso o cliente solicite análise excepcional de prorrogação ou negociação.",
+      "encaminhar_operacoes": "Não aplicável diretamente, salvo aprovação de ajuste pelo supervisor.",
+      "observacoes": "REGRA ÉTICA E DE COMPLIANCE: É estritamente proibido sugerir que o cliente peça empréstimo a familiares ou faça novas dívidas para pagar a empresa."
+    },
+    {
+      "ref": "SOP-16",
+      "categoria": "Pagamentos",
+      "problema": "16. Solicitação de parcelamento",
+      "keywords": "parcelar, dividir, pagar em parcelas, duas vezes, acordo parcelado, parcelamento",
+      "status_validacao": "Validar política de parcelamento no Brasil",
+      "quando_utilizar": "Quando o cliente pede para dividir o pagamento do empréstimo em várias parcelas.",
+      "como_consultar": "Consultar o plano de pagamento no CRM.",
+      "caminho_sistema": "CRM → Repayment Plan (Plano de pagamento)",
+      "o_que_verificar": "Confirmar o formato do contrato (pagamento único ou parcelado) e as opções habilitadas no sistema.",
+      "o_que_fazer": "• Verificar a política atual confirmada pela empresa antes de responder definitivamente.\n• O material original informa que o parcelamento não está disponível e menciona a alternativa de extensão mediante pagamento (quando disponível no app).",
+      "msg_pronta": "Olá! Verifiquei as condições do seu contrato em nosso sistema.\n\nNo momento, a modalidade contratada prevê o pagamento integral na data de vencimento, não havendo opção de parcelamento automático disponível. Caso precise de mais tempo, você pode verificar diretamente no aplicativo (em Pedidos → Pagamento) se a opção de extensão de prazo está habilitada para o seu contrato.\n\nSe precisar de mais esclarecimentos, estou à disposição!",
+      "encaminhar_supervisor": "Confirmar antes de usar se houve alteração na política de parcelamento para o Brasil.",
+      "encaminhar_operacoes": "Não aplicável.",
+      "observacoes": "PONTO PARA VALIDAR: Confirmar a política atual de pagamentos no Brasil antes de afirmar definitivamente que não existe parcelamento."
+    },
+    {
+      "ref": "SOP-17",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "17. Problemas com código de verificação, reconhecimento facial ou cadastro",
+      "keywords": "otp, código sms, verificação, reconhecimento facial, selfie, câmera, cadastro incompleto, não verificado",
+      "status_validacao": "Fluxo padrão (revisar termos locais)",
+      "quando_utilizar": "Quando o cliente não recebe o código SMS/verificação, falha na validação facial ou não consegue concluir o cadastro.",
+      "como_consultar": "Consultar o cadastro do cliente no CRM para verificar se está incompleto ou 'Não verificado' (未认证).",
+      "caminho_sistema": "CRM → Customer List (Lista de clientes) / Detalhes do Usuário",
+      "o_que_verificar": "Conferir o status de verificação do usuário no CRM e possíveis bloqueios/erros de etapa.",
+      "o_que_fazer": "Orientar o cliente com as verificações padrão:\n1. Conferir a caixa de spam/mensagens bloqueadas ou sinal da operadora (para código SMS).\n2. Verificar a estabilidade da conexão com a internet.\n3. Atualizar o aplicativo para a versão mais recente.\n4. Conferir se as permissões de câmera e armazenamento estão ativadas (para reconhecimento facial).\n5. Realizar o reconhecimento facial em local bem iluminado, sem acessórios (boné, óculos escuros).\n6. Tentar novamente e, se o erro persistir, solicitar print ou vídeo curto mostrando o erro.",
+      "msg_pronta": "Olá! Para resolver problemas com o código de verificação ou reconhecimento facial, por favor, tente os seguintes passos:\n\n1. Verifique sua conexão com a internet e o sinal da operadora (no caso de SMS, confira também mensagens bloqueadas/spam).\n2. Atualize o aplicativo para a versão mais recente na loja de aplicativos.\n3. Nas configurações do seu celular, verifique se a permissão de Câmera está ativada para o aplicativo.\n4. Ao fazer a verificação facial, esteja em um ambiente bem iluminado e sem acessórios no rosto.\n\nSe o problema continuar após essas tentativas, por favor, envie uma captura de tela ou um vídeo curto mostrando o erro para que possamos analisar!",
+      "encaminhar_supervisor": "Se houver falha sistêmica no envio de SMS ou validação facial.",
+      "encaminhar_operacoes": "Encaminhar print/vídeo e telefone/UID do cliente para a equipe técnica / Operações.",
+      "observacoes": "Sempre checar no CRM se o cadastro consta como 'Não verificado' (未认证)."
+    },
+    {
+      "ref": "SOP-18",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "18. Alteração de dados bancários, telefone ou contato de emergência",
+      "keywords": "alterar conta, trocar pix, mudar telefone, número novo, contato de emergência, dados bancários",
+      "status_validacao": "Validar regras de alteração de telefone/cadastro",
+      "quando_utilizar": "Quando o cliente precisa atualizar a conta bancária/chave Pix, alterar o número de telefone cadastrado ou modificar contatos de emergência.",
+      "como_consultar": "Consultar o cadastro do cliente e o status dos pedidos no CRM.",
+      "caminho_sistema": "CRM → Customer List (Lista de clientes) e CRM → Order List (Lista de pedidos)",
+      "o_que_verificar": "• Se há algum pedido ativo/em andamento.\n• Regras de alteração: dados bancários geralmente só podem ser alterados antes de uma nova solicitação ou após falha no desembolso; telefone e contato de emergência possuem restrições de alteração.",
+      "o_que_fazer": "• Explicar ao cliente quando os dados bancários podem ser alterados (antes de novo pedido ou após falha no desembolso).\n• Informar as restrições existentes para alteração de telefone e contato de emergência.\n• PROIBIDO: Nunca orientar o cliente a criar uma nova conta/outro cadastro sem confirmar antes as regras de segurança, prevenção a fraude e proteção de dados.",
+      "msg_pronta": "Olá! Sobre a alteração de dados cadastrais, seguem as orientações:\n\n• Dados bancários: A alteração pode ser feita diretamente no aplicativo antes de enviar uma nova solicitação de empréstimo ou caso tenha ocorrido falha no desembolso anterior (não é possível alterar enquanto uma transferência está em andamento).\n• Telefone e contatos de emergência: Por motivos de segurança e validação de conta, esses dados possuem restrições de alteração no sistema.\n\nPor favor, informe exatamente qual dado você precisa atualizar e se há algum pedido em andamento para que possamos verificar a orientação adequada.",
+      "encaminhar_supervisor": "Para validar se há exceção operacional para troca de número de telefone.",
+      "encaminhar_operacoes": "Encaminhar solicitações elegíveis de ajuste cadastral conforme fluxo aprovado.",
+      "observacoes": "PONTO PARA VALIDAR: Confirmar as regras oficiais de alteração de telefone/cadastro e prevenção à fraude no Brasil. Nunca sugerir abertura de conta duplicada."
+    },
+    {
+      "ref": "SOP-19",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "19. Dúvidas sobre juros e taxas",
+      "keywords": "juros, taxas, encargos, quanto custa, porcentagem, cet, taxa de serviço, iva",
+      "status_validacao": "Validar percentuais de taxa/IVA no Brasil",
+      "quando_utilizar": "Quando o cliente pede esclarecimentos sobre como são calculados os juros, taxas de serviço ou encargos do empréstimo.",
+      "como_consultar": "Consultar os valores específicos registrados no pedido/contrato do cliente.",
+      "caminho_sistema": "CRM → Order List (Lista de pedidos) → Detalhes do Pedido",
+      "o_que_verificar": "Conferir os valores exatos do contrato do cliente (principal, taxa de serviço, impostos/IVA e valor total a pagar).",
+      "o_que_fazer": "• Explicar exclusivamente os valores reais da operação do cliente, conforme descrito no contrato e nos detalhes do pedido no aplicativo.\n• Não usar exemplos genéricos do manual original como se fossem regras fixas para todos os clientes.",
+      "msg_pronta": "Olá! Os juros, taxas e encargos aplicáveis variam de acordo com o produto e as condições aprovadas para cada perfil, sendo sempre exibidos de forma transparente na tela de resumo antes da confirmação do pedido.\n\nNo seu contrato atual, os valores registrados são:\n• Valor principal: [VALOR PRINCIPAL]\n• Taxas e encargos: [VALORES DO CONTRATO]\n• Valor total para pagamento: [VALOR TOTAL]\n\nVocê pode revisar essas informações a qualquer momento na aba 'Pedidos' do seu aplicativo.",
+      "encaminhar_supervisor": "Se o cliente contestar a cobrança de alguma taxa não informada previamente.",
+      "encaminhar_operacoes": "Não aplicável.",
+      "observacoes": "PONTO PARA VALIDAR: O material original cita taxas de serviço de 30% ou 35% e IVA de 5% (líquido de 60% ou 65%). Validar a estrutura tributária e de taxas aplicada no Brasil (ex: IOF em vez de IVA) e informar apenas os valores reais do contrato."
+    },
+    {
+      "ref": "SOP-20",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "20. Cliente sem limite disponível",
+      "keywords": "sem limite, limite zero, não consigo pedir, indisponível, quando libera limite",
+      "status_validacao": "Validar prazo de 7 dias após rejeição",
+      "quando_utilizar": "Quando o cliente acessa o aplicativo e vê que não possui limite de crédito disponível para nova solicitação.",
+      "como_consultar": "Pesquisar pelo UID do cliente e verificar todo o histórico de pedidos.",
+      "caminho_sistema": "CRM → Order List (Lista de pedidos)",
+      "o_que_verificar": "Verificar se existem:\n• Pedidos rejeitados anteriormente (已拒绝).\n• Empréstimos ativos aguardando pagamento (待还款).",
+      "o_que_fazer": "• Explicar ao cliente o motivo conforme o status no CRM (ex: existência de contrato ativo em aberto ou resultado da última análise de crédito).\n• Informar que a disponibilidade de limite é reavaliada automaticamente pelo sistema.\n• Não informar prazo fixo de 7 dias sem antes confirmar a regra vigente.",
+      "msg_pronta": "Olá! Verifiquei o seu cadastro em nosso sistema e, no momento, não há limite disponível para uma nova contratação.\n\nA liberação de limite depende da análise automática do sistema, que considera a quitação de contratos anteriores e o histórico de utilização. Recomendamos que acompanhe periodicamente pelo próprio aplicativo quando uma nova oferta estiver disponível para o seu perfil.",
+      "encaminhar_supervisor": "Não necessário em consultas padrão.",
+      "encaminhar_operacoes": "Apenas se o cliente já quitou o empréstimo há dias e o sistema não atualizou o status.",
+      "observacoes": "PONTO PARA VALIDAR: O material original menciona aguardar 7 dias em determinados casos de rejeição. Confirmar essa regra antes de informar prazo ao cliente."
+    },
+    {
+      "ref": "SOP-21",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "21. Solicitação de aumento de limite",
+      "keywords": "aumentar limite, mais crédito, limite maior, pedir aumento, crédito baixo",
+      "status_validacao": "Fluxo padrão (revisar termos locais)",
+      "quando_utilizar": "Quando o cliente solicita manualmente que o atendente aumente seu limite de crédito.",
+      "como_consultar": "Opcionalmente consultar o histórico de pedidos do cliente.",
+      "caminho_sistema": "CRM → Order List (Lista de pedidos)",
+      "o_que_verificar": "Confirmar que não existe funcionalidade de alteração manual de limite pelo atendimento.",
+      "o_que_fazer": "• Explicar com cordialidade que a definição e o ajuste de limite são feitos exclusivamente pela análise automática do sistema.\n• O atendente NUNCA deve afirmar que pode alterar o limite manualmente.\n• NUNCA prometer aumento de limite futuro.",
+      "msg_pronta": "Olá! O valor do limite de crédito é definido e atualizado exclusivamente pela análise automática do nosso sistema, não sendo possível realizar alterações manuais pela equipe de atendimento.\n\nO sistema realiza reavaliações periódicas levando em conta o histórico de uso e o pagamento em dia dos contratos, mas não há garantia ou prazo fixo para aumento. Caso haja atualização no seu limite, ela aparecerá automaticamente na tela inicial do aplicativo.",
+      "encaminhar_supervisor": "Não aplicável.",
+      "encaminhar_operacoes": "Não aplicável.",
+      "observacoes": "Proibido prometer aumento de limite ou dizer que o atendente pode alterar o valor."
+    },
+    {
+      "ref": "SOP-22",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "22. Mensagens em branco ou sem sentido",
+      "keywords": "mensagem vazia, em branco, oi, teste, texto sem sentido, figurinha, emoji",
+      "status_validacao": "Fluxo padrão (revisar termos locais)",
+      "quando_utilizar": "Quando o cliente inicia o atendimento enviando apenas espaços, caracteres aleatórios, emojis ou mensagens incompreensíveis.",
+      "como_consultar": "Não é necessário consultar dados sensíveis antes de entender a demanda.",
+      "caminho_sistema": "Plataforma de Atendimento / Chat",
+      "o_que_verificar": "Confirmar que não há pergunta ou solicitação clara na mensagem.",
+      "o_que_fazer": "• Responder de forma educada e objetiva perguntando como a equipe pode ajudar.\n• Evitar solicitar dados pessoais desnecessários neste primeiro contato.",
+      "msg_pronta": "Olá! Bem-vindo(a) ao nosso atendimento. Recebemos a sua mensagem, mas não conseguimos identificar a sua dúvida ou solicitação.\n\nPor favor, conte-nos como podemos ajudar hoje para que possamos direcionar o seu atendimento!",
+      "encaminhar_supervisor": "Não aplicável.",
+      "encaminhar_operacoes": "Não aplicável.",
+      "observacoes": "Não pedir CPF, telefone ou documentos antes que o cliente informe o motivo do contato."
+    },
+    {
+      "ref": "SOP-23",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "23. Solicitação de exclusão de dados",
+      "keywords": "excluir dados, apagar conta, lgpd, remover cadastro, cancelar conta, privacidade, dados pessoais",
+      "status_validacao": "Validar exclusão de dados (LGPD / Jurídico)",
+      "quando_utilizar": "Quando o cliente solicita a exclusão de seus dados pessoais, documentos ou encerramento definitivo do cadastro.",
+      "como_consultar": "Verificar se o cliente possui pedidos ativos, pendências financeiras ou apenas cadastro sem empréstimo concluído.",
+      "caminho_sistema": "CRM → Customer List (Lista de clientes) e CRM → Order List (Lista de pedidos)",
+      "o_que_verificar": "Conferir se há contratos ativos ou obrigações legais/regulatórias vigentes no cadastro.",
+      "o_que_fazer": "• Acolher a solicitação do cliente com seriedade.\n• Registrar o pedido e encaminhar para o setor responsável por Privacidade / Proteção de Dados (LGPD) / Compliance.\n• NÃO utilizar respostas automáticas antigas sem validação jurídica brasileira.",
+      "msg_pronta": "Olá! Recebemos a sua solicitação referente à exclusão de dados pessoais e encerramento de cadastro.\n\nPara garantir a segurança das suas informações e o cumprimento da legislação brasileira de proteção de dados (LGPD), encaminhamos o seu pedido ao setor responsável pela análise de privacidade.\n\nAssim que a verificação sobre eventuais vínculos contratuais ou obrigações legais for concluída, retornaremos com a confirmação e as orientações sobre o seu pedido.",
+      "encaminhar_supervisor": "OBRIGATÓRIO: Encaminhar toda solicitação de exclusão de dados para supervisão / Compliance / DPO.",
+      "encaminhar_operacoes": "Aguardar instrução formal do Jurídico/Compliance antes de executar qualquer exclusão ou bloqueio no sistema.",
+      "observacoes": "PONTO PARA VALIDAR: O material original traz uma resposta padrão para quando o empréstimo não foi aprovado. Essa política precisa ser validada com o Jurídico/Privacidade no Brasil (LGPD e regras do Banco Central) antes de se tornar resposta oficial."
+    },
+    {
+      "ref": "SOP-24",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "24. Problemas técnicos no aplicativo",
+      "keywords": "app travando, erro no app, tela branca, fechando sozinho, bug, não abre, falha técnica",
+      "status_validacao": "Fluxo padrão (revisar termos locais)",
+      "quando_utilizar": "Quando o cliente relata falhas gerais de funcionamento no aplicativo (travamentos, tela branca, fechamento inesperado, erro de carregamento).",
+      "como_consultar": "Consultar o cadastro pelo UID ou telefone para registrar a ocorrência técnica.",
+      "caminho_sistema": "CRM → Customer List (Lista de clientes)",
+      "o_que_verificar": "Verificar se há outros relatos semelhantes no mesmo horário (instabilidade geral).",
+      "o_que_fazer": "Orientar o cliente com o roteiro técnico:\n1. Conferir a conexão com a internet.\n2. Verificar as permissões do aplicativo nas configurações do aparelho.\n3. Atualizar o aplicativo na loja oficial.\n4. Fechar completamente e reiniciar o aplicativo (ou o aparelho).\n5. Se persistir, solicitar captura de tela ou vídeo mostrando o erro e encaminhar à equipe técnica.",
+      "msg_pronta": "Olá! Lamentamos a instabilidade que você está enfrentando no aplicativo. Por favor, tente realizar estes procedimentos:\n\n1. Verifique se sua conexão com a internet está estável.\n2. Acesse a loja de aplicativos e confira se há alguma atualização pendente para o app.\n3. Feche completamente o aplicativo e abra-o novamente.\n4. Confira nas configurações do celular se as permissões do aplicativo estão habilitadas.\n\nCaso o problema continue, por favor, envie um print da tela ou um vídeo curto mostrando o erro (junto com o modelo do seu celular) para que nossa equipe técnica possa investigar!",
+      "encaminhar_supervisor": "Em caso de falha sistêmica afetando múltiplos usuários.",
+      "encaminhar_operacoes": "Encaminhar print/vídeo, UID e modelo do aparelho para a equipe técnica / Operações.",
+      "observacoes": "Sempre registrar evidências visuais (print/vídeo) antes de escalar para a engenharia/técnica."
+    },
+    {
+      "ref": "SOP-25",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "25. Empréstimo recusado",
+      "keywords": "recusado, negado, reprovado, não aprovado, crédito negado, 已拒绝",
+      "status_validacao": "Fluxo padrão (revisar termos locais)",
+      "quando_utilizar": "Quando o cliente pergunta o motivo pelo qual sua solicitação de empréstimo foi recusada ou quando não consegue concluir o pedido.",
+      "como_consultar": "Consultar a lista de pedidos e as etiquetas/histórico do cliente.",
+      "caminho_sistema": "CRM → Order List (Lista de pedidos) e CRM → Customer List (Lista de clientes)",
+      "o_que_verificar": "• Verificar o histórico de pedidos e as etiquetas do cliente, diferenciando se é cliente novo ou recorrente.\n• Verificar se existe realmente um pedido registrado como 'Rejeitado' (已拒绝) ou se não há registro (possível erro técnico no app).",
+      "o_que_fazer": "• Se o pedido consta como 'Rejeitado': Explicar com respeito que a aprovação passa por critérios internos e automáticos de análise de crédito e que, no momento, não foi possível aprovar.\n• Se NÃO houver registro de solicitação e o cliente não conseguir prosseguir: Verificar possível erro do aplicativo e encaminhar o UID para Operações.",
+      "msg_pronta": "Olá! Verifiquei o seu cadastro em nosso sistema e a sua solicitação atual não foi aprovada pela nossa análise automática de crédito.\n\nA avaliação considera diversos critérios internos e de perfil no momento do pedido, e infelizmente não temos acesso aos detalhes específicos da recusa nem podemos alterar o resultado manualmente.\n\nCaso você esteja enfrentando algum erro técnico que impeça a conclusão do envio da proposta no aplicativo, por favor, nos avise e envie um print da tela para verificarmos.",
+      "encaminhar_supervisor": "Se houver dúvida sobre bloqueio indevido no perfil.",
+      "encaminhar_operacoes": "Quando não houver registro de pedido no CRM e o cliente não conseguir avançar no aplicativo (encaminhar UID).",
+      "observacoes": "Não inventar motivos para a recusa (ex: não afirmar 'nome sujo' se o sistema não informar o motivo exato)."
+    },
+    {
+      "ref": "SOP-26",
+      "categoria": "Reclamações",
+      "problema": "26. Cliente afirma que o empréstimo foi contratado ou liberado sem autorização",
+      "keywords": "não pedi, sem autorização, não contratei, empréstimo indevido, caiu sem pedir, fraude contratação",
+      "status_validacao": "Validar fluxo de empréstimo não autorizado",
+      "quando_utilizar": "Quando o cliente alega que não solicitou ou não autorizou o empréstimo que foi contratado ou desembolsado em seu nome/conta.",
+      "como_consultar": "Consultar detalhadamente todos os registros do pedido, etiquetas, logs de acesso e horários de contratação e desembolso.",
+      "caminho_sistema": "CRM → Order List (Lista de pedidos) e CRM → Order Management → Disbursement List",
+      "o_que_verificar": "• Horário exato da solicitação e horário do desembolso.\n• Etiquetas e registros técnicos do pedido.\n• Dados da conta bancária de destino.",
+      "o_que_fazer": "• Acolher a reclamação imediatamente sem confrontar o cliente.\n• ATENÇÃO CRÍTICA: NUNCA afirmar que o cliente autorizou sem evidência.\n• ATENÇÃO CRÍTICA: NUNCA impor pagamento de juros, descontos ou condições de devolução sem validação.\n• Encaminhar imediatamente toda suspeita de contratação não autorizada para análise especializada (Segurança/Compliance/Supervisão).",
+      "msg_pronta": "Olá! Levamos a sua manifestação muito a sério e já registramos a sua contestação sobre a contratação deste empréstimo.\n\nEncaminhamos imediatamente o seu caso e os registros da operação para análise da nossa equipe especializada de segurança e auditoria. Pedimos que aguarde o retorno da nossa equipe com as orientações oficiais após a verificação.\n\nPor segurança, não realize nenhuma transferência para contas de terceiros ou fora dos canais oficiais enquanto analisamos o ocorrido.",
+      "encaminhar_supervisor": "IMEDIATO: Escalar para supervisão, Compliance e Segurança.",
+      "encaminhar_operacoes": "Encaminhar UID, ID do pedido e horários para auditoria técnica e bloqueio preventivo de cobranças durante a análise.",
+      "observacoes": "PONTO PARA VALIDAR: O procedimento original menciona condições conforme o tempo transcorrido e possíveis descontos. PROIBIDO aplicar isso automaticamente; precisa de validação jurídica e de compliance no Brasil."
+    },
+    {
+      "ref": "SOP-27",
+      "categoria": "Reclamações",
+      "problema": "27. Reclamação sobre valor baixo, juros altos ou prazo curto",
+      "keywords": "reclamação juros, valor muito baixo, abusivo, prazo curto demais, insatisfeito com condições",
+      "status_validacao": "Fluxo padrão (revisar termos locais)",
+      "quando_utilizar": "Quando o cliente registra uma reclamação formal (não apenas dúvida) sobre as condições comerciais do empréstimo contratado.",
+      "como_consultar": "Consultar os valores exatos e a data de vencimento do contrato no CRM.",
+      "caminho_sistema": "CRM → Order List (Lista de pedidos) / CRM → Repayment Plan",
+      "o_que_verificar": "Conferir os valores contratados, valor líquido liberado, encargos e data de vencimento.",
+      "o_que_fazer": "• Acolher o cliente com empatia e explicar de forma transparente os valores e condições contratuais registradas.\n• Registrar a insatisfação do cliente.\n• NUNCA prometer benefícios (como redução de 5% ou extensão de 2 dias) sem aprovação prévia do responsável.",
+      "msg_pronta": "Olá! Agradecemos por compartilhar sua insatisfação e compreendemos a sua preocupação em relação às condições do contrato.\n\nConforme registrado no momento da contratação, o valor total do pedido é de [VALOR TOTAL], com vencimento em [DATA DE VENCIMENTO], conforme as condições exibidas antes da confirmação no aplicativo.\n\nVou registrar sua manifestação e encaminhar suas observações para avaliação do setor responsável. Caso haja alguma alternativa aplicável ao seu contrato, entraremos em contato.",
+      "encaminhar_supervisor": "Encaminhar caso o cliente solicite revisão formal ou negociação.",
+      "encaminhar_operacoes": "Não aplicável, salvo aprovação de ajuste pelo supervisor.",
+      "observacoes": "PONTO PARA VALIDAR: O material original cita possibilidade de redução de 5% ou extensão de 2 dias somente após aprovação. Validar política e nunca prometer antes da autorização."
+    },
+    {
+      "ref": "SOP-28",
+      "categoria": "Reclamações",
+      "problema": "28. Reclamação sobre desembolso, mas cliente recebeu cobrança",
+      "keywords": "não recebi e estão cobrando, cobrança sem desembolso, cobrando empréstimo não recebido",
+      "status_validacao": "Fluxo padrão (revisar termos locais)",
+      "quando_utilizar": "Quando o cliente reclama que está recebendo mensagens ou ligações de cobrança referentes a um empréstimo cujo dinheiro ele afirma não ter recebido.",
+      "como_consultar": "Consultar o status do desembolso e o plano de pagamento no CRM.",
+      "caminho_sistema": "1) CRM → Order Management → Disbursement List\n2) CRM → Repayment Plan (Plano de pagamento)",
+      "o_que_verificar": "Verificar se o desembolso consta como 'Sucesso' (成功) ou 'Falha' (失败) / 'Em processamento'.",
+      "o_que_fazer": "• Se o status do desembolso estiver como 'Falha': Encaminhar imediatamente para Operações regularizar o contrato e suspender a cobrança indevida, acompanhando o caso até a solução.\n• Se o status estiver como 'Sucesso': Seguir o fluxo de análise da operação, verificar evidências bancárias e encaminhar para auditoria/Operações.",
+      "msg_pronta": "Olá! Lamentamos o transtorno e já estamos verificando a situação do desembolso vinculado a essa cobrança.\n\nRegistrei sua reclamação com prioridade e encaminhei para nossa equipe de Operações analisar o status da transferência bancária e regularizar o cadastro, se necessário. Por favor, aguarde nosso retorno com a atualização do seu caso.",
+      "encaminhar_supervisor": "Informar supervisão para acompanhar a suspensão de cobrança durante a análise.",
+      "encaminhar_operacoes": "OBRIGATÓRIO: Encaminhar imediatamente para Operações verificar o desembolso e corrigir o status do pedido se houve falha.",
+      "observacoes": "Prioridade alta: cobrar um cliente por um valor que falhou no desembolso gera risco grave de reclamação externa e jurídico."
+    },
+    {
+      "ref": "SOP-29",
+      "categoria": "Reclamações",
+      "problema": "29. Reclamação sobre cobrança",
+      "keywords": "cobrança abusiva, ameaça, assédio, ligação excessiva, cobrança agressiva, desrespeito",
+      "status_validacao": "Validar políticas de cobrança (CDC)",
+      "quando_utilizar": "Quando o cliente reclama da frequência das cobranças, de abordagem agressiva/desrespeitosa ou de cobrança após pagamento.",
+      "como_consultar": "Consultar a data de vencimento, status de pagamento e histórico de cobranças no CRM.",
+      "caminho_sistema": "CRM → Repayment Plan (Plano de pagamento) / Histórico de Cobrança",
+      "o_que_verificar": "• Se o pedido já foi pago ou ainda está em aberto.\n• Data de vencimento.\n• Detalhes da abordagem relatada pelo cliente.",
+      "o_que_fazer": "• Tratar o cliente com máximo respeito e empatia.\n• NUNCA justificar ou minimizar condutas agressivas ou inadequadas de cobrança.\n• Se houver reclamação sobre abordagem agressiva/ameaça, solicitar registros da conversa (prints, áudios, números de telefone) e encaminhar imediatamente para investigação.",
+      "msg_pronta": "Olá! Lamentamos profundamente pela experiência relatada e reforçamos que não compactuamos com qualquer abordagem desrespeitosa ou inadequada.\n\nPara que possamos investigar o ocorrido e tomar as providências cabíveis junto à equipe responsável, por favor, envie capturas de tela, números de contato ou registros das mensagens recebidas.\n\nJá registrei a sua reclamação para análise urgente da nossa supervisão.",
+      "encaminhar_supervisor": "IMEDIATO: Encaminhar evidências de cobrança agressiva para Supervisão e Compliance.",
+      "encaminhar_operacoes": "Para verificação do agente/assessoria responsável pelo contato e bloqueio de abusos.",
+      "observacoes": "PONTO PARA VALIDAR: Revisar políticas de cobrança conforme o Código de Defesa do Consumidor (CDC) no Brasil."
+    },
+    {
+      "ref": "SOP-30",
+      "categoria": "Reclamações",
+      "problema": "30. Suspeita de fraude ou golpe",
+      "keywords": "golpe, fraude, estelionato, perfil falso, whatsapp falso, conta de terceiro, roubo de dados",
+      "status_validacao": "Fluxo padrão (revisar termos locais)",
+      "quando_utilizar": "Quando o cliente relata ter sido abordado por golpistas usando o nome da empresa, ou suspeita que terceiros usaram seus dados para fraude.",
+      "como_consultar": "Consultar o cadastro e pedidos vinculados ao CPF/telefone/UID no CRM.",
+      "caminho_sistema": "CRM → Customer List (Lista de clientes) e CRM → Order List (Lista de pedidos)",
+      "o_que_verificar": "• Qual canal foi utilizado no contato suspeito (WhatsApp, SMS, redes sociais, ligação).\n• Se existe algum pedido real no sistema.",
+      "o_que_fazer": "• Perguntar por qual canal ocorreu o contato e solicitar evidências relevantes (prints, números, comprovantes, links).\n• Orientar enfaticamente o cliente a NÃO realizar novas transferências para contas suspeitas ou de terceiros.\n• Reforçar que a empresa NUNCA solicita pagamentos em contas pessoais.\n• Encaminhar imediatamente para Operações, Segurança e Compliance.\n• Se houver suspeita de golpe externo, orientar o cliente a procurar seu banco (para contestação/MED) e as autoridades competentes (Boletim de Ocorrência).",
+      "msg_pronta": "Olá! Agradecemos por nos alertar imediatamente sobre essa situação.\n\nReforçamos que nossa empresa NUNCA solicita pagamentos, taxas de liberação ou transferências para contas bancárias pessoais ou fora do nosso aplicativo oficial. Por segurança, não realize nenhuma transferência ou pagamento para esses contatos.\n\nPor favor, envie capturas de tela das conversas, números de telefone ou links recebidos para que possamos encaminhar à nossa equipe de Segurança. Caso você já tenha realizado alguma transferência para terceiros, recomendamos que entre em contato imediatamente com o seu banco e registre um Boletim de Ocorrência junto às autoridades competentes.",
+      "encaminhar_supervisor": "IMEDIATO: Escalar para Supervisão, Segurança e Compliance.",
+      "encaminhar_operacoes": "Encaminhar todas as evidências para bloqueio de contas/pedidos fraudulentos e monitoramento.",
+      "observacoes": "Segurança máxima: jamais pedir dados sensíveis desnecessários e sempre alertar sobre canais oficiais."
+    },
+    {
+      "ref": "SOP-31",
+      "categoria": "Reclamações",
+      "problema": "31. Avaliação negativa na Google Play",
+      "keywords": "google play, loja de aplicativos, estrela, avaliação negativa, comentário na loja, review",
+      "status_validacao": "SUSPENSO: Validar resposta Google Play (Compliance)",
+      "quando_utilizar": "Quando o cliente menciona uma avaliação negativa na Google Play ou quando o atendimento trata casos originados de avaliações na loja.",
+      "como_consultar": "Consultar o cadastro do cliente (se identificado) para entender o problema relatado na avaliação.",
+      "caminho_sistema": "CRM → Customer List (Lista de clientes) / Order List",
+      "o_que_verificar": "Identificar qual é a dificuldade real do cliente (atraso no desembolso, dúvida de taxa, erro técnico etc.) para resolver a causa raiz.",
+      "o_que_fazer": "• Tratar o problema técnico ou operacional do cliente com agilidade e transparência.\n• ATENÇÃO CRÍTICA: NUNCA oferecer descontos, benefícios ou dinheiro em troca da exclusão ou alteração de avaliação negativa.\n• ATENÇÃO CRÍTICA: NUNCA pressionar o cliente a apagar ou mudar a nota na Google Play.",
+      "msg_pronta": "Olá! Agradecemos pelo seu feedback na loja de aplicativos, pois sua opinião é muito importante para melhorarmos nossos serviços.\n\nGostaríamos de entender melhor o ocorrido para ajudar a resolver sua solicitação da melhor forma possível. Por favor, nos informe qual dificuldade você encontrou no aplicativo ou em seu pedido para que possamos verificar em nosso sistema.",
+      "encaminhar_supervisor": "Encaminhar para revisão da política de resposta à Google Play pelo Jurídico e Compliance.",
+      "encaminhar_operacoes": "Resolver o problema operacional apontado pelo cliente (ex: falha técnica ou desembolso).",
+      "observacoes": "PONTO PARA VALIDAR (RISCO ALTO): O material original menciona oferecer descontos em troca da alteração/remoção de avaliação negativa. ESSA PRÁTICA ESTÁ SUSPENSA e precisa ser revisada pelo Jurídico e Compliance (viola políticas da Google Play e CDC)."
+    },
+    {
+      "ref": "SOP-32",
+      "categoria": "Reclamações",
+      "problema": "32. Reclamação encaminhada ao setor de pagamentos",
+      "keywords": "setor de pagamentos, reembolso, estorno, reclamação financeira, pós-venda, 售后",
+      "status_validacao": "Validar tratamento de reclamações formais",
+      "quando_utilizar": "Quando a reclamação envolve divergências financeiras, estornos, conciliação de pagamentos ou problemas de desembolso que exigem atuação do setor de pagamentos/pós-venda.",
+      "como_consultar": "Consultar o histórico de desembolso e pagamentos no CRM.",
+      "caminho_sistema": "CRM → Order Management → Disbursement List / Repayment Records",
+      "o_que_verificar": "Reunir UID, número do pedido, comprovantes enviados pelo cliente e prints do CRM.",
+      "o_que_fazer": "• Registrar a reclamação de forma completa e identificar exatamente o problema financeiro.\n• Encaminhar o dossiê para Operações ou Pós-venda (售后).\n• Acompanhar o andamento do caso e fornecer um retorno verdadeiro e transparente ao cliente.\n• NUNCA pressionar o cliente a retirar reclamações (ex: Reclame Aqui, Procon, Banco Central) ou desistir de seus direitos.",
+      "msg_pronta": "Olá! Registramos formalmente a sua reclamação e reunimos os dados da sua operação para encaminhamento ao nosso setor especializado de Pagamentos e Pós-venda.\n\nNossa equipe está analisando o caso e acompanharemos a tratativa até a conclusão para lhe dar um retorno claro e transparente. Agradecemos pela sua paciência.",
+      "encaminhar_supervisor": "Acompanhar casos que ultrapassem o prazo interno de resposta.",
+      "encaminhar_operacoes": "OBRIGATÓRIO: Encaminhar para Operações / Pós-venda (售后) com todas as evidências.",
+      "observacoes": "PONTO PARA VALIDAR: Nunca condicionar atendimento ou solução à retirada de reclamações em órgãos de defesa do consumidor ou plataformas públicas."
+    },
+    {
+      "ref": "SOP-33",
+      "categoria": "Reclamações",
+      "problema": "33. Outras reclamações",
+      "keywords": "outras reclamações, sugestão, elogio, reclamação geral, insatisfação, ouvidoria",
+      "status_validacao": "Fluxo padrão (revisar termos locais)",
+      "quando_utilizar": "Quando o cliente apresenta uma reclamação ou manifestação que não se enquadra diretamente nos itens 26 a 32.",
+      "como_consultar": "Consultar o cadastro básico do cliente para registrar o protocolo/atendimento.",
+      "caminho_sistema": "CRM → Customer List (Lista de clientes)",
+      "o_que_verificar": "Compreender o relato completo do cliente e verificar se há evidências anexadas.",
+      "o_que_fazer": "• Acolher o cliente com cordialidade e escuta ativa.\n• Entender exatamente o ocorrido (se necessário, solicitar mais detalhes ou prints).\n• Registrar todas as informações de forma organizada e encaminhar ao setor responsável.",
+      "msg_pronta": "Olá! Agradecemos por entrar em contato e compartilhar sua manifestação conosco.\n\nRegistramos os detalhes do seu relato e encaminharemos as informações ao setor responsável para análise. Caso você tenha alguma captura de tela ou informação adicional que possa ajudar na verificação, por favor, envie por aqui. Retornaremos assim que tivermos uma atualização!",
+      "encaminhar_supervisor": "Encaminhar para supervisão quando o tema envolver risco jurídico, regulatório ou insatisfação grave.",
+      "encaminhar_operacoes": "Direcionar para a área específica conforme a natureza da reclamação.",
+      "observacoes": "Sempre registrar o máximo de detalhes objetivos no atendimento para evitar retrabalho."
+    }
+  ],
+  "msgs": [
+    {
+      "id": "MSG-01",
+      "categoria": "Pagamentos",
+      "titulo": "Escolha do método de pagamento por transferência",
+      "quando_utilizar": "Quando for necessário confirmar qual método de transferência o cliente prefere utilizar.",
+      "texto": "Prezado(a) cliente,\n\nPor favor, informe qual das opções abaixo você prefere utilizar para realizar o pagamento por transferência. Assim, enviaremos o link correspondente:\n- Mach\n- Webpay\n- Khipu\n- Fintoc\n\nFicamos no aguardo da sua resposta para dar continuidade ao atendimento.",
+      "orientacao": "ATENÇÃO (VALIDAR): Mach, Webpay, Khipu e Fintoc são meios de pagamento do Chile. Confirmar com Operações quais métodos estão efetivamente disponíveis para clientes no Brasil (ex: Pix, Boleto) antes de enviar esta mensagem!"
+    },
+    {
+      "id": "MSG-02",
+      "categoria": "Reclamações / Geral",
+      "titulo": "Reclamação incompleta: solicitação de informações",
+      "quando_utilizar": "Quando o cliente apresentar uma reclamação ou dúvida sem fornecer detalhes suficientes para análise.",
+      "texto": "Prezado(a) cliente,\n\nAgradecemos por entrar em contato.\n\nLamentamos qualquer inconveniente que você tenha enfrentado e queremos ajudar a resolver sua situação o mais rápido possível.\n\nPara que possamos oferecer uma solução adequada, pedimos que nos forneça mais detalhes sobre o ocorrido.\n\nPor favor, envie uma descrição clara do problema, juntamente com capturas de tela ou outras evidências que possam nos ajudar a analisar melhor a situação.\n\nNossa equipe está comprometida em analisar seu caso e fornecer um retorno o mais breve possível.\n\nAgradecemos pela paciência e confiança. Não hesite em responder a esta mensagem caso precise de ajuda.\n\nMuito obrigado! Ficamos à disposição para qualquer dúvida.",
+      "orientacao": "Orientação interna:\n• Solicitar descrição clara do problema.\n• Solicitar prints ou evidências relevantes.\n• Não apresentar solução ou prometer prazos antes de compreender o ocorrido.\n• Encaminhar ao setor responsável após receber as informações."
+    },
+    {
+      "id": "MSG-SOP-01",
+      "categoria": "Desembolso do empréstimo",
+      "titulo": "1. Cliente não recebeu o dinheiro",
+      "quando_utilizar": "Quando o cliente informa que o empréstimo consta como aprovado ou liberado, mas o valor ainda não caiu na conta bancária.",
+      "texto": "Olá! Verifiquei o status do seu pedido em nosso sistema.\n\n[SE EM ANDAMENTO]: Seu desembolso está atualmente em fase de processamento bancário. Pedimos que aguarde a compensação pela instituição financeira.\n\n[SE FALHA]: Identificamos uma falha na transferência para a conta informada. Por favor, verifique se os dados bancários cadastrados estão corretos e ativos para que possamos orientar os próximos passos.\n\n[SE SUCESSO - APÓS VALIDAÇÃO]: Em nosso sistema, a transferência consta como concluída com sucesso. Caso o valor ainda não apareça em sua conta, por favor, envie o extrato bancário em PDF referente aos últimos 15 dias (se aprovado pela supervisão/compliance) para que possamos verificar junto ao banco.",
+      "orientacao": "PONTO PARA VALIDAR: A solicitação de extrato bancário em PDF dos últimos 15 dias precisa ser validada quanto à necessidade, segurança e proteção de dados (LGPD) antes de ser aplicada."
+    },
+    {
+      "id": "MSG-SOP-02",
+      "categoria": "Desembolso do empréstimo",
+      "titulo": "2. Consulta do status do empréstimo",
+      "quando_utilizar": "Quando o cliente entra em contato apenas para saber em que etapa está a solicitação ou o contrato de empréstimo.",
+      "texto": "Olá! Consultei o cadastro do seu pedido em nosso sistema e o status atual é: [INFORMAR STATUS: Em análise / Aprovado / Aguardando pagamento / Não aprovado].\n\nVocê também pode acompanhar todas as atualizações diretamente na aba 'Pedidos' (Orders) do seu aplicativo. Se precisar de mais algum detalhe sobre essa etapa, estou à disposição!",
+      "orientacao": "PONTO PARA VALIDAR: O material original menciona possibilidade de nova solicitação após 7 dias em determinados casos de rejeição. Confirmar se essa regra se aplica ao Brasil antes de informar ao cliente."
+    },
+    {
+      "id": "MSG-SOP-03",
+      "categoria": "Desembolso do empréstimo",
+      "titulo": "3. Cliente recebeu valor inferior ao esperado",
+      "quando_utilizar": "Quando o cliente reclama que solicitou um valor X, mas recebeu um valor Y menor na conta bancária.",
+      "texto": "Olá! Verifiquei os detalhes do seu contrato para esclarecer o valor transferido.\n\nNa contratação, sobre o valor total do pedido ([VALOR CONTRATADO]), são aplicados os encargos previstos nas condições do produto escolhido (como taxa de serviço de [VALOR/PERCENTUAL DO CONTRATO] e encargos/impostos de [VALOR/PERCENTUAL DO CONTRATO]), resultando no valor líquido liberado de [VALOR LÍQUIDO].\n\nEsses detalhes ficam disponíveis para conferência nos detalhes do seu pedido dentro do aplicativo. Caso tenha dúvidas sobre algum item específico do seu contrato, me avise!",
+      "orientacao": "ATENÇÃO: O material original menciona exemplos de taxa de serviço de 30% ou 35%, IVA de 5% e líquido de 60% ou 65%, conforme o produto. NÃO apresentar esses percentuais como regra universal; validar as taxas oficiais no Brasil e usar apenas os dados reais do contrato do cliente."
+    },
+    {
+      "id": "MSG-SOP-04",
+      "categoria": "Desembolso do empréstimo",
+      "titulo": "4. Cancelamento do empréstimo",
+      "quando_utilizar": "Quando o cliente solicita o cancelamento de um pedido em andamento ou o cancelamento/devolução de um empréstimo recém-liberado.",
+      "texto": "Olá! Compreendo perfeitamente a sua solicitação de cancelamento e já estou verificando a situação atual do seu pedido em nosso sistema.\n\n[SE AINDA NÃO DESEMBOLSADO]: Verifiquei que o pagamento ainda não foi concluído. Vou registrar sua solicitação e encaminhar ao setor responsável para verificar a interrupção do processo.\n\n[SE JÁ DESEMBOLSADO]: Como a transferência já foi processada, vou encaminhar seu pedido à nossa equipe responsável para orientar corretamente sobre o procedimento de cancelamento e devolução, conforme as regras aplicáveis. Por favor, aguarde nosso retorno.",
+      "orientacao": "Regra rígida: Não pressionar o cliente a manter o empréstimo e não presumir autorização sem evidência técnica. Validar fluxo exato de devolução (direito de arrependimento / estorno) com a gestão."
+    },
+    {
+      "id": "MSG-SOP-05",
+      "categoria": "Desembolso do empréstimo",
+      "titulo": "5. Reclamação sobre prazo curto",
+      "quando_utilizar": "Quando o cliente reclama que o prazo de vencimento do empréstimo aprovado é muito curto.",
+      "texto": "Olá! Entendo a sua observação sobre o prazo do empréstimo.\n\nAs condições de prazo e valor são definidas automaticamente pelo nosso sistema no momento da análise de crédito e ficam descritas no resumo do pedido antes da confirmação.\n\nPara o contrato atual, a data de vencimento prevista é [DATA DE VENCIMENTO]. Manter um bom histórico de pagamentos em dia ajuda nas futuras análises realizadas pelo sistema, embora não possamos garantir alterações automáticas de prazo. Se precisar de ajuda para consultar os detalhes do seu pagamento, estou à disposição!",
+      "orientacao": "Proibido prometer aumento de prazo ou de limite em empréstimos futuros."
+    },
+    {
+      "id": "MSG-SOP-06",
+      "categoria": "Pagamentos",
+      "titulo": "6. Cliente não consegue pagar",
+      "quando_utilizar": "Quando o cliente tenta efetuar o pagamento pelo aplicativo, mas encontra erro técnico, falha no carregamento ou bloqueio na transação.",
+      "texto": "Olá! Para ajudá-lo(a) a concluir seu pagamento sem dificuldades, por favor, siga estas verificações:\n\n1. Verifique sua conexão com a internet (tente alternar entre Wi-Fi e dados móveis).\n2. Certifique-se de que o aplicativo está atualizado na última versão (ou tente fechar e abrir novamente).\n3. Confira nas configurações do celular se as permissões do aplicativo estão ativadas.\n4. Caso haja mais de uma opção disponível no app, tente selecionar outro método de pagamento.\n\nSe o erro continuar, por favor, envie uma captura de tela ou um vídeo curto mostrando a mensagem que aparece para que nossa equipe técnica possa analisar!",
+      "orientacao": "Nunca orientar pagamento fora dos canais oficiais do aplicativo enquanto o erro técnico é investigado."
+    },
+    {
+      "id": "MSG-SOP-07",
+      "categoria": "Pagamentos",
+      "titulo": "7. Como realizar o pagamento",
+      "quando_utilizar": "Quando o cliente pergunta qual é o procedimento ou caminho dentro do aplicativo para quitar o empréstimo.",
+      "texto": "Olá! Para realizar o pagamento do seu empréstimo de forma rápida e segura, siga este passo a passo diretamente no aplicativo:\n\n1. Abra o aplicativo e acesse a aba 'Orders' (Pedidos).\n2. Selecione o pedido ativo e clique em 'Payment' (Pagamento).\n3. Selecione 'Full Payment' (Pagamento Total).\n4. Escolha o método de pagamento disponível de sua preferência.\n5. Clique em 'Pay Now' (Pagar Agora) e siga as instruções na tela.\n\nImportante: Utilize sempre apenas os meios de pagamento gerados dentro do próprio aplicativo oficial.",
+      "orientacao": "REGRA DE SEGURANÇA CRÍTICA: Jamais solicitar transferências para contas pessoais ou links externos não oficiais."
+    },
+    {
+      "id": "MSG-SOP-08",
+      "categoria": "Pagamentos",
+      "titulo": "8. Consulta de vencimento e informações do empréstimo",
+      "quando_utilizar": "Quando o cliente solicita informações sobre a data de vencimento, quantidade de pedidos ativos ou valor atualizado para pagamento.",
+      "texto": "Olá! Você pode conferir todas as informações do seu empréstimo diretamente na aba 'Pedidos' (Orders) do aplicativo.\n\nDe acordo com o registro atual em nosso sistema, seguem os detalhes do seu contrato:\n• Pedidos pendentes: [QUANTIDADE]\n• Valor devido: [VALOR DEVIDO]\n• Data de vencimento: [DATA DE VENCIMENTO]\n\nCaso precise de orientação sobre como efetuar o pagamento no aplicativo, é só me avisar!",
+      "orientacao": "Sempre limpar o filtro de data no CRM ao pesquisar por UID ou telefone para não ocultar contratos."
+    },
+    {
+      "id": "MSG-SOP-09",
+      "categoria": "Pagamentos",
+      "titulo": "9. Solicitação de prorrogação do prazo",
+      "quando_utilizar": "Quando o cliente pede para estender a data de vencimento sem custo adicional (prorrogação gratuita).",
+      "texto": "Olá! Entendi a sua necessidade de prorrogação do prazo de vencimento.\n\nVou registrar o seu motivo e encaminhar os dados do seu pedido para análise do setor responsável, pois qualquer alteração de data depende de aprovação interna.\n\nAssim que tivermos um retorno sobre a possibilidade de atendimento da sua solicitação, entraremos em contato. Por favor, aguarde nossa confirmação.",
+      "orientacao": "PONTO PARA VALIDAR: O material original menciona a possibilidade de prorrogação gratuita de 2 dias, uma única vez, mediante aprovação. Não prometer ao cliente antes da confirmação da política e da aprovação do supervisor."
+    },
+    {
+      "id": "MSG-SOP-10",
+      "categoria": "Pagamentos",
+      "titulo": "10. Prorrogação mediante pagamento",
+      "quando_utilizar": "Quando o cliente pergunta se pode pagar uma taxa para estender o prazo de vencimento do empréstimo.",
+      "texto": "Olá! Para verificar se a opção oficial de extensão de prazo mediante pagamento está disponível para o seu contrato, acesse o seu aplicativo em 'Pedidos' (Orders) → 'Pagamento' (Payment) e confira as opções exibidas na tela.\n\nCaso essa opção esteja habilitada para o seu perfil, o próprio aplicativo mostrará o valor e a nova data de vencimento antes de você confirmar. Se precisar de outra orientação, estou à disposição!",
+      "orientacao": "O material original menciona que, em pedidos de extensão gratuita, há possibilidade de 2 dias em casos específicos (sujeito à validação e aprovação)."
+    },
+    {
+      "id": "MSG-SOP-11",
+      "categoria": "Pagamentos",
+      "titulo": "11. Pagamento realizado, mas não identificado",
+      "quando_utilizar": "Quando o cliente afirma que já pagou o empréstimo, mas o aplicativo continua cobrando ou mostrando o pedido em aberto.",
+      "texto": "Olá! Vou verificar a situação do seu pagamento imediatamente.\n\nPara que possamos localizar a transação e analisar junto ao setor responsável, por favor, envie o comprovante de pagamento completo (contendo data, hora, valor e dados da transação).\n\nAssim que recebermos o comprovante, encaminharemos para verificação. Pedimos que não realize nenhuma transferência fora do aplicativo oficial.",
+      "orientacao": "Nunca orientar transferências para contas pessoais. Sempre conferir Repayment Records antes de responder."
+    },
+    {
+      "id": "MSG-SOP-12",
+      "categoria": "Pagamentos",
+      "titulo": "12. Cupons de desconto",
+      "quando_utilizar": "Quando o cliente pergunta se possui cupons de desconto disponíveis ou onde encontrá-los no aplicativo.",
+      "texto": "Olá! Para verificar se há algum cupom disponível para você, acesse a área de 'Cupons' dentro do seu perfil no aplicativo.\n\nOs cupons são liberados em etapas pelo sistema. Caso você possua um cupom ativo, basta selecioná-lo na tela de pagamento antes de concluir a operação, verificando as regras e a validade exibidas no próprio cupom.",
+      "orientacao": "Não prometer envio manual de cupons se o sistema não tiver disponibilizado."
+    },
+    {
+      "id": "MSG-SOP-13",
+      "categoria": "Pagamentos",
+      "titulo": "13. Solicitação de redução de juros",
+      "quando_utilizar": "Quando o cliente solicita desconto ou redução nos juros do empréstimo.",
+      "texto": "Olá! Registrei a sua solicitação de análise para redução de encargos/juros do seu contrato.\n\nComo qualquer alteração de valores depende de avaliação e aprovação interna, encaminhei o seu pedido e a sua justificativa para o setor responsável. Assim que houver um parecer, retornaremos o contato com você.",
+      "orientacao": "PONTO PARA VALIDAR: O material original menciona possibilidade de solicitar redução de 5% do principal em casos específicos, mediante análise e aprovação. NÃO prometer esse percentual antes da validação e aprovação."
+    },
+    {
+      "id": "MSG-SOP-14",
+      "categoria": "Pagamentos",
+      "titulo": "14. Solicitação de redução de multa por atraso",
+      "quando_utilizar": "Quando o cliente está em atraso e pede isenção ou redução da multa/encargos moratórios para quitar o débito.",
+      "texto": "Olá! Verifiquei as condições atuais do seu contrato em atraso.\n\nNo momento, não posso garantir automaticamente a redução da multa, pois qualquer desconto nos encargos precisa passar por análise e autorização do setor responsável. Vou registrar o seu pedido e sua intenção de pagamento para avaliação e retorno assim que possível.",
+      "orientacao": "PONTO PARA VALIDAR: Validar a política oficial de descontos/negociação de multa por atraso com a supervisão e financeiro."
+    },
+    {
+      "id": "MSG-SOP-15",
+      "categoria": "Pagamentos",
+      "titulo": "15. Cliente com dificuldades financeiras",
+      "quando_utilizar": "Quando o cliente relata estar passando por dificuldades financeiras, desemprego ou problemas pessoais que o impedem de pagar no momento.",
+      "texto": "Olá! Sinto muito pelo momento difícil que você está enfrentando e agradeço por entrar em contato conosco com transparência.\n\nConforme previsto em seu contrato, o valor atual do pedido é de [VALOR] com vencimento em [DATA]. Caso tenha interesse em verificar se há alguma alternativa oficial disponível para o seu caso (como análise de extensão), posso registrar sua solicitação para avaliação da equipe responsável.\n\nConte com o nosso respeito para buscar as informações oficiais do seu contrato.",
+      "orientacao": "REGRA ÉTICA E DE COMPLIANCE: É estritamente proibido sugerir que o cliente peça empréstimo a familiares ou faça novas dívidas para pagar a empresa."
+    },
+    {
+      "id": "MSG-SOP-16",
+      "categoria": "Pagamentos",
+      "titulo": "16. Solicitação de parcelamento",
+      "quando_utilizar": "Quando o cliente pede para dividir o pagamento do empréstimo em várias parcelas.",
+      "texto": "Olá! Verifiquei as condições do seu contrato em nosso sistema.\n\nNo momento, a modalidade contratada prevê o pagamento integral na data de vencimento, não havendo opção de parcelamento automático disponível. Caso precise de mais tempo, você pode verificar diretamente no aplicativo (em Pedidos → Pagamento) se a opção de extensão de prazo está habilitada para o seu contrato.\n\nSe precisar de mais esclarecimentos, estou à disposição!",
+      "orientacao": "PONTO PARA VALIDAR: Confirmar a política atual de pagamentos no Brasil antes de afirmar definitivamente que não existe parcelamento."
+    },
+    {
+      "id": "MSG-SOP-17",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "titulo": "17. Problemas com código de verificação, reconhecimento facial ou cadastro",
+      "quando_utilizar": "Quando o cliente não recebe o código SMS/verificação, falha na validação facial ou não consegue concluir o cadastro.",
+      "texto": "Olá! Para resolver problemas com o código de verificação ou reconhecimento facial, por favor, tente os seguintes passos:\n\n1. Verifique sua conexão com a internet e o sinal da operadora (no caso de SMS, confira também mensagens bloqueadas/spam).\n2. Atualize o aplicativo para a versão mais recente na loja de aplicativos.\n3. Nas configurações do seu celular, verifique se a permissão de Câmera está ativada para o aplicativo.\n4. Ao fazer a verificação facial, esteja em um ambiente bem iluminado e sem acessórios no rosto.\n\nSe o problema continuar após essas tentativas, por favor, envie uma captura de tela ou um vídeo curto mostrando o erro para que possamos analisar!",
+      "orientacao": "Sempre checar no CRM se o cadastro consta como 'Não verificado' (未认证)."
+    },
+    {
+      "id": "MSG-SOP-18",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "titulo": "18. Alteração de dados bancários, telefone ou contato de emergência",
+      "quando_utilizar": "Quando o cliente precisa atualizar a conta bancária/chave Pix, alterar o número de telefone cadastrado ou modificar contatos de emergência.",
+      "texto": "Olá! Sobre a alteração de dados cadastrais, seguem as orientações:\n\n• Dados bancários: A alteração pode ser feita diretamente no aplicativo antes de enviar uma nova solicitação de empréstimo ou caso tenha ocorrido falha no desembolso anterior (não é possível alterar enquanto uma transferência está em andamento).\n• Telefone e contatos de emergência: Por motivos de segurança e validação de conta, esses dados possuem restrições de alteração no sistema.\n\nPor favor, informe exatamente qual dado você precisa atualizar e se há algum pedido em andamento para que possamos verificar a orientação adequada.",
+      "orientacao": "PONTO PARA VALIDAR: Confirmar as regras oficiais de alteração de telefone/cadastro e prevenção à fraude no Brasil. Nunca sugerir abertura de conta duplicada."
+    },
+    {
+      "id": "MSG-SOP-19",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "titulo": "19. Dúvidas sobre juros e taxas",
+      "quando_utilizar": "Quando o cliente pede esclarecimentos sobre como são calculados os juros, taxas de serviço ou encargos do empréstimo.",
+      "texto": "Olá! Os juros, taxas e encargos aplicáveis variam de acordo com o produto e as condições aprovadas para cada perfil, sendo sempre exibidos de forma transparente na tela de resumo antes da confirmação do pedido.\n\nNo seu contrato atual, os valores registrados são:\n• Valor principal: [VALOR PRINCIPAL]\n• Taxas e encargos: [VALORES DO CONTRATO]\n• Valor total para pagamento: [VALOR TOTAL]\n\nVocê pode revisar essas informações a qualquer momento na aba 'Pedidos' do seu aplicativo.",
+      "orientacao": "PONTO PARA VALIDAR: O material original cita taxas de serviço de 30% ou 35% e IVA de 5% (líquido de 60% ou 65%). Validar a estrutura tributária e de taxas aplicada no Brasil (ex: IOF em vez de IVA) e informar apenas os valores reais do contrato."
+    },
+    {
+      "id": "MSG-SOP-20",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "titulo": "20. Cliente sem limite disponível",
+      "quando_utilizar": "Quando o cliente acessa o aplicativo e vê que não possui limite de crédito disponível para nova solicitação.",
+      "texto": "Olá! Verifiquei o seu cadastro em nosso sistema e, no momento, não há limite disponível para uma nova contratação.\n\nA liberação de limite depende da análise automática do sistema, que considera a quitação de contratos anteriores e o histórico de utilização. Recomendamos que acompanhe periodicamente pelo próprio aplicativo quando uma nova oferta estiver disponível para o seu perfil.",
+      "orientacao": "PONTO PARA VALIDAR: O material original menciona aguardar 7 dias em determinados casos de rejeição. Confirmar essa regra antes de informar prazo ao cliente."
+    },
+    {
+      "id": "MSG-SOP-21",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "titulo": "21. Solicitação de aumento de limite",
+      "quando_utilizar": "Quando o cliente solicita manualmente que o atendente aumente seu limite de crédito.",
+      "texto": "Olá! O valor do limite de crédito é definido e atualizado exclusivamente pela análise automática do nosso sistema, não sendo possível realizar alterações manuais pela equipe de atendimento.\n\nO sistema realiza reavaliações periódicas levando em conta o histórico de uso e o pagamento em dia dos contratos, mas não há garantia ou prazo fixo para aumento. Caso haja atualização no seu limite, ela aparecerá automaticamente na tela inicial do aplicativo.",
+      "orientacao": "Proibido prometer aumento de limite ou dizer que o atendente pode alterar o valor."
+    },
+    {
+      "id": "MSG-SOP-22",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "titulo": "22. Mensagens em branco ou sem sentido",
+      "quando_utilizar": "Quando o cliente inicia o atendimento enviando apenas espaços, caracteres aleatórios, emojis ou mensagens incompreensíveis.",
+      "texto": "Olá! Bem-vindo(a) ao nosso atendimento. Recebemos a sua mensagem, mas não conseguimos identificar a sua dúvida ou solicitação.\n\nPor favor, conte-nos como podemos ajudar hoje para que possamos direcionar o seu atendimento!",
+      "orientacao": "Não pedir CPF, telefone ou documentos antes que o cliente informe o motivo do contato."
+    },
+    {
+      "id": "MSG-SOP-23",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "titulo": "23. Solicitação de exclusão de dados",
+      "quando_utilizar": "Quando o cliente solicita a exclusão de seus dados pessoais, documentos ou encerramento definitivo do cadastro.",
+      "texto": "Olá! Recebemos a sua solicitação referente à exclusão de dados pessoais e encerramento de cadastro.\n\nPara garantir a segurança das suas informações e o cumprimento da legislação brasileira de proteção de dados (LGPD), encaminhamos o seu pedido ao setor responsável pela análise de privacidade.\n\nAssim que a verificação sobre eventuais vínculos contratuais ou obrigações legais for concluída, retornaremos com a confirmação e as orientações sobre o seu pedido.",
+      "orientacao": "PONTO PARA VALIDAR: O material original traz uma resposta padrão para quando o empréstimo não foi aprovado. Essa política precisa ser validada com o Jurídico/Privacidade no Brasil (LGPD e regras do Banco Central) antes de se tornar resposta oficial."
+    },
+    {
+      "id": "MSG-SOP-24",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "titulo": "24. Problemas técnicos no aplicativo",
+      "quando_utilizar": "Quando o cliente relata falhas gerais de funcionamento no aplicativo (travamentos, tela branca, fechamento inesperado, erro de carregamento).",
+      "texto": "Olá! Lamentamos a instabilidade que você está enfrentando no aplicativo. Por favor, tente realizar estes procedimentos:\n\n1. Verifique se sua conexão com a internet está estável.\n2. Acesse a loja de aplicativos e confira se há alguma atualização pendente para o app.\n3. Feche completamente o aplicativo e abra-o novamente.\n4. Confira nas configurações do celular se as permissões do aplicativo estão habilitadas.\n\nCaso o problema continue, por favor, envie um print da tela ou um vídeo curto mostrando o erro (junto com o modelo do seu celular) para que nossa equipe técnica possa investigar!",
+      "orientacao": "Sempre registrar evidências visuais (print/vídeo) antes de escalar para a engenharia/técnica."
+    },
+    {
+      "id": "MSG-SOP-25",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "titulo": "25. Empréstimo recusado",
+      "quando_utilizar": "Quando o cliente pergunta o motivo pelo qual sua solicitação de empréstimo foi recusada ou quando não consegue concluir o pedido.",
+      "texto": "Olá! Verifiquei o seu cadastro em nosso sistema e a sua solicitação atual não foi aprovada pela nossa análise automática de crédito.\n\nA avaliação considera diversos critérios internos e de perfil no momento do pedido, e infelizmente não temos acesso aos detalhes específicos da recusa nem podemos alterar o resultado manualmente.\n\nCaso você esteja enfrentando algum erro técnico que impeça a conclusão do envio da proposta no aplicativo, por favor, nos avise e envie um print da tela para verificarmos.",
+      "orientacao": "Não inventar motivos para a recusa (ex: não afirmar 'nome sujo' se o sistema não informar o motivo exato)."
+    },
+    {
+      "id": "MSG-SOP-26",
+      "categoria": "Reclamações",
+      "titulo": "26. Cliente afirma que o empréstimo foi contratado ou liberado sem autorização",
+      "quando_utilizar": "Quando o cliente alega que não solicitou ou não autorizou o empréstimo que foi contratado ou desembolsado em seu nome/conta.",
+      "texto": "Olá! Levamos a sua manifestação muito a sério e já registramos a sua contestação sobre a contratação deste empréstimo.\n\nEncaminhamos imediatamente o seu caso e os registros da operação para análise da nossa equipe especializada de segurança e auditoria. Pedimos que aguarde o retorno da nossa equipe com as orientações oficiais após a verificação.\n\nPor segurança, não realize nenhuma transferência para contas de terceiros ou fora dos canais oficiais enquanto analisamos o ocorrido.",
+      "orientacao": "PONTO PARA VALIDAR: O procedimento original menciona condições conforme o tempo transcorrido e possíveis descontos. PROIBIDO aplicar isso automaticamente; precisa de validação jurídica e de compliance no Brasil."
+    },
+    {
+      "id": "MSG-SOP-27",
+      "categoria": "Reclamações",
+      "titulo": "27. Reclamação sobre valor baixo, juros altos ou prazo curto",
+      "quando_utilizar": "Quando o cliente registra uma reclamação formal (não apenas dúvida) sobre as condições comerciais do empréstimo contratado.",
+      "texto": "Olá! Agradecemos por compartilhar sua insatisfação e compreendemos a sua preocupação em relação às condições do contrato.\n\nConforme registrado no momento da contratação, o valor total do pedido é de [VALOR TOTAL], com vencimento em [DATA DE VENCIMENTO], conforme as condições exibidas antes da confirmação no aplicativo.\n\nVou registrar sua manifestação e encaminhar suas observações para avaliação do setor responsável. Caso haja alguma alternativa aplicável ao seu contrato, entraremos em contato.",
+      "orientacao": "PONTO PARA VALIDAR: O material original cita possibilidade de redução de 5% ou extensão de 2 dias somente após aprovação. Validar política e nunca prometer antes da autorização."
+    },
+    {
+      "id": "MSG-SOP-28",
+      "categoria": "Reclamações",
+      "titulo": "28. Reclamação sobre desembolso, mas cliente recebeu cobrança",
+      "quando_utilizar": "Quando o cliente reclama que está recebendo mensagens ou ligações de cobrança referentes a um empréstimo cujo dinheiro ele afirma não ter recebido.",
+      "texto": "Olá! Lamentamos o transtorno e já estamos verificando a situação do desembolso vinculado a essa cobrança.\n\nRegistrei sua reclamação com prioridade e encaminhei para nossa equipe de Operações analisar o status da transferência bancária e regularizar o cadastro, se necessário. Por favor, aguarde nosso retorno com a atualização do seu caso.",
+      "orientacao": "Prioridade alta: cobrar um cliente por um valor que falhou no desembolso gera risco grave de reclamação externa e jurídico."
+    },
+    {
+      "id": "MSG-SOP-29",
+      "categoria": "Reclamações",
+      "titulo": "29. Reclamação sobre cobrança",
+      "quando_utilizar": "Quando o cliente reclama da frequência das cobranças, de abordagem agressiva/desrespeitosa ou de cobrança após pagamento.",
+      "texto": "Olá! Lamentamos profundamente pela experiência relatada e reforçamos que não compactuamos com qualquer abordagem desrespeitosa ou inadequada.\n\nPara que possamos investigar o ocorrido e tomar as providências cabíveis junto à equipe responsável, por favor, envie capturas de tela, números de contato ou registros das mensagens recebidas.\n\nJá registrei a sua reclamação para análise urgente da nossa supervisão.",
+      "orientacao": "PONTO PARA VALIDAR: Revisar políticas de cobrança conforme o Código de Defesa do Consumidor (CDC) no Brasil."
+    },
+    {
+      "id": "MSG-SOP-30",
+      "categoria": "Reclamações",
+      "titulo": "30. Suspeita de fraude ou golpe",
+      "quando_utilizar": "Quando o cliente relata ter sido abordado por golpistas usando o nome da empresa, ou suspeita que terceiros usaram seus dados para fraude.",
+      "texto": "Olá! Agradecemos por nos alertar imediatamente sobre essa situação.\n\nReforçamos que nossa empresa NUNCA solicita pagamentos, taxas de liberação ou transferências para contas bancárias pessoais ou fora do nosso aplicativo oficial. Por segurança, não realize nenhuma transferência ou pagamento para esses contatos.\n\nPor favor, envie capturas de tela das conversas, números de telefone ou links recebidos para que possamos encaminhar à nossa equipe de Segurança. Caso você já tenha realizado alguma transferência para terceiros, recomendamos que entre em contato imediatamente com o seu banco e registre um Boletim de Ocorrência junto às autoridades competentes.",
+      "orientacao": "Segurança máxima: jamais pedir dados sensíveis desnecessários e sempre alertar sobre canais oficiais."
+    },
+    {
+      "id": "MSG-SOP-31",
+      "categoria": "Reclamações",
+      "titulo": "31. Avaliação negativa na Google Play",
+      "quando_utilizar": "Quando o cliente menciona uma avaliação negativa na Google Play ou quando o atendimento trata casos originados de avaliações na loja.",
+      "texto": "Olá! Agradecemos pelo seu feedback na loja de aplicativos, pois sua opinião é muito importante para melhorarmos nossos serviços.\n\nGostaríamos de entender melhor o ocorrido para ajudar a resolver sua solicitação da melhor forma possível. Por favor, nos informe qual dificuldade você encontrou no aplicativo ou em seu pedido para que possamos verificar em nosso sistema.",
+      "orientacao": "PONTO PARA VALIDAR (RISCO ALTO): O material original menciona oferecer descontos em troca da alteração/remoção de avaliação negativa. ESSA PRÁTICA ESTÁ SUSPENSA e precisa ser revisada pelo Jurídico e Compliance (viola políticas da Google Play e CDC)."
+    },
+    {
+      "id": "MSG-SOP-32",
+      "categoria": "Reclamações",
+      "titulo": "32. Reclamação encaminhada ao setor de pagamentos",
+      "quando_utilizar": "Quando a reclamação envolve divergências financeiras, estornos, conciliação de pagamentos ou problemas de desembolso que exigem atuação do setor de pagamentos/pós-venda.",
+      "texto": "Olá! Registramos formalmente a sua reclamação e reunimos os dados da sua operação para encaminhamento ao nosso setor especializado de Pagamentos e Pós-venda.\n\nNossa equipe está analisando o caso e acompanharemos a tratativa até a conclusão para lhe dar um retorno claro e transparente. Agradecemos pela sua paciência.",
+      "orientacao": "PONTO PARA VALIDAR: Nunca condicionar atendimento ou solução à retirada de reclamações em órgãos de defesa do consumidor ou plataformas públicas."
+    },
+    {
+      "id": "MSG-SOP-33",
+      "categoria": "Reclamações",
+      "titulo": "33. Outras reclamações",
+      "quando_utilizar": "Quando o cliente apresenta uma reclamação ou manifestação que não se enquadra diretamente nos itens 26 a 32.",
+      "texto": "Olá! Agradecemos por entrar em contato e compartilhar sua manifestação conosco.\n\nRegistramos os detalhes do seu relato e encaminharemos as informações ao setor responsável para análise. Caso você tenha alguma captura de tela ou informação adicional que possa ajudar na verificação, por favor, envie por aqui. Retornaremos assim que tivermos uma atualização!",
+      "orientacao": "Sempre registrar o máximo de detalhes objetivos no atendimento para evitar retrabalho."
+    }
+  ],
+  "glossario": [
+    {
+      "original": "用户ID / UID",
+      "traducao": "Identificação do usuário",
+      "contexto": "Código único numérico/alfanumérico do cliente no CRM para buscas."
+    },
+    {
+      "original": "订单管理 / Order Management",
+      "traducao": "Gerenciamento de pedidos",
+      "contexto": "Menu principal no CRM para gestão de desembolsos e contratos."
+    },
+    {
+      "original": "放款列表 / Disbursement List",
+      "traducao": "Lista de desembolsos",
+      "contexto": "Tela do CRM onde se consulta o status da transferência do empréstimo ao cliente."
+    },
+    {
+      "original": "订单列表 / Order List",
+      "traducao": "Lista de pedidos",
+      "contexto": "Tela do CRM com histórico de solicitações, status de aprovação e detalhes."
+    },
+    {
+      "original": "还款计划 / Repayment Plan",
+      "traducao": "Plano de pagamento",
+      "contexto": "Tela do CRM com datas de vencimento, valores devidos e parcelas/pedidos em aberto."
+    },
+    {
+      "original": "还款记录 / Repayment Records",
+      "traducao": "Histórico de pagamentos",
+      "contexto": "Tela do CRM que registra transações de pagamento efetuadas ou em processamento."
+    },
+    {
+      "original": "处理中",
+      "traducao": "Em processamento",
+      "contexto": "Status indicando que o desembolso ou pagamento está sendo processado pelo sistema/banco."
+    },
+    {
+      "original": "失败",
+      "traducao": "Falha",
+      "contexto": "Status indicando erro na transferência bancária (desembolso) ou na tentativa de pagamento."
+    },
+    {
+      "original": "成功",
+      "traducao": "Sucesso",
+      "contexto": "Status indicando que a operação (desembolso ou pagamento) foi concluída."
+    },
+    {
+      "original": "待还款",
+      "traducao": "Aguardando pagamento",
+      "contexto": "Status de empréstimo já liberado que está ativo aguardando quitação pelo cliente."
+    },
+    {
+      "original": "已拒绝",
+      "traducao": "Rejeitado",
+      "contexto": "Status de solicitação de empréstimo não aprovada pela análise de crédito."
+    },
+    {
+      "original": "客户列表 / Customer List",
+      "traducao": "Lista de clientes",
+      "contexto": "Cadastro geral dos usuários no CRM, status de verificação e dados básicos."
+    },
+    {
+      "original": "未认证",
+      "traducao": "Não verificado",
+      "contexto": "Status cadastral indicando que o cliente não concluiu validação documental/facial."
+    },
+    {
+      "original": "运营",
+      "traducao": "Operações",
+      "contexto": "Equipe operacional responsável por conciliações, falhas de desembolso e ajustes."
+    },
+    {
+      "original": "售后",
+      "traducao": "Pós-venda",
+      "contexto": "Equipe de suporte avançado e tratativa de reclamações financeiras/pós-contratação."
+    },
+    {
+      "original": "优惠券",
+      "traducao": "Cupom de desconto",
+      "contexto": "Benefício promocional aplicável na tela de pagamento dentro do aplicativo."
+    },
+    {
+      "original": "本金",
+      "traducao": "Valor principal",
+      "contexto": "Valor base do empréstimo antes da aplicação de juros, taxas ou multas."
+    },
+    {
+      "original": "服务费",
+      "traducao": "Taxa de serviço",
+      "contexto": "Encargo administrativo/operacional cobrado sobre o produto de crédito."
+    },
+    {
+      "original": "IVA",
+      "traducao": "Imposto sobre valor agregado",
+      "contexto": "Tributo mencionado no manual original (validar nomenclatura/imposto equivalente no Brasil, ex: IOF)."
+    },
+    {
+      "original": "Orders (App)",
+      "traducao": "Pedidos",
+      "contexto": "Aba no aplicativo do cliente onde ficam os empréstimos ativos e histórico."
+    },
+    {
+      "original": "Payment / Full Payment (App)",
+      "traducao": "Pagamento / Pagamento Total",
+      "contexto": "Opções no aplicativo do cliente para iniciar a quitação integral do contrato."
+    },
+    {
+      "original": "Pay Now (App)",
+      "traducao": "Pagar Agora",
+      "contexto": "Botão final no aplicativo para gerar o meio de pagamento."
+    },
+    {
+      "original": "Link de descarga (ES)",
+      "traducao": "Link de download",
+      "contexto": "Endereço para baixar/instalar o aplicativo (Android/iOS)."
+    },
+    {
+      "original": "Estado de APP (ES)",
+      "traducao": "Status do aplicativo",
+      "contexto": "Indicador numérico (0 ou 1) na tabela de aplicativos (significado pendente de confirmação)."
+    },
+    {
+      "original": "Enlaces de marketing retirados (ES)",
+      "traducao": "Links de marketing desativados/retirados",
+      "contexto": "URLs antigas ou removidas de campanhas de divulgação."
+    }
+  ],
+  "apps": [
+    {
+      "nome": "CredDireto",
+      "sistema": "IOS",
+      "link_descarga": "http://web.findireto.com",
+      "estado": "1",
+      "links_retirados": "http://web.findireto.com",
+      "app_id": "BR-IOS-H5",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "EmprestMais",
+      "sistema": "IOS",
+      "link_descarga": "http://web.emprestuse.com",
+      "estado": "1",
+      "links_retirados": "http://web.emprestuse.com",
+      "app_id": "BR-IOS-H5-2",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "CredNotas",
+      "sistema": "IOS",
+      "link_descarga": "https://web.sotindung.com",
+      "estado": "0",
+      "links_retirados": "https://web.sotindung.com",
+      "app_id": "BR-IOS-EMI-E01",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "CredRumo",
+      "sistema": "IOS",
+      "link_descarga": "http://web.credrumo.com",
+      "estado": "0",
+      "links_retirados": "http://web.credrumo.com",
+      "app_id": "BR-IOS-EMI-E03",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "CredCresce",
+      "sistema": "IOS",
+      "link_descarga": "http://web.credcresce.com",
+      "estado": "0",
+      "links_retirados": "http://web.credcresce.com",
+      "app_id": "BR-IOS-EMI-E04",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "ReguaCred",
+      "sistema": "IOS",
+      "link_descarga": "bit.ly/ReguaCred",
+      "estado": "0",
+      "links_retirados": "https://web.reguacred.com",
+      "app_id": "BR-IOS-EMI-E05",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "BussolaCred",
+      "sistema": "IOS",
+      "link_descarga": "bit.ly/BussolaCred",
+      "estado": "0",
+      "links_retirados": "https://web.bussolacred.com/",
+      "app_id": "BR-IOS-EMI-E07",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "CrediVigia",
+      "sistema": "IOS",
+      "link_descarga": "bit.ly/CrediVigia",
+      "estado": "1",
+      "links_retirados": "",
+      "app_id": "BR-IOS-EMI-E09",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "VertexCredito",
+      "sistema": "Android",
+      "link_descarga": "https://bit.ly/3P7SaqM",
+      "estado": "1",
+      "links_retirados": "",
+      "app_id": "BR-Android-H5",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "EmprestJa",
+      "sistema": "Android",
+      "link_descarga": "http://web.emprestja.com",
+      "estado": "0",
+      "links_retirados": "",
+      "app_id": "BR-Android-E01",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "CreditoLeve",
+      "sistema": "Android",
+      "link_descarga": "https://web.creditoleve.com",
+      "estado": "1",
+      "links_retirados": "",
+      "app_id": "BR-Android-E02",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "SaqueJa",
+      "sistema": "Android",
+      "link_descarga": "https://bit.ly/43J8rG7",
+      "estado": "1",
+      "links_retirados": "",
+      "app_id": "BR-Android-E03",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "PazCredito",
+      "sistema": "Android",
+      "link_descarga": "bit.ly/pazcredito",
+      "estado": "1",
+      "links_retirados": "",
+      "app_id": "BR-Android-E04",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "ElevaCredito",
+      "sistema": "Android",
+      "link_descarga": "bit.ly/ElevaCredito",
+      "estado": "1",
+      "links_retirados": "http://bit.ly/ElevaCredito1",
+      "app_id": "BR-Android-E05",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "ProntoCredito",
+      "sistema": "Android",
+      "link_descarga": "https://bit.ly/prontocredito",
+      "estado": "1",
+      "links_retirados": "",
+      "app_id": "BR-Android-E06",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "DinheiroJa",
+      "sistema": "Android",
+      "link_descarga": "bit.ly/4b3M3eS",
+      "estado": "0",
+      "links_retirados": "https://web.dinheirocred.com/",
+      "app_id": "BR-Android-E07",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "CreditoCerto",
+      "sistema": "Android",
+      "link_descarga": "bit.ly/certocredito",
+      "estado": "1",
+      "links_retirados": "",
+      "app_id": "BR-Android-E08",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    }
+  ],
+  "validacoes": [
+    {
+      "tema": "Percentuais de taxas e valores líquidos (SOP-03 e SOP-19)",
+      "risco": "O material original menciona taxa de serviço de 30% ou 35%, IVA de 5% e valor líquido de 60% ou 65%. No Brasil não existe IVA nesse formato (aplica-se IOF e regras do Banco Central/CDC). Informar percentuais errados gera risco regulatório e de propaganda enganosa.",
+      "quem_confirma": "Produto / Financeiro / Jurídico",
+      "status": "Pendente de confirmação",
+      "obs": "Usar apenas os valores reais exibidos no contrato de cada cliente até a tabela oficial do Brasil ser confirmada."
+    },
+    {
+      "tema": "Descontos de 5%, 20% ou outros (SOP-13 e SOP-26)",
+      "risco": "O material menciona possibilidade de redução de 5% do principal ou descontos de 20% em casos específicos. Não há critérios claros de elegibilidade nem alçada aprovada para o Brasil.",
+      "quem_confirma": "Supervisão / Financeiro / Operações",
+      "status": "Pendente de confirmação",
+      "obs": "Proibido prometer ou aplicar qualquer desconto sem autorização formal."
+    },
+    {
+      "tema": "Prorrogação gratuita de 2 dias (SOP-09 e SOP-10)",
+      "risco": "O procedimento original cita extensão gratuita de 2 dias, uma única vez, mediante aprovação. Precisa confirmar se essa regra existe na operação brasileira e qual o fluxo sistêmico.",
+      "quem_confirma": "Supervisão / Operações",
+      "status": "Pendente de confirmação",
+      "obs": "Registrar justificativa e submeter ao supervisor antes de qualquer promessa ao cliente."
+    },
+    {
+      "tema": "Redução de juros ou multas por atraso (SOP-13 e SOP-14)",
+      "risco": "Falta definição da régua oficial de negociação/desconto de encargos moratórios para clientes em atraso no Brasil.",
+      "quem_confirma": "Cobrança / Financeiro / Supervisão",
+      "status": "Pendente de confirmação",
+      "obs": "Atender com empatia e submeter solicitações à análise do responsável."
+    },
+    {
+      "tema": "Solicitação de extratos bancários em PDF (SOP-01)",
+      "risco": "Solicitar extrato bancário completo dos últimos 15 dias envolve dados financeiros sensíveis e pode violar o princípio da minimização da LGPD se houver meios menos invasivos de comprovação.",
+      "quem_confirma": "Jurídico / Compliance / DPO",
+      "status": "Pendente de confirmação",
+      "obs": "Não solicitar extrato bancário sem aprovação expressa de Compliance/LGPD."
+    },
+    {
+      "tema": "Exclusão de dados pessoais (SOP-23)",
+      "risco": "A resposta original sobre exclusão de dados quando o empréstimo não é aprovado precisa ser adequada à LGPD (direitos do titular) e às normas de guarda obrigatória do Banco Central/COAF.",
+      "quem_confirma": "Jurídico / Compliance / DPO",
+      "status": "Pendente de confirmação",
+      "obs": "Escalar todas as solicitações de exclusão para o setor responsável."
+    },
+    {
+      "tema": "Alteração de telefone e cadastro (SOP-18)",
+      "risco": "Regras restritivas para troca de número de celular e contato de emergência precisam ser alinhadas com os fluxos de prevenção à fraude e autenticação de identidade no Brasil.",
+      "quem_confirma": "Segurança / Prevenção à Fraude / Operações",
+      "status": "Pendente de confirmação",
+      "obs": "Nunca orientar o cliente a criar uma segunda conta/cadastro."
+    },
+    {
+      "tema": "Tratamento de empréstimo não autorizado (SOP-26)",
+      "risco": "O material original sugere condições vinculadas ao tempo transcorrido ou descontos para devolução. Em casos de fraude/contratação sem consentimento no Brasil, exigir pagamento viola o CDC.",
+      "quem_confirma": "Jurídico / Compliance / Segurança",
+      "status": "Pendente de confirmação",
+      "obs": "Encaminhar imediatamente para auditoria especializada sem impor pagamento."
+    },
+    {
+      "tema": "Políticas de cobrança (SOP-15 e SOP-29)",
+      "risco": "Necessidade de garantir que todas as abordagens de cobrança sigam rigorosamente o Código de Defesa do Consumidor (art. 42 e 71 - proibição de constrangimento, ameaça ou exposição).",
+      "quem_confirma": "Compliance / Jurídico / Gestão de Cobrança",
+      "status": "Pendente de confirmação",
+      "obs": "Qualquer relato de cobrança agressiva deve ser investigado imediatamente."
+    },
+    {
+      "tema": "Solicitação de remoção de avaliações negativas (SOP-31)",
+      "risco": "O material original menciona oferecer descontos em troca da alteração/remoção de avaliação na Google Play. Essa prática viola as políticas da Google Play e configura prática abusiva.",
+      "quem_confirma": "Jurídico / Compliance / Marketing",
+      "status": "Pendente de confirmação",
+      "obs": "PRÁTICA SUSPENSA: Proibido condicionar descontos à remoção ou edição de avaliações."
+    },
+    {
+      "tema": "Ofertas condicionadas à retirada de reclamações (SOP-32)",
+      "risco": "Não se deve condicionar soluções legítimas ou estornos à retirada de reclamações em órgãos públicos (Procon, Bacen, Consumidor.gov) ou Reclame Aqui.",
+      "quem_confirma": "Jurídico / Compliance",
+      "status": "Pendente de confirmação",
+      "obs": "Resolver o mérito da reclamação com transparência."
+    },
+    {
+      "tema": "Promessas de prazo de resolução de 24 horas",
+      "risco": "Evitar prometer prazos fixos (como 24h) para análises bancárias ou de operações se o SLA interno no Brasil ainda não estiver homologado.",
+      "quem_confirma": "Operações / Supervisão de Atendimento",
+      "status": "Pendente de confirmação",
+      "obs": "Informar que o caso está em análise prioritária sem fixar SLA não confirmado."
+    },
+    {
+      "tema": "Métodos de pagamento e links disponíveis no Brasil (Aba Mensagens e Aba Apps)",
+      "risco": "A Mensagem 1 lista métodos chilenos (Mach, Webpay, Khipu, Fintoc) e a lista de Apps possui códigos '0' e '1' sem legenda oficial.",
+      "quem_confirma": "Operações / Produto Brasil",
+      "status": "Pendente de confirmação",
+      "obs": "Confirmar meios de pagamento ativos no Brasil (ex: Pix) e o significado de 0/1 nos apps."
+    },
+    {
+      "tema": "Prazo de 7 dias para nova solicitação após rejeição (SOP-02 e SOP-20)",
+      "risco": "O manual original cita aguardar 7 dias após recusa para tentar novo pedido, mas é necessário confirmar se a motorização de crédito no Brasil usa esse mesmo intervalo.",
+      "quem_confirma": "Produto / Risco de Crédito",
+      "status": "Pendente de confirmação",
+      "obs": "Não informar prazo fixo de 7 dias até confirmação da regra."
+    },
+    {
+      "tema": "Disponibilidade de parcelamento (SOP-16)",
+      "risco": "O manual original afirma que não existe parcelamento, apenas extensão paga. Confirmar se os produtos lançados no Brasil operam apenas em parcela única.",
+      "quem_confirma": "Produto / Operações Brasil",
+      "status": "Pendente de confirmação",
+      "obs": "Verificar a estrutura do contrato no CRM antes de responder."
+    }
+  ]
+};
+
+    let currentCategory = "ALL";
+    let currentOS = "ALL";
+
+    function showToast(msg) {
+      const toast = document.getElementById("copy-toast");
+      const label = document.getElementById("copy-toast-msg");
+      label.textContent = msg || "Copiado para a área de transferência!";
+      toast.classList.remove("translate-y-6", "opacity-0", "pointer-events-none");
+      toast.classList.add("translate-y-0", "opacity-100");
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => {
+        toast.classList.remove("translate-y-0", "opacity-100");
+        toast.classList.add("translate-y-6", "opacity-0", "pointer-events-none");
+      }, 2200);
+    }
+
+    function copyText(text, customMsg) {
+      if (!text) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => showToast(customMsg)).catch(() => fallbackCopy(text, customMsg));
+      } else {
+        fallbackCopy(text, customMsg);
+      }
+    }
+
+    function fallbackCopy(text, customMsg) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        showToast(customMsg);
+      } catch (e) {
+        showToast("Não foi possível copiar automaticamente.");
+      }
+      document.body.removeChild(ta);
+    }
+
+    function escapeHtml(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function setTab(tabName) {
+      const tabs = ["sops", "macros", "bko", "apps", "compliance"];
+      tabs.forEach(t => {
+        document.getElementById(`section-${t}`).classList.toggle("hidden", t !== tabName);
+        const btn = document.getElementById(`nav-${t}`);
+        if (t === tabName) {
+          btn.className = "nav-tab px-3.5 py-2 rounded-lg text-xs font-bold bg-amber-500 text-slate-950 shadow transition whitespace-nowrap cursor-pointer";
+        } else {
+          btn.className = "nav-tab px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition whitespace-nowrap cursor-pointer";
+        }
+      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function selectCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll(".cat-pill").forEach(pill => {
+        const isActive = pill.getAttribute("data-cat") === cat;
+        pill.className = isActive
+          ? "cat-pill px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500 text-slate-950 cursor-pointer"
+          : "cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700 cursor-pointer";
+      });
+      renderSOPs();
+    }
+
+    function isAlertValidation(statusText) {
+      const s = (statusText || "").toLowerCase();
+      return s.includes("validar") || s.includes("suspenso") || s.includes("risco");
+    }
+
+    function renderSOPs() {
+      const query = (document.getElementById("search-sops").value || "").toLowerCase().trim();
+      const valFilter = document.getElementById("filter-validacao").value;
+      const container = document.getElementById("sops-container");
+
+      const filtered = MANUAL_DATA.sops.filter(item => {
+        const matchCat = currentCategory === "ALL" || item.categoria === currentCategory;
+        const hasAlert = isAlertValidation(item.status_validacao) || /validar|suspenso|risco alto|proibido/i.test(item.observacoes);
+        const matchVal =
+          valFilter === "ALL" ||
+          (valFilter === "ALERTA" && hasAlert) ||
+          (valFilter === "PADRAO" && !hasAlert);
+
+        const haystack = [
+          item.ref, item.categoria, item.problema, item.keywords,
+          item.quando_utilizar, item.caminho_sistema, item.o_que_verificar,
+          item.o_que_fazer, item.msg_pronta, item.observacoes
+        ].join(" ").toLowerCase();
+
+        const matchQuery = !query || haystack.includes(query);
+        return matchCat && matchVal && matchQuery;
+      });
+
+      document.getElementById("sop-count-label").textContent =
+        `Exibindo ${filtered.length} de ${MANUAL_DATA.sops.length} procedimentos`;
+
+      if (!filtered.length) {
+        container.innerHTML = `
+          <div class="glass-card p-8 rounded-2xl text-center space-y-2">
+            <p class="text-sm font-bold text-white">Nenhum procedimento encontrado</p>
+            <p class="text-xs text-slate-400">Tente limpar os filtros ou buscar por outro termo (ex: pix, limite, fraude, status).</p>
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map((item, idx) => {
+        const hasAlert = isAlertValidation(item.status_validacao) || /validar|suspenso|risco alto/i.test(item.observacoes);
+        const badgeClass = hasAlert
+          ? "bg-amber-500/15 text-amber-300 border-amber-500/35"
+          : "bg-slate-800 text-slate-300 border-slate-700";
+
+        const encodedMsg = encodeURIComponent(item.msg_pronta || "");
+        const encodedRoute = encodeURIComponent(item.caminho_sistema || "");
+
+        return `
+          <article class="glass-card rounded-2xl p-5 space-y-4">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 border-b border-slate-800 pb-3.5">
+              <div class="space-y-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="px-2.5 py-0.5 rounded-md bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-mono text-xs font-extrabold">${escapeHtml(item.ref)}</span>
+                  <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-amber-300 text-xs font-semibold">${escapeHtml(item.categoria)}</span>
+                  <span class="px-2.5 py-0.5 rounded-md border text-[11px] font-semibold ${badgeClass}">${escapeHtml(item.status_validacao || "Fluxo padrão")}</span>
+                </div>
+                <h3 class="text-base font-extrabold text-white pt-1">${escapeHtml(item.problema)}</h3>
+                <p class="text-xs text-slate-400"><strong class="text-slate-300">Quando utilizar:</strong> ${escapeHtml(item.quando_utilizar)}</p>
+              </div>
+
+              <div class="flex items-center gap-2 shrink-0 flex-wrap">
+                <button
+                  onclick="copyText(decodeURIComponent('${encodedRoute}'), 'Caminho do sistema copiado!')"
+                  class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-slate-700 text-xs font-bold transition cursor-pointer"
+                >
+                  <i class="fa-solid fa-folder-tree mr-1.5"></i>Copiar Caminho
+                </button>
+                <button
+                  onclick="copyText(decodeURIComponent('${encodedMsg}'), 'Script do ${escapeHtml(item.ref)} copiado!')"
+                  class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow transition cursor-pointer"
+                >
+                  <i class="fa-regular fa-copy mr-1.5"></i>Copiar Script
+                </button>
+              </div>
+            </div>
+
+            <!-- Passo a Passo BKO -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+              <div class="p-3.5 rounded-xl bg-slate-950/75 border border-slate-800/90 space-y-1.5">
+                <div class="font-bold text-cyan-400 uppercase text-[11px]"><i class="fa-solid fa-desktop mr-1.5"></i>1. Caminho & Consulta</div>
+                <p class="font-mono text-[11px] text-amber-200 bg-slate-900 p-2 rounded-lg border border-slate-800">${escapeHtml(item.caminho_sistema)}</p>
+                <p class="text-slate-300 leading-relaxed whitespace-pre-line">${escapeHtml(item.como_consultar)}</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-950/75 border border-slate-800/90 space-y-1.5">
+                <div class="font-bold text-amber-400 uppercase text-[11px]"><i class="fa-solid fa-list-check mr-1.5"></i>2. O que Verificar</div>
+                <p class="text-slate-200 leading-relaxed whitespace-pre-line">${escapeHtml(item.o_que_verificar)}</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-950/75 border border-slate-800/90 space-y-1.5">
+                <div class="font-bold text-emerald-400 uppercase text-[11px]"><i class="fa-solid fa-bolt mr-1.5"></i>3. O que Fazer</div>
+                <p class="text-slate-200 leading-relaxed whitespace-pre-line">${escapeHtml(item.o_que_fazer)}</p>
+              </div>
+            </div>
+
+            <!-- Mensagem Pronta -->
+            <div class="rounded-xl bg-slate-950 border border-emerald-500/25 p-3.5 space-y-2">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400">
+                  <i class="fa-regular fa-message mr-1.5"></i>Mensagem Pronta para o Cliente (PT-BR)
+                </span>
+                <button
+                  onclick="copyText(decodeURIComponent('${encodedMsg}'), 'Mensagem pronta copiada!')"
+                  class="text-[11px] font-bold text-emerald-300 hover:text-emerald-200 cursor-pointer"
+                >
+                  <i class="fa-regular fa-copy mr-1"></i>Copiar texto
+                </button>
+              </div>
+              <pre class="text-xs text-slate-200 whitespace-pre-wrap font-sans leading-relaxed bg-slate-900/70 p-3 rounded-lg border border-slate-800/80">${escapeHtml(item.msg_pronta)}</pre>
+            </div>
+
+            <!-- Escalonamento e Observações -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+              <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
+                <span class="block font-bold text-purple-300 text-[11px] mb-1">Encaminhar para Supervisor</span>
+                <p class="text-slate-300 leading-relaxed">${escapeHtml(item.encaminhar_supervisor)}</p>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
+                <span class="block font-bold text-cyan-300 text-[11px] mb-1">Encaminhar para Operações / Outro Setor</span>
+                <p class="text-slate-300 leading-relaxed">${escapeHtml(item.encaminhar_operacoes)}</p>
+              </div>
+              <div class="p-3 rounded-xl bg-amber-950/25 border border-amber-500/25">
+                <span class="block font-bold text-amber-300 text-[11px] mb-1">Observações & Atenção</span>
+                <p class="text-amber-100/90 leading-relaxed">${escapeHtml(item.observacoes)}</p>
+              </div>
+            </div>
+
+            ${item.keywords ? `<p class="text-[11px] text-slate-500"><strong>Palavras-chave:</strong> ${escapeHtml(item.keywords)}</p>` : ""}
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderMacros() {
+      const q = (document.getElementById("search-macros").value || "").toLowerCase().trim();
+      const cat = document.getElementById("filter-macro-cat").value;
+      const container = document.getElementById("macros-container");
+
+      const list = MANUAL_DATA.msgs.filter(m => {
+        const matchCat = cat === "ALL" || m.categoria === cat;
+        const text = `${m.id} ${m.categoria} ${m.titulo} ${m.quando_utilizar} ${m.texto} ${m.orientacao}`.toLowerCase();
+        return matchCat && (!q || text.includes(q));
+      });
+
+      container.innerHTML = list.map(m => {
+        const encoded = encodeURIComponent(m.texto || "");
+        return `
+          <div class="glass-card rounded-2xl p-4 flex flex-col justify-between gap-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-mono text-[11px] font-bold">${escapeHtml(m.id)}</span>
+                  <span class="text-[11px] font-semibold text-amber-300">${escapeHtml(m.categoria)}</span>
+                </div>
+                <button
+                  onclick="copyText(decodeURIComponent('${encoded}'), '${escapeHtml(m.id)} copiada!')"
+                  class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold cursor-pointer shrink-0"
+                >
+                  <i class="fa-regular fa-copy mr-1"></i>Copiar
+                </button>
+              </div>
+              <h3 class="text-sm font-bold text-white">${escapeHtml(m.titulo)}</h3>
+              <p class="text-[11px] text-slate-400">${escapeHtml(m.quando_utilizar)}</p>
+              <pre class="text-xs text-slate-200 whitespace-pre-wrap font-sans leading-relaxed bg-slate-950 p-3 rounded-xl border border-slate-800">${escapeHtml(m.texto)}</pre>
+            </div>
+            <div class="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/25 text-[11px] text-amber-200">
+              <strong>Orientação interna:</strong> ${escapeHtml(m.orientacao)}
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderGlossario() {
+      const q = (document.getElementById("search-glossario").value || "").toLowerCase().trim();
+      const tbody = document.getElementById("glossario-tbody");
+      const list = MANUAL_DATA.glossario.filter(g =>
+        !q || `${g.original} ${g.traducao} ${g.contexto}`.toLowerCase().includes(q)
+      );
+
+      tbody.innerHTML = list.map(g => {
+        const encOrig = encodeURIComponent(g.original);
+        return `
+          <tr class="hover:bg-slate-800/40">
+            <td class="p-3.5 font-mono text-cyan-300 font-semibold">${escapeHtml(g.original)}</td>
+            <td class="p-3.5 text-white font-bold">${escapeHtml(g.traducao)}</td>
+            <td class="p-3.5 text-slate-300">${escapeHtml(g.contexto)}</td>
+            <td class="p-3.5 text-right">
+              <button onclick="copyText(decodeURIComponent('${encOrig}'), 'Termo copiado!')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-[11px] font-semibold cursor-pointer">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    function setAppOS(os) {
+      currentOS = os;
+      document.querySelectorAll(".os-btn").forEach(btn => {
+        const active = btn.getAttribute("data-os") === os;
+        btn.className = active
+          ? "os-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white cursor-pointer"
+          : "os-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700 cursor-pointer";
+      });
+      renderApps();
+    }
+
+    function renderApps() {
+      const q = (document.getElementById("search-apps").value || "").toLowerCase().trim();
+      const grid = document.getElementById("apps-grid");
+
+      const list = MANUAL_DATA.apps.filter(a => {
+        const matchOS = currentOS === "ALL" || a.sistema.toLowerCase() === currentOS.toLowerCase();
+        const text = `${a.nome} ${a.sistema} ${a.link_descarga} ${a.estado} ${a.links_retirados} ${a.app_id}`.toLowerCase();
+        return matchOS && (!q || text.includes(q));
+      });
+
+      grid.innerHTML = list.map(a => {
+        const encLink = encodeURIComponent(a.link_descarga);
+        return `
+          <div class="glass-card rounded-2xl p-4 space-y-3">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h3 class="text-sm font-extrabold text-white">${escapeHtml(a.nome)}</h3>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-bold ${a.sistema === 'IOS' ? 'bg-sky-500/15 text-sky-300 border border-sky-500/30' : 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30'}">${escapeHtml(a.sistema)}</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800 text-amber-300 font-mono text-[11px]">Estado: ${escapeHtml(a.estado)}</span>
+                </div>
+                <p class="text-[11px] text-slate-400 font-mono mt-1">APP ID: ${escapeHtml(a.app_id)}</p>
+              </div>
+              <button onclick="copyText(decodeURIComponent('${encLink}'), 'Link de ${escapeHtml(a.nome)} copiado!')" class="px-2.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold cursor-pointer shrink-0">
+                <i class="fa-regular fa-copy mr-1"></i>Link
+              </button>
+            </div>
+
+            <div class="text-xs bg-slate-950 p-2.5 rounded-xl border border-slate-800 break-all">
+              <span class="text-[10px] uppercase font-bold text-slate-400 block mb-0.5">Link de Descarga</span>
+              <span class="text-cyan-300 font-mono text-[11px]">${escapeHtml(a.link_descarga || "—")}</span>
+            </div>
+
+            ${a.links_retirados ? `
+              <div class="text-xs bg-rose-950/25 p-2.5 rounded-xl border border-rose-500/25 break-all">
+                <span class="text-[10px] uppercase font-bold text-rose-300 block mb-0.5">Link de Marketing Retirado</span>
+                <span class="text-rose-200 font-mono text-[11px]">${escapeHtml(a.links_retirados)}</span>
+              </div>
+            ` : ""}
+
+            <p class="text-[11px] text-amber-200/90 leading-relaxed">${escapeHtml(a.obs)}</p>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderValidacoes() {
+      const container = document.getElementById("validacoes-container");
+      container.innerHTML = MANUAL_DATA.validacoes.map((v, i) => `
+        <div class="glass-card rounded-2xl p-4 space-y-2.5 border border-rose-500/20">
+          <div class="flex items-start justify-between gap-2">
+            <h3 class="text-sm font-extrabold text-white">${i + 1}. ${escapeHtml(v.tema)}</h3>
+            <span class="px-2 py-0.5 rounded bg-rose-500/15 text-rose-300 border border-rose-500/30 text-[10px] font-bold shrink-0">${escapeHtml(v.status)}</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">${escapeHtml(v.risco)}</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 text-[11px]">
+            <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800">
+              <span class="text-cyan-400 font-bold block">Quem confirma:</span>
+              <span class="text-slate-200">${escapeHtml(v.quem_confirma)}</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-amber-950/25 border border-amber-500/25">
+              <span class="text-amber-300 font-bold block">Orientação prática:</span>
+              <span class="text-amber-100">${escapeHtml(v.obs)}</span>
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderSOPs();
+      renderMacros();
+      renderGlossario();
+      renderApps();
+      renderValidacoes();
+    });
+  </script>
+</body>
+</html>
