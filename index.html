@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Central Operacional de Atendimento — Crédito & BKO (Brasil)</title>
+  <title>Manual_Atendimento_Cliente_Brasil-v2</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <style>
@@ -15,10 +15,6 @@
     .glass-card {
       background: rgba(15, 23, 42, 0.88);
       border: 1px solid rgba(51, 65, 85, 0.75);
-    }
-    .toast-enter {
-      transform: translateY(0);
-      opacity: 1;
     }
     ::-webkit-scrollbar {
       width: 8px;
@@ -41,10 +37,10 @@
   <!-- Toast de Confirmação ao Copiar -->
   <div id="copy-toast" class="fixed bottom-5 right-5 z-50 bg-emerald-500 text-slate-950 font-bold text-xs px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 transition-all duration-300 translate-y-6 opacity-0 pointer-events-none">
     <i class="fa-solid fa-circle-check text-sm"></i>
-    <span id="copy-toast-msg">Copiado para a área de transferência!</span>
+    <span id="copy-toast-msg">Copiado!</span>
   </div>
 
-  <!-- Cabeçalho Principal -->
+  <!-- Cabeçalho Principal (100% fiel às 6 abas do arquivo) -->
   <header class="sticky top-0 z-40 bg-slate-950/95 backdrop-blur border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
       <div class="flex items-center gap-3">
@@ -53,73 +49,104 @@
         </div>
         <div>
           <div class="flex items-center gap-2 flex-wrap">
-            <h1 class="text-base sm:text-lg font-extrabold text-white tracking-tight">Manual Operacional de Atendimento — Brasil</h1>
-            <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">v2 • SOP-01 a SOP-33</span>
+            <h1 class="text-base sm:text-lg font-extrabold text-white tracking-tight">Manual_Atendimento_Cliente_Brasil-v2</h1>
+            <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">6 Abas Originais</span>
           </div>
-          <p class="text-xs text-slate-400">Consulta rápida por categoria, scripts com 1 clique, passo a passo no BKO/CRM e alertas de compliance</p>
+          <p class="text-xs text-slate-400">Conteúdo literal da planilha, organizado pelas abas e categorias do manual</p>
         </div>
       </div>
 
-      <!-- Métricas Rápidas -->
+      <!-- Contadores exatos das linhas da planilha -->
       <div class="flex items-center gap-2 text-xs flex-wrap">
         <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">
-          <strong class="text-amber-400">33</strong> SOPs
+          <strong class="text-amber-400">33</strong> Procedimentos (SOP)
         </span>
         <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">
-          <strong class="text-emerald-400">35</strong> Macros
+          <strong class="text-emerald-400">35</strong> Mensagens Prontas
         </span>
         <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">
-          <strong class="text-cyan-400">17</strong> Apps
+          <strong class="text-cyan-400">25</strong> Glossário
         </span>
         <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">
-          <strong class="text-rose-400">15</strong> Alertas
+          <strong class="text-indigo-400">17</strong> Apps e Links
+        </span>
+        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">
+          <strong class="text-rose-400">15</strong> Pontos para Validar
         </span>
       </div>
     </div>
 
-    <!-- Navegação por Categorias / Abas -->
+    <!-- Navegação com os nomes EXATOS das 6 abas do Excel -->
     <nav class="max-w-7xl mx-auto px-4 pb-3 flex items-center gap-2 overflow-x-auto">
-      <button id="nav-sops" onclick="setTab('sops')" class="nav-tab px-3.5 py-2 rounded-lg text-xs font-bold bg-amber-500 text-slate-950 shadow transition whitespace-nowrap cursor-pointer">
-        <i class="fa-solid fa-magnifying-glass mr-1.5"></i>Consulta Rápida & SOPs
+      <button id="nav-qr" onclick="setTab('qr')" class="nav-tab px-3.5 py-2 rounded-lg text-xs font-bold bg-amber-500 text-slate-950 shadow transition whitespace-nowrap cursor-pointer">
+        <i class="fa-solid fa-table-list mr-1.5"></i>Consulta Rápida
       </button>
-      <button id="nav-macros" onclick="setTab('macros')" class="nav-tab px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition whitespace-nowrap cursor-pointer">
-        <i class="fa-regular fa-copy mr-1.5 text-emerald-400"></i>Mensagens Prontas (Copiar)
+      <button id="nav-sops" onclick="setTab('sops')" class="nav-tab px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition whitespace-nowrap cursor-pointer">
+        <i class="fa-solid fa-book-open mr-1.5 text-cyan-400"></i>Procedimentos Completos (SOP)
       </button>
-      <button id="nav-bko" onclick="setTab('bko')" class="nav-tab px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition whitespace-nowrap cursor-pointer">
-        <i class="fa-solid fa-diagram-project mr-1.5 text-cyan-400"></i>Passo a Passo BKO & Glossário
+      <button id="nav-msgs" onclick="setTab('msgs')" class="nav-tab px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition whitespace-nowrap cursor-pointer">
+        <i class="fa-regular fa-copy mr-1.5 text-emerald-400"></i>Mensagens Prontas
       </button>
       <button id="nav-apps" onclick="setTab('apps')" class="nav-tab px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition whitespace-nowrap cursor-pointer">
-        <i class="fa-solid fa-mobile-screen-button mr-1.5 text-indigo-400"></i>Apps & Links
+        <i class="fa-solid fa-mobile-screen-button mr-1.5 text-indigo-400"></i>Apps e Links
       </button>
-      <button id="nav-compliance" onclick="setTab('compliance')" class="nav-tab px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition whitespace-nowrap cursor-pointer">
-        <i class="fa-solid fa-shield-halved mr-1.5 text-rose-400"></i>Pontos para Validar & Regras
+      <button id="nav-glossario" onclick="setTab('glossario')" class="nav-tab px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition whitespace-nowrap cursor-pointer">
+        <i class="fa-solid fa-language mr-1.5 text-amber-400"></i>Glossário do CRM
+      </button>
+      <button id="nav-validacoes" onclick="setTab('validacoes')" class="nav-tab px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition whitespace-nowrap cursor-pointer">
+        <i class="fa-solid fa-triangle-exclamation mr-1.5 text-rose-400"></i>Pontos para Validar
       </button>
     </nav>
   </header>
 
-  <!-- Faixa de Regras Críticas Permanentes -->
-  <div class="bg-rose-950/35 border-b border-rose-500/25">
-    <div class="max-w-7xl mx-auto px-4 py-2 text-xs text-rose-200 flex flex-wrap items-center justify-between gap-2">
-      <div class="flex items-center gap-2 flex-wrap">
-        <span class="font-bold text-rose-400 uppercase"><i class="fa-solid fa-triangle-exclamation mr-1"></i>Regra de Ouro:</span>
-        <span>Nunca pedir/fornecer conta pessoal ou Pix fora do app oficial</span>
-        <span class="text-slate-600">•</span>
-        <span>Nunca sugerir nova dívida ou empréstimo com familiares</span>
-        <span class="text-slate-600">•</span>
-        <span>Não prometer descontos, prazos ou alterações sem aprovação</span>
-      </div>
-      <button onclick="setTab('compliance')" class="text-[11px] font-bold text-amber-300 hover:underline cursor-pointer">
-        Ver 15 pontos de validação →
-      </button>
-    </div>
-  </div>
-
   <!-- Conteúdo Principal -->
   <main class="max-w-7xl w-full mx-auto px-4 py-6 flex-1 space-y-6">
 
-    <!-- ==================== ABA 1: CONSULTA RÁPIDA & SOPs ==================== -->
-    <section id="section-sops" class="space-y-5">
-      <!-- Barra de Busca e Filtros de Categoria -->
+    <!-- ==================== ABA 1: CONSULTA RÁPIDA ==================== -->
+    <section id="section-qr" class="space-y-4">
+      <div class="glass-card p-4 rounded-2xl space-y-3">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+          <div class="md:col-span-8 relative">
+            <i class="fa-solid fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+            <input
+              type="text"
+              id="search-qr"
+              oninput="renderQR()"
+              placeholder="Pesquisar por Ref. SOP, Nome do Problema, Palavras-chave ou Status de Validação..."
+              class="w-full bg-slate-950 border border-slate-700 rounded-xl pl-9 pr-4 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
+            />
+          </div>
+          <div class="md:col-span-4">
+            <select id="filter-qr-cat" onchange="renderQR()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+              <option value="ALL">Todas as Categorias do Atendimento</option>
+              <option value="Desembolso do empréstimo">Desembolso do empréstimo</option>
+              <option value="Pagamentos">Pagamentos</option>
+              <option value="Dúvidas sobre utilização do aplicativo">Dúvidas sobre utilização do aplicativo</option>
+              <option value="Reclamações">Reclamações</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto glass-card rounded-2xl">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-950 text-slate-400 uppercase font-bold border-b border-slate-800">
+            <tr>
+              <th class="p-3.5">Ref. SOP</th>
+              <th class="p-3.5">Categoria do Atendimento</th>
+              <th class="p-3.5">Nome do Problema</th>
+              <th class="p-3.5">Palavras-chave para Pesquisa</th>
+              <th class="p-3.5">Status de Validação</th>
+              <th class="p-3.5 text-right">Acesso Direto</th>
+            </tr>
+          </thead>
+          <tbody id="qr-tbody" class="divide-y divide-slate-800/80"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== ABA 2: PROCEDIMENTOS COMPLETOS (SOP) ==================== -->
+    <section id="section-sops" class="hidden space-y-5">
       <div class="glass-card p-4 rounded-2xl space-y-4">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
           <div class="md:col-span-8 relative">
@@ -128,63 +155,58 @@
               type="text"
               id="search-sops"
               oninput="renderSOPs()"
-              placeholder="Buscar por SOP-01..33, palavra-chave (ex: pix, comprovante, rejeitado, cobrança, fraude, limite) ou situação..."
+              placeholder="Filtrar procedimentos por Ref. SOP, problema, palavras-chave, caminho ou texto..."
               class="w-full bg-slate-950 border border-slate-700 rounded-xl pl-9 pr-4 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
             />
           </div>
-          <div class="md:col-span-4 flex items-center gap-2">
-            <select id="filter-validacao" onchange="renderSOPs()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-amber-500">
-              <option value="ALL">Todos os status de validação</option>
-              <option value="ALERTA">Com ponto de validação / atenção</option>
-              <option value="PADRAO">Fluxo padrão (revisar termos locais)</option>
+          <div class="md:col-span-4">
+            <select id="filter-sop-ref" onchange="renderSOPs()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+              <option value="ALL">Selecionar SOP específico (Todos)</option>
             </select>
           </div>
         </div>
 
-        <!-- Botões de Categoria -->
         <div class="flex flex-wrap items-center gap-2 pt-1">
           <button onclick="selectCategory('ALL')" data-cat="ALL" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500 text-slate-950 cursor-pointer">
             Todas as Categorias (33)
           </button>
           <button onclick="selectCategory('Desembolso do empréstimo')" data-cat="Desembolso do empréstimo" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700 cursor-pointer">
-            💸 Desembolso do empréstimo (5)
+            Desembolso do empréstimo (5)
           </button>
           <button onclick="selectCategory('Pagamentos')" data-cat="Pagamentos" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700 cursor-pointer">
-            💳 Pagamentos (11)
+            Pagamentos (11)
           </button>
           <button onclick="selectCategory('Dúvidas sobre utilização do aplicativo')" data-cat="Dúvidas sobre utilização do aplicativo" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700 cursor-pointer">
-            📱 Dúvidas sobre utilização do aplicativo (9)
+            Dúvidas sobre utilização do aplicativo (9)
           </button>
           <button onclick="selectCategory('Reclamações')" data-cat="Reclamações" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700 cursor-pointer">
-            🚨 Reclamações (8)
+            Reclamações (8)
           </button>
         </div>
       </div>
 
       <div class="flex items-center justify-between text-xs text-slate-400 px-1">
         <span id="sop-count-label">Exibindo 33 procedimentos</span>
-        <span>Clique em <strong class="text-emerald-400">Copiar Script</strong> para colar direto no atendimento</span>
       </div>
 
-      <!-- Lista de SOPs -->
       <div id="sops-container" class="space-y-4"></div>
     </section>
 
-    <!-- ==================== ABA 2: MENSAGENS PRONTAS (MACROS) ==================== -->
-    <section id="section-macros" class="hidden space-y-5">
+    <!-- ==================== ABA 3: MENSAGENS PRONTAS ==================== -->
+    <section id="section-msgs" class="hidden space-y-5">
       <div class="glass-card p-4 rounded-2xl flex flex-col md:flex-row gap-3">
         <div class="flex-1 relative">
           <i class="fa-solid fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
           <input
             type="text"
-            id="search-macros"
-            oninput="renderMacros()"
-            placeholder="Buscar mensagem pronta por ID (MSG-01, MSG-SOP-01...), título, situação ou texto..."
+            id="search-msgs"
+            oninput="renderMsgs()"
+            placeholder="Pesquisar por ID, Título da Mensagem, Quando Utilizar ou texto..."
             class="w-full bg-slate-950 border border-slate-700 rounded-xl pl-9 pr-4 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
           />
         </div>
-        <select id="filter-macro-cat" onchange="renderMacros()" class="bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
-          <option value="ALL">Todas as categorias de mensagens</option>
+        <select id="filter-msg-cat" onchange="renderMsgs()" class="bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+          <option value="ALL">Todas as Categorias</option>
           <option value="Desembolso do empréstimo">Desembolso do empréstimo</option>
           <option value="Pagamentos">Pagamentos</option>
           <option value="Dúvidas sobre utilização do aplicativo">Dúvidas sobre utilização do aplicativo</option>
@@ -193,114 +215,22 @@
         </select>
       </div>
 
-      <div id="macros-container" class="grid grid-cols-1 lg:grid-cols-2 gap-4"></div>
+      <div id="msgs-container" class="grid grid-cols-1 lg:grid-cols-2 gap-4"></div>
     </section>
 
-    <!-- ==================== ABA 3: PASSO A PASSO BKO & GLOSSÁRIO ==================== -->
-    <section id="section-bko" class="hidden space-y-6">
-      <!-- Guia Visual de Rotas no CRM e no App -->
-      <div class="glass-card p-5 rounded-2xl space-y-4">
-        <div class="flex items-center justify-between flex-wrap gap-2">
-          <div>
-            <h2 class="text-base font-extrabold text-white"><i class="fa-solid fa-route text-cyan-400 mr-2"></i>Rotas Principais no CRM (BKO) e no Aplicativo</h2>
-            <p class="text-xs text-slate-400">Caminhos mais usados na rotina — lembre-se de limpar o filtro de data ao buscar por UID ou telefone</p>
-          </div>
-          <button onclick="copyText('CRM → Order Management → Disbursement List', 'Caminho de Desembolso copiado!')" class="px-3 py-1.5 rounded-lg bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-300 border border-cyan-500/30 text-xs font-bold cursor-pointer">
-            <i class="fa-regular fa-copy mr-1"></i>Copiar Rota Disbursement List
-          </button>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
-          <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1.5">
-            <span class="text-[11px] font-bold uppercase text-amber-400">1. Desembolso / Transferência</span>
-            <p class="font-mono text-cyan-300 bg-slate-900 px-2.5 py-1.5 rounded-lg border border-slate-800">CRM → Order Management → Disbursement List</p>
-            <p class="text-slate-300 leading-relaxed">Conferir se está em processamento, falha ou sucesso, e validar dados bancários do cliente.</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1.5">
-            <span class="text-[11px] font-bold uppercase text-amber-400">2. Pedidos, Taxas e Status</span>
-            <p class="font-mono text-cyan-300 bg-slate-900 px-2.5 py-1.5 rounded-lg border border-slate-800">CRM → Order List → Detalhes do Pedido</p>
-            <p class="text-slate-300 leading-relaxed">Checar status da solicitação (aprovado, rejeitado, aguardando pagamento) e valores reais do contrato.</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1.5">
-            <span class="text-[11px] font-bold uppercase text-emerald-400">3. Vencimento e Saldo Devedor</span>
-            <p class="font-mono text-cyan-300 bg-slate-900 px-2.5 py-1.5 rounded-lg border border-slate-800">CRM → Repayment Plan</p>
-            <p class="text-slate-300 leading-relaxed">Verificar quantidade de pedidos pendentes, data de vencimento, atraso e valor total devido.</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1.5">
-            <span class="text-[11px] font-bold uppercase text-emerald-400">4. Pagamento Não Baixado</span>
-            <p class="font-mono text-cyan-300 bg-slate-900 px-2.5 py-1.5 rounded-lg border border-slate-800">1) Repayment Plan → 2) Repayment Records</p>
-            <p class="text-slate-300 leading-relaxed">Quando o cliente diz que pagou mas consta aberto, checar se há registro em processamento antes de escalar.</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1.5">
-            <span class="text-[11px] font-bold uppercase text-indigo-400">5. Cadastro e Verificação (KYC)</span>
-            <p class="font-mono text-cyan-300 bg-slate-900 px-2.5 py-1.5 rounded-lg border border-slate-800">CRM → Customer List</p>
-            <p class="text-slate-300 leading-relaxed">Localizar cliente por UID/telefone e checar se o cadastro está completo ou pendente de verificação.</p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1.5">
-            <span class="text-[11px] font-bold uppercase text-purple-400">6. Como Pagar no App do Cliente</span>
-            <p class="font-mono text-cyan-300 bg-slate-900 px-2.5 py-1.5 rounded-lg border border-slate-800">Orders → Payment → Full Payment → Pay Now</p>
-            <p class="text-slate-300 leading-relaxed">Orientar o cliente a usar exclusivamente os canais/meios gerados dentro do aplicativo oficial.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Glossário do CRM -->
-      <div class="glass-card p-5 rounded-2xl space-y-4">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <div>
-            <h2 class="text-base font-extrabold text-white"><i class="fa-solid fa-language text-amber-400 mr-2"></i>Glossário de Termos e Status do CRM (25 itens)</h2>
-            <p class="text-xs text-slate-400">Tradução de termos em chinês, inglês e espanhol exibidos no sistema e no manual</p>
-          </div>
-          <input
-            type="text"
-            id="search-glossario"
-            oninput="renderGlossario()"
-            placeholder="Filtrar termo ou status (ex: 处理中, 失败, UID, Repayment)..."
-            class="bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 sm:w-80"
-          />
-        </div>
-
-        <div class="overflow-x-auto rounded-xl border border-slate-800">
-          <table class="w-full text-left text-xs">
-            <thead class="bg-slate-950 text-slate-400 uppercase font-bold border-b border-slate-800">
-              <tr>
-                <th class="p-3.5">Termo Original</th>
-                <th class="p-3.5">Tradução (PT-BR)</th>
-                <th class="p-3.5">Onde Aparece / Contexto</th>
-                <th class="p-3.5 text-right">Copiar</th>
-              </tr>
-            </thead>
-            <tbody id="glossario-tbody" class="divide-y divide-slate-800/80 bg-slate-900/50"></tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== ABA 4: APPS & LINKS ==================== -->
+    <!-- ==================== ABA 4: APPS E LINKS ==================== -->
     <section id="section-apps" class="hidden space-y-5">
-      <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-xs text-amber-200 flex items-start gap-3">
-        <i class="fa-solid fa-circle-info text-amber-400 text-base mt-0.5 shrink-0"></i>
-        <div>
-          <strong class="text-amber-300">Atenção sobre Status (0 / 1) e Links:</strong> O manual informa que o significado exato dos códigos <strong>0</strong> e <strong>1</strong> na coluna <em>Estado de APP</em> deve ser confirmado com Operações/Produto antes de divulgar links aos clientes, e há links antigos listados em <em>Links de marketing retirados</em>.
-        </div>
-      </div>
-
       <div class="glass-card p-4 rounded-2xl flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
         <div class="flex items-center gap-2">
           <button onclick="setAppOS('ALL')" data-os="ALL" class="os-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white cursor-pointer">Todos (17)</button>
-          <button onclick="setAppOS('IOS')" data-os="IOS" class="os-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700 cursor-pointer">iOS (8)</button>
+          <button onclick="setAppOS('IOS')" data-os="IOS" class="os-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700 cursor-pointer">IOS (8)</button>
           <button onclick="setAppOS('Android')" data-os="Android" class="os-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700 cursor-pointer">Android (9)</button>
         </div>
         <input
           type="text"
           id="search-apps"
           oninput="renderApps()"
-          placeholder="Buscar por nome do app, APP ID ou link..."
+          placeholder="Pesquisar por APP Name, APP ID ou Link..."
           class="bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 sm:w-72"
         />
       </div>
@@ -308,11 +238,51 @@
       <div id="apps-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </section>
 
-    <!-- ==================== ABA 5: PONTOS PARA VALIDAR & COMPLIANCE ==================== -->
-    <section id="section-compliance" class="hidden space-y-5">
-      <div class="glass-card p-5 rounded-2xl space-y-1">
-        <h2 class="text-base font-extrabold text-white"><i class="fa-solid fa-shield-halved text-rose-400 mr-2"></i>Pontos Pendentes de Validação & Riscos (15 itens)</h2>
-        <p class="text-xs text-slate-400">Itens sinalizados no manual para alinhamento local no Brasil (LGPD, CDC, SPA/MF, Operações e Produto)</p>
+    <!-- ==================== ABA 5: GLOSSÁRIO DO CRM ==================== -->
+    <section id="section-glossario" class="hidden space-y-4">
+      <div class="glass-card p-4 rounded-2xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div>
+          <h2 class="text-base font-extrabold text-white">Glossário do CRM (25 itens)</h2>
+          <p class="text-xs text-slate-400">Termo Original (Chinês / Inglês / Espanhol), Tradução em Português (BR) e Contexto / Onde Aparece no Sistema</p>
+        </div>
+        <input
+          type="text"
+          id="search-glossario"
+          oninput="renderGlossario()"
+          placeholder="Pesquisar termo, tradução ou contexto..."
+          class="bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 sm:w-80"
+        />
+      </div>
+
+      <div class="overflow-x-auto glass-card rounded-2xl">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-950 text-slate-400 uppercase font-bold border-b border-slate-800">
+            <tr>
+              <th class="p-3.5">Termo Original (Chinês / Inglês / Espanhol)</th>
+              <th class="p-3.5">Tradução em Português (BR)</th>
+              <th class="p-3.5">Contexto / Onde Aparece no Sistema</th>
+              <th class="p-3.5 text-right">Copiar</th>
+            </tr>
+          </thead>
+          <tbody id="glossario-tbody" class="divide-y divide-slate-800/80"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== ABA 6: PONTOS PARA VALIDAR ==================== -->
+    <section id="section-validacoes" class="hidden space-y-4">
+      <div class="glass-card p-4 rounded-2xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div>
+          <h2 class="text-base font-extrabold text-white">Pontos para Validar (15 itens)</h2>
+          <p class="text-xs text-slate-400">Procedimento / Tema, Qual é a Dúvida ou Risco, Quem Deve Confirmar, Status da Validação e Observações</p>
+        </div>
+        <input
+          type="text"
+          id="search-validacoes"
+          oninput="renderValidacoes()"
+          placeholder="Pesquisar tema, risco ou área..."
+          class="bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 sm:w-80"
+        />
       </div>
 
       <div id="validacoes-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
@@ -321,18 +291,282 @@
   </main>
 
   <footer class="border-t border-slate-800/80 bg-slate-950/70 py-4 px-4 text-center text-xs text-slate-500">
-    Central Operacional de Atendimento — Base extraída de <span class="text-slate-400 font-semibold">Manual_Atendimento_Cliente_Brasil-v2</span>
+    Fonte: <span class="text-slate-400 font-semibold">Manual_Atendimento_Cliente_Brasil-v2.xlsx</span>
   </footer>
 
   <script>
     const MANUAL_DATA = {
-  "sops": [
+  "consulta_rapida": [
     {
       "ref": "SOP-01",
       "categoria": "Desembolso do empréstimo",
       "problema": "1. Cliente não recebeu o dinheiro",
       "keywords": "desembolso, dinheiro não caiu, transferência, pix, conta bancária, extrato, pagamento não recebido, disbursement",
-      "status_validacao": "Validar solicitação de extrato PDF (LGPD)",
+      "acesso_direto": "Ir para SOP-01 (Linha 2)",
+      "status_validacao": "Validar solicitação de extrato PDF (LGPD)"
+    },
+    {
+      "ref": "SOP-02",
+      "categoria": "Desembolso do empréstimo",
+      "problema": "2. Consulta do status do empréstimo",
+      "keywords": "status, andamento, pedido, aprovação, rejeitado, aguardando, nova solicitação, 7 dias, order list",
+      "acesso_direto": "Ir para SOP-02 (Linha 3)",
+      "status_validacao": "Validar regra de nova solicitação após 7 dias"
+    },
+    {
+      "ref": "SOP-03",
+      "categoria": "Desembolso do empréstimo",
+      "problema": "3. Cliente recebeu valor inferior ao esperado",
+      "keywords": "valor menor, desconto na liberação, taxa de serviço, iva, valor líquido, recebido a menos, composição",
+      "acesso_direto": "Ir para SOP-03 (Linha 4)",
+      "status_validacao": "Validar taxas/impostos reais do produto no Brasil"
+    },
+    {
+      "ref": "SOP-04",
+      "categoria": "Desembolso do empréstimo",
+      "problema": "4. Cancelamento do empréstimo",
+      "keywords": "cancelar, desistir, devolução, não quero mais, arrependimento, estorno, cancelamento",
+      "acesso_direto": "Ir para SOP-04 (Linha 5)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-05",
+      "categoria": "Desembolso do empréstimo",
+      "problema": "5. Reclamação sobre prazo curto",
+      "keywords": "prazo curto, poucos dias, vencimento rápido, 7 dias, aumentar prazo, tempo de pagamento",
+      "acesso_direto": "Ir para SOP-05 (Linha 6)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-06",
+      "categoria": "Pagamentos",
+      "problema": "6. Cliente não consegue pagar",
+      "keywords": "erro ao pagar, falha no pagamento, não consigo pagar, botão não funciona, aplicativo travando no pagamento",
+      "acesso_direto": "Ir para SOP-06 (Linha 7)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-07",
+      "categoria": "Pagamentos",
+      "problema": "7. Como realizar o pagamento",
+      "keywords": "como pagar, pagar empréstimo, passo a passo pagamento, boleto, pix, link de pagamento, pay now",
+      "acesso_direto": "Ir para SOP-07 (Linha 8)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-08",
+      "categoria": "Pagamentos",
+      "problema": "8. Consulta de vencimento e informações do empréstimo",
+      "keywords": "vencimento, data de pagamento, quanto devo, valor devido, saldo devedor, consultar empréstimo, repayment plan",
+      "acesso_direto": "Ir para SOP-08 (Linha 9)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-09",
+      "categoria": "Pagamentos",
+      "problema": "9. Solicitação de prorrogação do prazo",
+      "keywords": "prorrogação, adiar vencimento, mais prazo, estender data, 2 dias, não consigo pagar hoje",
+      "acesso_direto": "Ir para SOP-09 (Linha 10)",
+      "status_validacao": "Validar prorrogação gratuita de 2 dias"
+    },
+    {
+      "ref": "SOP-10",
+      "categoria": "Pagamentos",
+      "problema": "10. Prorrogação mediante pagamento",
+      "keywords": "extensão paga, prorrogar pagando, pagar taxa de extensão, adiar vencimento pagando",
+      "acesso_direto": "Ir para SOP-10 (Linha 11)",
+      "status_validacao": "Validar extensão gratuita de 2 dias"
+    },
+    {
+      "ref": "SOP-11",
+      "categoria": "Pagamentos",
+      "problema": "11. Pagamento realizado, mas não identificado",
+      "keywords": "já paguei, pagamento não caiu, comprovante, continua em aberto, paguei e não baixou, repayment records",
+      "acesso_direto": "Ir para SOP-11 (Linha 12)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-12",
+      "categoria": "Pagamentos",
+      "problema": "12. Cupons de desconto",
+      "keywords": "cupom, desconto, código promocional, onde fica o cupom, usar cupom, 优惠券",
+      "acesso_direto": "Ir para SOP-12 (Linha 13)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-13",
+      "categoria": "Pagamentos",
+      "problema": "13. Solicitação de redução de juros",
+      "keywords": "reduzir juros, baixar juros, desconto nos juros, juros altos, 5%, revisão de juros",
+      "acesso_direto": "Ir para SOP-13 (Linha 14)",
+      "status_validacao": "Validar redução de 5% do principal"
+    },
+    {
+      "ref": "SOP-14",
+      "categoria": "Pagamentos",
+      "problema": "14. Solicitação de redução de multa por atraso",
+      "keywords": "multa por atraso, mora, reduzir multa, desconto na multa, encargos de atraso, vencido",
+      "acesso_direto": "Ir para SOP-14 (Linha 15)",
+      "status_validacao": "Validar política de desconto de multa"
+    },
+    {
+      "ref": "SOP-15",
+      "categoria": "Pagamentos",
+      "problema": "15. Cliente com dificuldades financeiras",
+      "keywords": "sem dinheiro, desempregado, dificuldade financeira, não tenho como pagar, crise, empatia",
+      "acesso_direto": "Ir para SOP-15 (Linha 16)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-16",
+      "categoria": "Pagamentos",
+      "problema": "16. Solicitação de parcelamento",
+      "keywords": "parcelar, dividir, pagar em parcelas, duas vezes, acordo parcelado, parcelamento",
+      "acesso_direto": "Ir para SOP-16 (Linha 17)",
+      "status_validacao": "Validar política de parcelamento no Brasil"
+    },
+    {
+      "ref": "SOP-17",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "17. Problemas com código de verificação, reconhecimento facial ou cadastro",
+      "keywords": "otp, código sms, verificação, reconhecimento facial, selfie, câmera, cadastro incompleto, não verificado",
+      "acesso_direto": "Ir para SOP-17 (Linha 18)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-18",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "18. Alteração de dados bancários, telefone ou contato de emergência",
+      "keywords": "alterar conta, trocar pix, mudar telefone, número novo, contato de emergência, dados bancários",
+      "acesso_direto": "Ir para SOP-18 (Linha 19)",
+      "status_validacao": "Validar regras de alteração de telefone/cadastro"
+    },
+    {
+      "ref": "SOP-19",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "19. Dúvidas sobre juros e taxas",
+      "keywords": "juros, taxas, encargos, quanto custa, porcentagem, cet, taxa de serviço, iva",
+      "acesso_direto": "Ir para SOP-19 (Linha 20)",
+      "status_validacao": "Validar percentuais de taxa/IVA no Brasil"
+    },
+    {
+      "ref": "SOP-20",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "20. Cliente sem limite disponível",
+      "keywords": "sem limite, limite zero, não consigo pedir, indisponível, quando libera limite",
+      "acesso_direto": "Ir para SOP-20 (Linha 21)",
+      "status_validacao": "Validar prazo de 7 dias após rejeição"
+    },
+    {
+      "ref": "SOP-21",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "21. Solicitação de aumento de limite",
+      "keywords": "aumentar limite, mais crédito, limite maior, pedir aumento, crédito baixo",
+      "acesso_direto": "Ir para SOP-21 (Linha 22)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-22",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "22. Mensagens em branco ou sem sentido",
+      "keywords": "mensagem vazia, em branco, oi, teste, texto sem sentido, figurinha, emoji",
+      "acesso_direto": "Ir para SOP-22 (Linha 23)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-23",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "23. Solicitação de exclusão de dados",
+      "keywords": "excluir dados, apagar conta, lgpd, remover cadastro, cancelar conta, privacidade, dados pessoais",
+      "acesso_direto": "Ir para SOP-23 (Linha 24)",
+      "status_validacao": "Validar exclusão de dados (LGPD / Jurídico)"
+    },
+    {
+      "ref": "SOP-24",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "24. Problemas técnicos no aplicativo",
+      "keywords": "app travando, erro no app, tela branca, fechando sozinho, bug, não abre, falha técnica",
+      "acesso_direto": "Ir para SOP-24 (Linha 25)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-25",
+      "categoria": "Dúvidas sobre utilização do aplicativo",
+      "problema": "25. Empréstimo recusado",
+      "keywords": "recusado, negado, reprovado, não aprovado, crédito negado, 已拒绝",
+      "acesso_direto": "Ir para SOP-25 (Linha 26)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-26",
+      "categoria": "Reclamações",
+      "problema": "26. Cliente afirma que o empréstimo foi contratado ou liberado sem autorização",
+      "keywords": "não pedi, sem autorização, não contratei, empréstimo indevido, caiu sem pedir, fraude contratação",
+      "acesso_direto": "Ir para SOP-26 (Linha 27)",
+      "status_validacao": "Validar fluxo de empréstimo não autorizado"
+    },
+    {
+      "ref": "SOP-27",
+      "categoria": "Reclamações",
+      "problema": "27. Reclamação sobre valor baixo, juros altos ou prazo curto",
+      "keywords": "reclamação juros, valor muito baixo, abusivo, prazo curto demais, insatisfeito com condições",
+      "acesso_direto": "Ir para SOP-27 (Linha 28)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-28",
+      "categoria": "Reclamações",
+      "problema": "28. Reclamação sobre desembolso, mas cliente recebeu cobrança",
+      "keywords": "não recebi e estão cobrando, cobrança sem desembolso, cobrando empréstimo não recebido",
+      "acesso_direto": "Ir para SOP-28 (Linha 29)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-29",
+      "categoria": "Reclamações",
+      "problema": "29. Reclamação sobre cobrança",
+      "keywords": "cobrança abusiva, ameaça, assédio, ligação excessiva, cobrança agressiva, desrespeito",
+      "acesso_direto": "Ir para SOP-29 (Linha 30)",
+      "status_validacao": "Validar políticas de cobrança (CDC)"
+    },
+    {
+      "ref": "SOP-30",
+      "categoria": "Reclamações",
+      "problema": "30. Suspeita de fraude ou golpe",
+      "keywords": "golpe, fraude, estelionato, perfil falso, whatsapp falso, conta de terceiro, roubo de dados",
+      "acesso_direto": "Ir para SOP-30 (Linha 31)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    },
+    {
+      "ref": "SOP-31",
+      "categoria": "Reclamações",
+      "problema": "31. Avaliação negativa na Google Play",
+      "keywords": "google play, loja de aplicativos, estrela, avaliação negativa, comentário na loja, review",
+      "acesso_direto": "Ir para SOP-31 (Linha 32)",
+      "status_validacao": "SUSPENSO: Validar resposta Google Play (Compliance)"
+    },
+    {
+      "ref": "SOP-32",
+      "categoria": "Reclamações",
+      "problema": "32. Reclamação encaminhada ao setor de pagamentos",
+      "keywords": "setor de pagamentos, reembolso, estorno, reclamação financeira, pós-venda, 售后",
+      "acesso_direto": "Ir para SOP-32 (Linha 33)",
+      "status_validacao": "Validar tratamento de reclamações formais"
+    },
+    {
+      "ref": "SOP-33",
+      "categoria": "Reclamações",
+      "problema": "33. Outras reclamações",
+      "keywords": "outras reclamações, sugestão, elogio, reclamação geral, insatisfação, ouvidoria",
+      "acesso_direto": "Ir para SOP-33 (Linha 34)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    }
+  ],
+  "sops": [
+    {
+      "ref": "SOP-01",
+      "categoria": "Desembolso do empréstimo",
+      "problema": "1. Cliente não recebeu o dinheiro",
       "quando_utilizar": "Quando o cliente informa que o empréstimo consta como aprovado ou liberado, mas o valor ainda não caiu na conta bancária.",
       "como_consultar": "Pesquisar pelo UID do cliente, limpar o filtro de data e realizar a busca para verificar o status atual da transferência.",
       "caminho_sistema": "CRM → Order Management (Gerenciamento de pedidos) → Disbursement List (Lista de desembolsos)",
@@ -341,14 +575,15 @@
       "msg_pronta": "Olá! Verifiquei o status do seu pedido em nosso sistema.\n\n[SE EM ANDAMENTO]: Seu desembolso está atualmente em fase de processamento bancário. Pedimos que aguarde a compensação pela instituição financeira.\n\n[SE FALHA]: Identificamos uma falha na transferência para a conta informada. Por favor, verifique se os dados bancários cadastrados estão corretos e ativos para que possamos orientar os próximos passos.\n\n[SE SUCESSO - APÓS VALIDAÇÃO]: Em nosso sistema, a transferência consta como concluída com sucesso. Caso o valor ainda não apareça em sua conta, por favor, envie o extrato bancário em PDF referente aos últimos 15 dias (se aprovado pela supervisão/compliance) para que possamos verificar junto ao banco.",
       "encaminhar_supervisor": "Sempre antes de solicitar extrato bancário em PDF (para confirmar se a prática está aprovada sob a LGPD) ou se o valor constar como 'Sucesso' há muito tempo sem compensação.",
       "encaminhar_operacoes": "Encaminhar para Operações / Setor de Pagamentos quando o status for 'Sucesso' e o cliente comprovar o não recebimento, ou em casos recorrentes de 'Falha' sistêmica.",
-      "observacoes": "PONTO PARA VALIDAR: A solicitação de extrato bancário em PDF dos últimos 15 dias precisa ser validada quanto à necessidade, segurança e proteção de dados (LGPD) antes de ser aplicada."
+      "observacoes": "PONTO PARA VALIDAR: A solicitação de extrato bancário em PDF dos últimos 15 dias precisa ser validada quanto à necessidade, segurança e proteção de dados (LGPD) antes de ser aplicada.",
+      "keywords": "desembolso, dinheiro não caiu, transferência, pix, conta bancária, extrato, pagamento não recebido, disbursement",
+      "acesso_direto": "Ir para SOP-01 (Linha 2)",
+      "status_validacao": "Validar solicitação de extrato PDF (LGPD)"
     },
     {
       "ref": "SOP-02",
       "categoria": "Desembolso do empréstimo",
       "problema": "2. Consulta do status do empréstimo",
-      "keywords": "status, andamento, pedido, aprovação, rejeitado, aguardando, nova solicitação, 7 dias, order list",
-      "status_validacao": "Validar regra de nova solicitação após 7 dias",
       "quando_utilizar": "Quando o cliente entra em contato apenas para saber em que etapa está a solicitação ou o contrato de empréstimo.",
       "como_consultar": "Pesquisar pelo UID ou telefone do cliente, limpar o filtro de data e verificar o status atualizado do pedido.",
       "caminho_sistema": "CRM → Order List (Lista de pedidos)",
@@ -357,14 +592,15 @@
       "msg_pronta": "Olá! Consultei o cadastro do seu pedido em nosso sistema e o status atual é: [INFORMAR STATUS: Em análise / Aprovado / Aguardando pagamento / Não aprovado].\n\nVocê também pode acompanhar todas as atualizações diretamente na aba 'Pedidos' (Orders) do seu aplicativo. Se precisar de mais algum detalhe sobre essa etapa, estou à disposição!",
       "encaminhar_supervisor": "Caso haja divergência entre o status exibido no aplicativo do cliente e o status registrado no CRM.",
       "encaminhar_operacoes": "Se o pedido ficar travado em 'Em processamento' além do tempo padrão da operação.",
-      "observacoes": "PONTO PARA VALIDAR: O material original menciona possibilidade de nova solicitação após 7 dias em determinados casos de rejeição. Confirmar se essa regra se aplica ao Brasil antes de informar ao cliente."
+      "observacoes": "PONTO PARA VALIDAR: O material original menciona possibilidade de nova solicitação após 7 dias em determinados casos de rejeição. Confirmar se essa regra se aplica ao Brasil antes de informar ao cliente.",
+      "keywords": "status, andamento, pedido, aprovação, rejeitado, aguardando, nova solicitação, 7 dias, order list",
+      "acesso_direto": "Ir para SOP-02 (Linha 3)",
+      "status_validacao": "Validar regra de nova solicitação após 7 dias"
     },
     {
       "ref": "SOP-03",
       "categoria": "Desembolso do empréstimo",
       "problema": "3. Cliente recebeu valor inferior ao esperado",
-      "keywords": "valor menor, desconto na liberação, taxa de serviço, iva, valor líquido, recebido a menos, composição",
-      "status_validacao": "Validar taxas/impostos reais do produto no Brasil",
       "quando_utilizar": "Quando o cliente reclama que solicitou um valor X, mas recebeu um valor Y menor na conta bancária.",
       "como_consultar": "Consultar os detalhes financeiros do pedido específico no CRM para verificar o valor principal, taxas aplicadas e valor líquido desembolsado.",
       "caminho_sistema": "CRM → Order List (Lista de pedidos) → Detalhes do Pedido / Contrato",
@@ -373,14 +609,15 @@
       "msg_pronta": "Olá! Verifiquei os detalhes do seu contrato para esclarecer o valor transferido.\n\nNa contratação, sobre o valor total do pedido ([VALOR CONTRATADO]), são aplicados os encargos previstos nas condições do produto escolhido (como taxa de serviço de [VALOR/PERCENTUAL DO CONTRATO] e encargos/impostos de [VALOR/PERCENTUAL DO CONTRATO]), resultando no valor líquido liberado de [VALOR LÍQUIDO].\n\nEsses detalhes ficam disponíveis para conferência nos detalhes do seu pedido dentro do aplicativo. Caso tenha dúvidas sobre algum item específico do seu contrato, me avise!",
       "encaminhar_supervisor": "Se o valor transferido for diferente do valor líquido calculado no próprio contrato do cliente.",
       "encaminhar_operacoes": "Se houver erro de cálculo do sistema ou falha parcial no desembolso.",
-      "observacoes": "ATENÇÃO: O material original menciona exemplos de taxa de serviço de 30% ou 35%, IVA de 5% e líquido de 60% ou 65%, conforme o produto. NÃO apresentar esses percentuais como regra universal; validar as taxas oficiais no Brasil e usar apenas os dados reais do contrato do cliente."
+      "observacoes": "ATENÇÃO: O material original menciona exemplos de taxa de serviço de 30% ou 35%, IVA de 5% e líquido de 60% ou 65%, conforme o produto. NÃO apresentar esses percentuais como regra universal; validar as taxas oficiais no Brasil e usar apenas os dados reais do contrato do cliente.",
+      "keywords": "valor menor, desconto na liberação, taxa de serviço, iva, valor líquido, recebido a menos, composição",
+      "acesso_direto": "Ir para SOP-03 (Linha 4)",
+      "status_validacao": "Validar taxas/impostos reais do produto no Brasil"
     },
     {
       "ref": "SOP-04",
       "categoria": "Desembolso do empréstimo",
       "problema": "4. Cancelamento do empréstimo",
-      "keywords": "cancelar, desistir, devolução, não quero mais, arrependimento, estorno, cancelamento",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente solicita o cancelamento de um pedido em andamento ou o cancelamento/devolução de um empréstimo recém-liberado.",
       "como_consultar": "Consultar o status do pedido e do desembolso no CRM para saber se o dinheiro já foi transferido ou se ainda está em análise/processamento.",
       "caminho_sistema": "CRM → Order List (Lista de pedidos) e CRM → Order Management → Disbursement List",
@@ -389,14 +626,15 @@
       "msg_pronta": "Olá! Compreendo perfeitamente a sua solicitação de cancelamento e já estou verificando a situação atual do seu pedido em nosso sistema.\n\n[SE AINDA NÃO DESEMBOLSADO]: Verifiquei que o pagamento ainda não foi concluído. Vou registrar sua solicitação e encaminhar ao setor responsável para verificar a interrupção do processo.\n\n[SE JÁ DESEMBOLSADO]: Como a transferência já foi processada, vou encaminhar seu pedido à nossa equipe responsável para orientar corretamente sobre o procedimento de cancelamento e devolução, conforme as regras aplicáveis. Por favor, aguarde nosso retorno.",
       "encaminhar_supervisor": "Em todos os casos de solicitação de cancelamento após desembolso ou contestação de contratação.",
       "encaminhar_operacoes": "Para interromper desembolsos em andamento ou processar devoluções/estornos.",
-      "observacoes": "Regra rígida: Não pressionar o cliente a manter o empréstimo e não presumir autorização sem evidência técnica. Validar fluxo exato de devolução (direito de arrependimento / estorno) com a gestão."
+      "observacoes": "Regra rígida: Não pressionar o cliente a manter o empréstimo e não presumir autorização sem evidência técnica. Validar fluxo exato de devolução (direito de arrependimento / estorno) com a gestão.",
+      "keywords": "cancelar, desistir, devolução, não quero mais, arrependimento, estorno, cancelamento",
+      "acesso_direto": "Ir para SOP-04 (Linha 5)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-05",
       "categoria": "Desembolso do empréstimo",
       "problema": "5. Reclamação sobre prazo curto",
-      "keywords": "prazo curto, poucos dias, vencimento rápido, 7 dias, aumentar prazo, tempo de pagamento",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente reclama que o prazo de vencimento do empréstimo aprovado é muito curto.",
       "como_consultar": "Consultar o pedido no CRM para confirmar a data exata de contratação e a data de vencimento estipulada no contrato.",
       "caminho_sistema": "CRM → Order List (Lista de pedidos) / CRM → Repayment Plan (Plano de pagamento)",
@@ -405,14 +643,15 @@
       "msg_pronta": "Olá! Entendo a sua observação sobre o prazo do empréstimo.\n\nAs condições de prazo e valor são definidas automaticamente pelo nosso sistema no momento da análise de crédito e ficam descritas no resumo do pedido antes da confirmação.\n\nPara o contrato atual, a data de vencimento prevista é [DATA DE VENCIMENTO]. Manter um bom histórico de pagamentos em dia ajuda nas futuras análises realizadas pelo sistema, embora não possamos garantir alterações automáticas de prazo. Se precisar de ajuda para consultar os detalhes do seu pagamento, estou à disposição!",
       "encaminhar_supervisor": "Se o cliente insistir em revisão excepcional de prazo.",
       "encaminhar_operacoes": "Não aplicável, salvo erro sistêmico na data de vencimento gerada.",
-      "observacoes": "Proibido prometer aumento de prazo ou de limite em empréstimos futuros."
+      "observacoes": "Proibido prometer aumento de prazo ou de limite em empréstimos futuros.",
+      "keywords": "prazo curto, poucos dias, vencimento rápido, 7 dias, aumentar prazo, tempo de pagamento",
+      "acesso_direto": "Ir para SOP-05 (Linha 6)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-06",
       "categoria": "Pagamentos",
       "problema": "6. Cliente não consegue pagar",
-      "keywords": "erro ao pagar, falha no pagamento, não consigo pagar, botão não funciona, aplicativo travando no pagamento",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente tenta efetuar o pagamento pelo aplicativo, mas encontra erro técnico, falha no carregamento ou bloqueio na transação.",
       "como_consultar": "Verificar se o pedido está ativo e aguardando pagamento no CRM.",
       "caminho_sistema": "CRM → Repayment Plan (Plano de pagamento)",
@@ -421,14 +660,15 @@
       "msg_pronta": "Olá! Para ajudá-lo(a) a concluir seu pagamento sem dificuldades, por favor, siga estas verificações:\n\n1. Verifique sua conexão com a internet (tente alternar entre Wi-Fi e dados móveis).\n2. Certifique-se de que o aplicativo está atualizado na última versão (ou tente fechar e abrir novamente).\n3. Confira nas configurações do celular se as permissões do aplicativo estão ativadas.\n4. Caso haja mais de uma opção disponível no app, tente selecionar outro método de pagamento.\n\nSe o erro continuar, por favor, envie uma captura de tela ou um vídeo curto mostrando a mensagem que aparece para que nossa equipe técnica possa analisar!",
       "encaminhar_supervisor": "Se houver falha generalizada reportada por vários clientes.",
       "encaminhar_operacoes": "Encaminhar o print/vídeo do erro junto com o UID do cliente para a equipe técnica / Operações.",
-      "observacoes": "Nunca orientar pagamento fora dos canais oficiais do aplicativo enquanto o erro técnico é investigado."
+      "observacoes": "Nunca orientar pagamento fora dos canais oficiais do aplicativo enquanto o erro técnico é investigado.",
+      "keywords": "erro ao pagar, falha no pagamento, não consigo pagar, botão não funciona, aplicativo travando no pagamento",
+      "acesso_direto": "Ir para SOP-06 (Linha 7)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-07",
       "categoria": "Pagamentos",
       "problema": "7. Como realizar o pagamento",
-      "keywords": "como pagar, pagar empréstimo, passo a passo pagamento, boleto, pix, link de pagamento, pay now",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente pergunta qual é o procedimento ou caminho dentro do aplicativo para quitar o empréstimo.",
       "como_consultar": "Opcionalmente consultar o pedido para confirmar se está em status 'Aguardando pagamento'.",
       "caminho_sistema": "Aplicativo do Cliente: Orders → Payment → Full Payment → escolher método de pagamento → Pay Now",
@@ -437,14 +677,15 @@
       "msg_pronta": "Olá! Para realizar o pagamento do seu empréstimo de forma rápida e segura, siga este passo a passo diretamente no aplicativo:\n\n1. Abra o aplicativo e acesse a aba 'Orders' (Pedidos).\n2. Selecione o pedido ativo e clique em 'Payment' (Pagamento).\n3. Selecione 'Full Payment' (Pagamento Total).\n4. Escolha o método de pagamento disponível de sua preferência.\n5. Clique em 'Pay Now' (Pagar Agora) e siga as instruções na tela.\n\nImportante: Utilize sempre apenas os meios de pagamento gerados dentro do próprio aplicativo oficial.",
       "encaminhar_supervisor": "Não necessário em consultas de rotina.",
       "encaminhar_operacoes": "Não necessário em consultas de rotina.",
-      "observacoes": "REGRA DE SEGURANÇA CRÍTICA: Jamais solicitar transferências para contas pessoais ou links externos não oficiais."
+      "observacoes": "REGRA DE SEGURANÇA CRÍTICA: Jamais solicitar transferências para contas pessoais ou links externos não oficiais.",
+      "keywords": "como pagar, pagar empréstimo, passo a passo pagamento, boleto, pix, link de pagamento, pay now",
+      "acesso_direto": "Ir para SOP-07 (Linha 8)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-08",
       "categoria": "Pagamentos",
       "problema": "8. Consulta de vencimento e informações do empréstimo",
-      "keywords": "vencimento, data de pagamento, quanto devo, valor devido, saldo devedor, consultar empréstimo, repayment plan",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente solicita informações sobre a data de vencimento, quantidade de pedidos ativos ou valor atualizado para pagamento.",
       "como_consultar": "Pesquisar pelo UID ou telefone cadastrado, limpar o filtro de data e consultar o plano de pagamento.",
       "caminho_sistema": "CRM → Repayment Plan (Plano de pagamento)",
@@ -453,14 +694,15 @@
       "msg_pronta": "Olá! Você pode conferir todas as informações do seu empréstimo diretamente na aba 'Pedidos' (Orders) do aplicativo.\n\nDe acordo com o registro atual em nosso sistema, seguem os detalhes do seu contrato:\n• Pedidos pendentes: [QUANTIDADE]\n• Valor devido: [VALOR DEVIDO]\n• Data de vencimento: [DATA DE VENCIMENTO]\n\nCaso precise de orientação sobre como efetuar o pagamento no aplicativo, é só me avisar!",
       "encaminhar_supervisor": "Se houver divergência de valores entre o aplicativo e o CRM.",
       "encaminhar_operacoes": "Se os encargos estiverem sendo calculados de forma incorreta pelo sistema.",
-      "observacoes": "Sempre limpar o filtro de data no CRM ao pesquisar por UID ou telefone para não ocultar contratos."
+      "observacoes": "Sempre limpar o filtro de data no CRM ao pesquisar por UID ou telefone para não ocultar contratos.",
+      "keywords": "vencimento, data de pagamento, quanto devo, valor devido, saldo devedor, consultar empréstimo, repayment plan",
+      "acesso_direto": "Ir para SOP-08 (Linha 9)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-09",
       "categoria": "Pagamentos",
       "problema": "9. Solicitação de prorrogação do prazo",
-      "keywords": "prorrogação, adiar vencimento, mais prazo, estender data, 2 dias, não consigo pagar hoje",
-      "status_validacao": "Validar prorrogação gratuita de 2 dias",
       "quando_utilizar": "Quando o cliente pede para estender a data de vencimento sem custo adicional (prorrogação gratuita).",
       "como_consultar": "Consultar o pedido e a data de vencimento atual no CRM.",
       "caminho_sistema": "CRM → Repayment Plan (Plano de pagamento)",
@@ -469,14 +711,15 @@
       "msg_pronta": "Olá! Entendi a sua necessidade de prorrogação do prazo de vencimento.\n\nVou registrar o seu motivo e encaminhar os dados do seu pedido para análise do setor responsável, pois qualquer alteração de data depende de aprovação interna.\n\nAssim que tivermos um retorno sobre a possibilidade de atendimento da sua solicitação, entraremos em contato. Por favor, aguarde nossa confirmação.",
       "encaminhar_supervisor": "OBRIGATÓRIO: Encaminhar UID, número do pedido e justificativa para aprovação do supervisor/responsável.",
       "encaminhar_operacoes": "Caso o supervisor aprove, seguir o fluxo operacional para aplicação no sistema.",
-      "observacoes": "PONTO PARA VALIDAR: O material original menciona a possibilidade de prorrogação gratuita de 2 dias, uma única vez, mediante aprovação. Não prometer ao cliente antes da confirmação da política e da aprovação do supervisor."
+      "observacoes": "PONTO PARA VALIDAR: O material original menciona a possibilidade de prorrogação gratuita de 2 dias, uma única vez, mediante aprovação. Não prometer ao cliente antes da confirmação da política e da aprovação do supervisor.",
+      "keywords": "prorrogação, adiar vencimento, mais prazo, estender data, 2 dias, não consigo pagar hoje",
+      "acesso_direto": "Ir para SOP-09 (Linha 10)",
+      "status_validacao": "Validar prorrogação gratuita de 2 dias"
     },
     {
       "ref": "SOP-10",
       "categoria": "Pagamentos",
       "problema": "10. Prorrogação mediante pagamento",
-      "keywords": "extensão paga, prorrogar pagando, pagar taxa de extensão, adiar vencimento pagando",
-      "status_validacao": "Validar extensão gratuita de 2 dias",
       "quando_utilizar": "Quando o cliente pergunta se pode pagar uma taxa para estender o prazo de vencimento do empréstimo.",
       "como_consultar": "Consultar o plano de pagamento no CRM para verificar se a opção está habilitada para o contrato.",
       "caminho_sistema": "CRM → Repayment Plan (Plano de pagamento) / Aplicativo do Cliente → Orders → Payment",
@@ -485,14 +728,15 @@
       "msg_pronta": "Olá! Para verificar se a opção oficial de extensão de prazo mediante pagamento está disponível para o seu contrato, acesse o seu aplicativo em 'Pedidos' (Orders) → 'Pagamento' (Payment) e confira as opções exibidas na tela.\n\nCaso essa opção esteja habilitada para o seu perfil, o próprio aplicativo mostrará o valor e a nova data de vencimento antes de você confirmar. Se precisar de outra orientação, estou à disposição!",
       "encaminhar_supervisor": "Se o cliente solicitar extensão gratuita em vez de extensão paga.",
       "encaminhar_operacoes": "Se o cliente pagar a extensão no app e a data de vencimento não for atualizada no sistema.",
-      "observacoes": "O material original menciona que, em pedidos de extensão gratuita, há possibilidade de 2 dias em casos específicos (sujeito à validação e aprovação)."
+      "observacoes": "O material original menciona que, em pedidos de extensão gratuita, há possibilidade de 2 dias em casos específicos (sujeito à validação e aprovação).",
+      "keywords": "extensão paga, prorrogar pagando, pagar taxa de extensão, adiar vencimento pagando",
+      "acesso_direto": "Ir para SOP-10 (Linha 11)",
+      "status_validacao": "Validar extensão gratuita de 2 dias"
     },
     {
       "ref": "SOP-11",
       "categoria": "Pagamentos",
       "problema": "11. Pagamento realizado, mas não identificado",
-      "keywords": "já paguei, pagamento não caiu, comprovante, continua em aberto, paguei e não baixou, repayment records",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente afirma que já pagou o empréstimo, mas o aplicativo continua cobrando ou mostrando o pedido em aberto.",
       "como_consultar": "Consultar primeiro o Repayment Plan e em seguida o Repayment Records pelo UID/pedido.",
       "caminho_sistema": "1) CRM → Repayment Plan (Plano de pagamento)\n2) CRM → Repayment Records (Histórico de pagamentos)",
@@ -501,14 +745,15 @@
       "msg_pronta": "Olá! Vou verificar a situação do seu pagamento imediatamente.\n\nPara que possamos localizar a transação e analisar junto ao setor responsável, por favor, envie o comprovante de pagamento completo (contendo data, hora, valor e dados da transação).\n\nAssim que recebermos o comprovante, encaminharemos para verificação. Pedimos que não realize nenhuma transferência fora do aplicativo oficial.",
       "encaminhar_supervisor": "Se houver demora na baixa após envio do comprovante.",
       "encaminhar_operacoes": "Encaminhar comprovante + UID + ID do pedido para Operações realizar a conciliação e baixa manual se confirmado.",
-      "observacoes": "Nunca orientar transferências para contas pessoais. Sempre conferir Repayment Records antes de responder."
+      "observacoes": "Nunca orientar transferências para contas pessoais. Sempre conferir Repayment Records antes de responder.",
+      "keywords": "já paguei, pagamento não caiu, comprovante, continua em aberto, paguei e não baixou, repayment records",
+      "acesso_direto": "Ir para SOP-11 (Linha 12)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-12",
       "categoria": "Pagamentos",
       "problema": "12. Cupons de desconto",
-      "keywords": "cupom, desconto, código promocional, onde fica o cupom, usar cupom, 优惠券",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente pergunta se possui cupons de desconto disponíveis ou onde encontrá-los no aplicativo.",
       "como_consultar": "Consultar informações da conta/pedidos do cliente no CRM, se disponível.",
       "caminho_sistema": "Aplicativo do Cliente → Área de Cupons da Conta / Tela de Pagamento",
@@ -517,14 +762,15 @@
       "msg_pronta": "Olá! Para verificar se há algum cupom disponível para você, acesse a área de 'Cupons' dentro do seu perfil no aplicativo.\n\nOs cupons são liberados em etapas pelo sistema. Caso você possua um cupom ativo, basta selecioná-lo na tela de pagamento antes de concluir a operação, verificando as regras e a validade exibidas no próprio cupom.",
       "encaminhar_supervisor": "Não aplicável, salvo falha na aplicação de cupom válido.",
       "encaminhar_operacoes": "Se um cupom válido selecionado pelo cliente não aplicar o desconto no momento do pagamento.",
-      "observacoes": "Não prometer envio manual de cupons se o sistema não tiver disponibilizado."
+      "observacoes": "Não prometer envio manual de cupons se o sistema não tiver disponibilizado.",
+      "keywords": "cupom, desconto, código promocional, onde fica o cupom, usar cupom, 优惠券",
+      "acesso_direto": "Ir para SOP-12 (Linha 13)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-13",
       "categoria": "Pagamentos",
       "problema": "13. Solicitação de redução de juros",
-      "keywords": "reduzir juros, baixar juros, desconto nos juros, juros altos, 5%, revisão de juros",
-      "status_validacao": "Validar redução de 5% do principal",
       "quando_utilizar": "Quando o cliente solicita desconto ou redução nos juros do empréstimo.",
       "como_consultar": "Consultar o valor principal (本金), juros e condições do contrato no CRM.",
       "caminho_sistema": "CRM → Repayment Plan (Plano de pagamento) / Order List",
@@ -533,14 +779,15 @@
       "msg_pronta": "Olá! Registrei a sua solicitação de análise para redução de encargos/juros do seu contrato.\n\nComo qualquer alteração de valores depende de avaliação e aprovação interna, encaminhei o seu pedido e a sua justificativa para o setor responsável. Assim que houver um parecer, retornaremos o contato com você.",
       "encaminhar_supervisor": "OBRIGATÓRIO: Encaminhar UID, pedido e justificativa para aprovação.",
       "encaminhar_operacoes": "Caso aprovado pelo supervisor, Operações aplica o ajuste no sistema.",
-      "observacoes": "PONTO PARA VALIDAR: O material original menciona possibilidade de solicitar redução de 5% do principal em casos específicos, mediante análise e aprovação. NÃO prometer esse percentual antes da validação e aprovação."
+      "observacoes": "PONTO PARA VALIDAR: O material original menciona possibilidade de solicitar redução de 5% do principal em casos específicos, mediante análise e aprovação. NÃO prometer esse percentual antes da validação e aprovação.",
+      "keywords": "reduzir juros, baixar juros, desconto nos juros, juros altos, 5%, revisão de juros",
+      "acesso_direto": "Ir para SOP-13 (Linha 14)",
+      "status_validacao": "Validar redução de 5% do principal"
     },
     {
       "ref": "SOP-14",
       "categoria": "Pagamentos",
       "problema": "14. Solicitação de redução de multa por atraso",
-      "keywords": "multa por atraso, mora, reduzir multa, desconto na multa, encargos de atraso, vencido",
-      "status_validacao": "Validar política de desconto de multa",
       "quando_utilizar": "Quando o cliente está em atraso e pede isenção ou redução da multa/encargos moratórios para quitar o débito.",
       "como_consultar": "Consultar o plano de pagamento, dias de atraso e composição da dívida no CRM.",
       "caminho_sistema": "CRM → Repayment Plan (Plano de pagamento)",
@@ -549,14 +796,15 @@
       "msg_pronta": "Olá! Verifiquei as condições atuais do seu contrato em atraso.\n\nNo momento, não posso garantir automaticamente a redução da multa, pois qualquer desconto nos encargos precisa passar por análise e autorização do setor responsável. Vou registrar o seu pedido e sua intenção de pagamento para avaliação e retorno assim que possível.",
       "encaminhar_supervisor": "OBRIGATÓRIO: Encaminhar solicitação de redução de multa/encargos para aprovação.",
       "encaminhar_operacoes": "Para atualização do valor a pagar no sistema caso o desconto seja aprovado.",
-      "observacoes": "PONTO PARA VALIDAR: Validar a política oficial de descontos/negociação de multa por atraso com a supervisão e financeiro."
+      "observacoes": "PONTO PARA VALIDAR: Validar a política oficial de descontos/negociação de multa por atraso com a supervisão e financeiro.",
+      "keywords": "multa por atraso, mora, reduzir multa, desconto na multa, encargos de atraso, vencido",
+      "acesso_direto": "Ir para SOP-14 (Linha 15)",
+      "status_validacao": "Validar política de desconto de multa"
     },
     {
       "ref": "SOP-15",
       "categoria": "Pagamentos",
       "problema": "15. Cliente com dificuldades financeiras",
-      "keywords": "sem dinheiro, desempregado, dificuldade financeira, não tenho como pagar, crise, empatia",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente relata estar passando por dificuldades financeiras, desemprego ou problemas pessoais que o impedem de pagar no momento.",
       "como_consultar": "Consultar a situação atual do contrato no CRM.",
       "caminho_sistema": "CRM → Repayment Plan (Plano de pagamento)",
@@ -565,14 +813,15 @@
       "msg_pronta": "Olá! Sinto muito pelo momento difícil que você está enfrentando e agradeço por entrar em contato conosco com transparência.\n\nConforme previsto em seu contrato, o valor atual do pedido é de [VALOR] com vencimento em [DATA]. Caso tenha interesse em verificar se há alguma alternativa oficial disponível para o seu caso (como análise de extensão), posso registrar sua solicitação para avaliação da equipe responsável.\n\nConte com o nosso respeito para buscar as informações oficiais do seu contrato.",
       "encaminhar_supervisor": "Encaminhar caso o cliente solicite análise excepcional de prorrogação ou negociação.",
       "encaminhar_operacoes": "Não aplicável diretamente, salvo aprovação de ajuste pelo supervisor.",
-      "observacoes": "REGRA ÉTICA E DE COMPLIANCE: É estritamente proibido sugerir que o cliente peça empréstimo a familiares ou faça novas dívidas para pagar a empresa."
+      "observacoes": "REGRA ÉTICA E DE COMPLIANCE: É estritamente proibido sugerir que o cliente peça empréstimo a familiares ou faça novas dívidas para pagar a empresa.",
+      "keywords": "sem dinheiro, desempregado, dificuldade financeira, não tenho como pagar, crise, empatia",
+      "acesso_direto": "Ir para SOP-15 (Linha 16)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-16",
       "categoria": "Pagamentos",
       "problema": "16. Solicitação de parcelamento",
-      "keywords": "parcelar, dividir, pagar em parcelas, duas vezes, acordo parcelado, parcelamento",
-      "status_validacao": "Validar política de parcelamento no Brasil",
       "quando_utilizar": "Quando o cliente pede para dividir o pagamento do empréstimo em várias parcelas.",
       "como_consultar": "Consultar o plano de pagamento no CRM.",
       "caminho_sistema": "CRM → Repayment Plan (Plano de pagamento)",
@@ -581,30 +830,32 @@
       "msg_pronta": "Olá! Verifiquei as condições do seu contrato em nosso sistema.\n\nNo momento, a modalidade contratada prevê o pagamento integral na data de vencimento, não havendo opção de parcelamento automático disponível. Caso precise de mais tempo, você pode verificar diretamente no aplicativo (em Pedidos → Pagamento) se a opção de extensão de prazo está habilitada para o seu contrato.\n\nSe precisar de mais esclarecimentos, estou à disposição!",
       "encaminhar_supervisor": "Confirmar antes de usar se houve alteração na política de parcelamento para o Brasil.",
       "encaminhar_operacoes": "Não aplicável.",
-      "observacoes": "PONTO PARA VALIDAR: Confirmar a política atual de pagamentos no Brasil antes de afirmar definitivamente que não existe parcelamento."
+      "observacoes": "PONTO PARA VALIDAR: Confirmar a política atual de pagamentos no Brasil antes de afirmar definitivamente que não existe parcelamento.",
+      "keywords": "parcelar, dividir, pagar em parcelas, duas vezes, acordo parcelado, parcelamento",
+      "acesso_direto": "Ir para SOP-16 (Linha 17)",
+      "status_validacao": "Validar política de parcelamento no Brasil"
     },
     {
       "ref": "SOP-17",
       "categoria": "Dúvidas sobre utilização do aplicativo",
       "problema": "17. Problemas com código de verificação, reconhecimento facial ou cadastro",
-      "keywords": "otp, código sms, verificação, reconhecimento facial, selfie, câmera, cadastro incompleto, não verificado",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente não recebe o código SMS/verificação, falha na validação facial ou não consegue concluir o cadastro.",
       "como_consultar": "Consultar o cadastro do cliente no CRM para verificar se está incompleto ou 'Não verificado' (未认证).",
       "caminho_sistema": "CRM → Customer List (Lista de clientes) / Detalhes do Usuário",
       "o_que_verificar": "Conferir o status de verificação do usuário no CRM e possíveis bloqueios/erros de etapa.",
-      "o_que_fazer": "Orientar o cliente com as verificações padrão:\n1. Conferir a caixa de spam/mensagens bloqueadas ou sinal da operadora (para código SMS).\n2. Verificar a estabilidade da conexão com a internet.\n3. Atualizar o aplicativo para a versão mais recente.\n4. Conferir se as permissões de câmera e armazenamento estão ativadas (para reconhecimento facial).\n5. Realizar o reconhecimento facial em local bem iluminado, sem acessórios (boné, óculos escuros).\n6. Tentar novamente e, se o erro persistir, solicitar print ou vídeo curto mostrando o erro.",
-      "msg_pronta": "Olá! Para resolver problemas com o código de verificação ou reconhecimento facial, por favor, tente os seguintes passos:\n\n1. Verifique sua conexão com a internet e o sinal da operadora (no caso de SMS, confira também mensagens bloqueadas/spam).\n2. Atualize o aplicativo para a versão mais recente na loja de aplicativos.\n3. Nas configurações do seu celular, verifique se a permissão de Câmera está ativada para o aplicativo.\n4. Ao fazer a verificação facial, esteja em um ambiente bem iluminado e sem acessórios no rosto.\n\nSe o problema continuar após essas tentativas, por favor, envie uma captura de tela ou um vídeo curto mostrando o erro para que possamos analisar!",
+      "o_que_fazer": "Orientar o cliente com as verificações padrão:\n1. Conferir a caixa de spam/mensagens bloqueadas ou sinal da operadora (para código SMS).\n2. Verificar a estabilidade da conexão com a internet.\n3. Atualizar o aplicativo para a versão mais recente.\n4. Conferir se as permissões de câmera e armazenamento estão ativadas (para reconhecimento facial).\n5. Realizar o reconhecimento facial em local bem iluminado, sem acessórios (boné, óculos escuros).\n6. Tentar novamente e, se o erro persistir, solicitar print ou vídeo do problema.",
+      "msg_pronta": "Olá! Para resolver problemas com o código de verificação ou reconhecimento facial, por favor, tente os seguintes passos:\n\n1. Verifique sua conexão com a internet e o sinal da operadora (no caso de SMS, confira também mensagens bloqueadas/spam).\n2. Atualize o aplicativo para a versão mais recente na loja de aplicativos.\n3. Nas configurações do seu celular, verifique se a permissão de Câmera está ativada para o aplicativo.\n4. Ao fazer a verificação facial, esteja em um ambiente bem iluminado e sem acessórios no rosto.\n\nSe o problema continuar após essas tentativas, por favor, envie uma captura de tela ou vídeo mostrando o erro para que possamos analisar!",
       "encaminhar_supervisor": "Se houver falha sistêmica no envio de SMS ou validação facial.",
       "encaminhar_operacoes": "Encaminhar print/vídeo e telefone/UID do cliente para a equipe técnica / Operações.",
-      "observacoes": "Sempre checar no CRM se o cadastro consta como 'Não verificado' (未认证)."
+      "observacoes": "Sempre checar no CRM se o cadastro consta como 'Não verificado' (未认证).",
+      "keywords": "otp, código sms, verificação, reconhecimento facial, selfie, câmera, cadastro incompleto, não verificado",
+      "acesso_direto": "Ir para SOP-17 (Linha 18)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-18",
       "categoria": "Dúvidas sobre utilização do aplicativo",
       "problema": "18. Alteração de dados bancários, telefone ou contato de emergência",
-      "keywords": "alterar conta, trocar pix, mudar telefone, número novo, contato de emergência, dados bancários",
-      "status_validacao": "Validar regras de alteração de telefone/cadastro",
       "quando_utilizar": "Quando o cliente precisa atualizar a conta bancária/chave Pix, alterar o número de telefone cadastrado ou modificar contatos de emergência.",
       "como_consultar": "Consultar o cadastro do cliente e o status dos pedidos no CRM.",
       "caminho_sistema": "CRM → Customer List (Lista de clientes) e CRM → Order List (Lista de pedidos)",
@@ -613,14 +864,15 @@
       "msg_pronta": "Olá! Sobre a alteração de dados cadastrais, seguem as orientações:\n\n• Dados bancários: A alteração pode ser feita diretamente no aplicativo antes de enviar uma nova solicitação de empréstimo ou caso tenha ocorrido falha no desembolso anterior (não é possível alterar enquanto uma transferência está em andamento).\n• Telefone e contatos de emergência: Por motivos de segurança e validação de conta, esses dados possuem restrições de alteração no sistema.\n\nPor favor, informe exatamente qual dado você precisa atualizar e se há algum pedido em andamento para que possamos verificar a orientação adequada.",
       "encaminhar_supervisor": "Para validar se há exceção operacional para troca de número de telefone.",
       "encaminhar_operacoes": "Encaminhar solicitações elegíveis de ajuste cadastral conforme fluxo aprovado.",
-      "observacoes": "PONTO PARA VALIDAR: Confirmar as regras oficiais de alteração de telefone/cadastro e prevenção à fraude no Brasil. Nunca sugerir abertura de conta duplicada."
+      "observacoes": "PONTO PARA VALIDAR: Confirmar as regras oficiais de alteração de telefone/cadastro e prevenção à fraude no Brasil. Nunca sugerir abertura de conta duplicada.",
+      "keywords": "alterar conta, trocar pix, mudar telefone, número novo, contato de emergência, dados bancários",
+      "acesso_direto": "Ir para SOP-18 (Linha 19)",
+      "status_validacao": "Validar regras de alteração de telefone/cadastro"
     },
     {
       "ref": "SOP-19",
       "categoria": "Dúvidas sobre utilização do aplicativo",
       "problema": "19. Dúvidas sobre juros e taxas",
-      "keywords": "juros, taxas, encargos, quanto custa, porcentagem, cet, taxa de serviço, iva",
-      "status_validacao": "Validar percentuais de taxa/IVA no Brasil",
       "quando_utilizar": "Quando o cliente pede esclarecimentos sobre como são calculados os juros, taxas de serviço ou encargos do empréstimo.",
       "como_consultar": "Consultar os valores específicos registrados no pedido/contrato do cliente.",
       "caminho_sistema": "CRM → Order List (Lista de pedidos) → Detalhes do Pedido",
@@ -629,14 +881,15 @@
       "msg_pronta": "Olá! Os juros, taxas e encargos aplicáveis variam de acordo com o produto e as condições aprovadas para cada perfil, sendo sempre exibidos de forma transparente na tela de resumo antes da confirmação do pedido.\n\nNo seu contrato atual, os valores registrados são:\n• Valor principal: [VALOR PRINCIPAL]\n• Taxas e encargos: [VALORES DO CONTRATO]\n• Valor total para pagamento: [VALOR TOTAL]\n\nVocê pode revisar essas informações a qualquer momento na aba 'Pedidos' do seu aplicativo.",
       "encaminhar_supervisor": "Se o cliente contestar a cobrança de alguma taxa não informada previamente.",
       "encaminhar_operacoes": "Não aplicável.",
-      "observacoes": "PONTO PARA VALIDAR: O material original cita taxas de serviço de 30% ou 35% e IVA de 5% (líquido de 60% ou 65%). Validar a estrutura tributária e de taxas aplicada no Brasil (ex: IOF em vez de IVA) e informar apenas os valores reais do contrato."
+      "observacoes": "PONTO PARA VALIDAR: O material original cita taxas de serviço de 30% ou 35% e IVA de 5% (líquido de 60% ou 65%). Validar a estrutura tributária e de taxas aplicada no Brasil (ex: IOF em vez de IVA) e informar apenas os valores reais do contrato.",
+      "keywords": "juros, taxas, encargos, quanto custa, porcentagem, cet, taxa de serviço, iva",
+      "acesso_direto": "Ir para SOP-19 (Linha 20)",
+      "status_validacao": "Validar percentuais de taxa/IVA no Brasil"
     },
     {
       "ref": "SOP-20",
       "categoria": "Dúvidas sobre utilização do aplicativo",
       "problema": "20. Cliente sem limite disponível",
-      "keywords": "sem limite, limite zero, não consigo pedir, indisponível, quando libera limite",
-      "status_validacao": "Validar prazo de 7 dias após rejeição",
       "quando_utilizar": "Quando o cliente acessa o aplicativo e vê que não possui limite de crédito disponível para nova solicitação.",
       "como_consultar": "Pesquisar pelo UID do cliente e verificar todo o histórico de pedidos.",
       "caminho_sistema": "CRM → Order List (Lista de pedidos)",
@@ -645,14 +898,15 @@
       "msg_pronta": "Olá! Verifiquei o seu cadastro em nosso sistema e, no momento, não há limite disponível para uma nova contratação.\n\nA liberação de limite depende da análise automática do sistema, que considera a quitação de contratos anteriores e o histórico de utilização. Recomendamos que acompanhe periodicamente pelo próprio aplicativo quando uma nova oferta estiver disponível para o seu perfil.",
       "encaminhar_supervisor": "Não necessário em consultas padrão.",
       "encaminhar_operacoes": "Apenas se o cliente já quitou o empréstimo há dias e o sistema não atualizou o status.",
-      "observacoes": "PONTO PARA VALIDAR: O material original menciona aguardar 7 dias em determinados casos de rejeição. Confirmar essa regra antes de informar prazo ao cliente."
+      "observacoes": "PONTO PARA VALIDAR: O material original menciona aguardar 7 dias em determinados casos de rejeição. Confirmar essa regra antes de informar prazo ao cliente.",
+      "keywords": "sem limite, limite zero, não consigo pedir, indisponível, quando libera limite",
+      "acesso_direto": "Ir para SOP-20 (Linha 21)",
+      "status_validacao": "Validar prazo de 7 dias após rejeição"
     },
     {
       "ref": "SOP-21",
       "categoria": "Dúvidas sobre utilização do aplicativo",
       "problema": "21. Solicitação de aumento de limite",
-      "keywords": "aumentar limite, mais crédito, limite maior, pedir aumento, crédito baixo",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente solicita manualmente que o atendente aumente seu limite de crédito.",
       "como_consultar": "Opcionalmente consultar o histórico de pedidos do cliente.",
       "caminho_sistema": "CRM → Order List (Lista de pedidos)",
@@ -661,14 +915,15 @@
       "msg_pronta": "Olá! O valor do limite de crédito é definido e atualizado exclusivamente pela análise automática do nosso sistema, não sendo possível realizar alterações manuais pela equipe de atendimento.\n\nO sistema realiza reavaliações periódicas levando em conta o histórico de uso e o pagamento em dia dos contratos, mas não há garantia ou prazo fixo para aumento. Caso haja atualização no seu limite, ela aparecerá automaticamente na tela inicial do aplicativo.",
       "encaminhar_supervisor": "Não aplicável.",
       "encaminhar_operacoes": "Não aplicável.",
-      "observacoes": "Proibido prometer aumento de limite ou dizer que o atendente pode alterar o valor."
+      "observacoes": "Proibido prometer aumento de limite ou dizer que o atendente pode alterar o valor.",
+      "keywords": "aumentar limite, mais crédito, limite maior, pedir aumento, crédito baixo",
+      "acesso_direto": "Ir para SOP-21 (Linha 22)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-22",
       "categoria": "Dúvidas sobre utilização do aplicativo",
       "problema": "22. Mensagens em branco ou sem sentido",
-      "keywords": "mensagem vazia, em branco, oi, teste, texto sem sentido, figurinha, emoji",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente inicia o atendimento enviando apenas espaços, caracteres aleatórios, emojis ou mensagens incompreensíveis.",
       "como_consultar": "Não é necessário consultar dados sensíveis antes de entender a demanda.",
       "caminho_sistema": "Plataforma de Atendimento / Chat",
@@ -677,14 +932,15 @@
       "msg_pronta": "Olá! Bem-vindo(a) ao nosso atendimento. Recebemos a sua mensagem, mas não conseguimos identificar a sua dúvida ou solicitação.\n\nPor favor, conte-nos como podemos ajudar hoje para que possamos direcionar o seu atendimento!",
       "encaminhar_supervisor": "Não aplicável.",
       "encaminhar_operacoes": "Não aplicável.",
-      "observacoes": "Não pedir CPF, telefone ou documentos antes que o cliente informe o motivo do contato."
+      "observacoes": "Não pedir CPF, telefone ou documentos antes que o cliente informe o motivo do contato.",
+      "keywords": "mensagem vazia, em branco, oi, teste, texto sem sentido, figurinha, emoji",
+      "acesso_direto": "Ir para SOP-22 (Linha 23)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-23",
       "categoria": "Dúvidas sobre utilização do aplicativo",
       "problema": "23. Solicitação de exclusão de dados",
-      "keywords": "excluir dados, apagar conta, lgpd, remover cadastro, cancelar conta, privacidade, dados pessoais",
-      "status_validacao": "Validar exclusão de dados (LGPD / Jurídico)",
       "quando_utilizar": "Quando o cliente solicita a exclusão de seus dados pessoais, documentos ou encerramento definitivo do cadastro.",
       "como_consultar": "Verificar se o cliente possui pedidos ativos, pendências financeiras ou apenas cadastro sem empréstimo concluído.",
       "caminho_sistema": "CRM → Customer List (Lista de clientes) e CRM → Order List (Lista de pedidos)",
@@ -693,14 +949,15 @@
       "msg_pronta": "Olá! Recebemos a sua solicitação referente à exclusão de dados pessoais e encerramento de cadastro.\n\nPara garantir a segurança das suas informações e o cumprimento da legislação brasileira de proteção de dados (LGPD), encaminhamos o seu pedido ao setor responsável pela análise de privacidade.\n\nAssim que a verificação sobre eventuais vínculos contratuais ou obrigações legais for concluída, retornaremos com a confirmação e as orientações sobre o seu pedido.",
       "encaminhar_supervisor": "OBRIGATÓRIO: Encaminhar toda solicitação de exclusão de dados para supervisão / Compliance / DPO.",
       "encaminhar_operacoes": "Aguardar instrução formal do Jurídico/Compliance antes de executar qualquer exclusão ou bloqueio no sistema.",
-      "observacoes": "PONTO PARA VALIDAR: O material original traz uma resposta padrão para quando o empréstimo não foi aprovado. Essa política precisa ser validada com o Jurídico/Privacidade no Brasil (LGPD e regras do Banco Central) antes de se tornar resposta oficial."
+      "observacoes": "PONTO PARA VALIDAR: O material original traz uma resposta padrão para quando o empréstimo não foi aprovado. Essa política precisa ser validada com o Jurídico/Privacidade no Brasil (LGPD e regras do Banco Central) antes de se tornar resposta oficial.",
+      "keywords": "excluir dados, apagar conta, lgpd, remover cadastro, cancelar conta, privacidade, dados pessoais",
+      "acesso_direto": "Ir para SOP-23 (Linha 24)",
+      "status_validacao": "Validar exclusão de dados (LGPD / Jurídico)"
     },
     {
       "ref": "SOP-24",
       "categoria": "Dúvidas sobre utilização do aplicativo",
       "problema": "24. Problemas técnicos no aplicativo",
-      "keywords": "app travando, erro no app, tela branca, fechando sozinho, bug, não abre, falha técnica",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente relata falhas gerais de funcionamento no aplicativo (travamentos, tela branca, fechamento inesperado, erro de carregamento).",
       "como_consultar": "Consultar o cadastro pelo UID ou telefone para registrar a ocorrência técnica.",
       "caminho_sistema": "CRM → Customer List (Lista de clientes)",
@@ -709,14 +966,15 @@
       "msg_pronta": "Olá! Lamentamos a instabilidade que você está enfrentando no aplicativo. Por favor, tente realizar estes procedimentos:\n\n1. Verifique se sua conexão com a internet está estável.\n2. Acesse a loja de aplicativos e confira se há alguma atualização pendente para o app.\n3. Feche completamente o aplicativo e abra-o novamente.\n4. Confira nas configurações do celular se as permissões do aplicativo estão habilitadas.\n\nCaso o problema continue, por favor, envie um print da tela ou um vídeo curto mostrando o erro (junto com o modelo do seu celular) para que nossa equipe técnica possa investigar!",
       "encaminhar_supervisor": "Em caso de falha sistêmica afetando múltiplos usuários.",
       "encaminhar_operacoes": "Encaminhar print/vídeo, UID e modelo do aparelho para a equipe técnica / Operações.",
-      "observacoes": "Sempre registrar evidências visuais (print/vídeo) antes de escalar para a engenharia/técnica."
+      "observacoes": "Sempre registrar evidências visuais (print/vídeo) antes de escalar para a engenharia/técnica.",
+      "keywords": "app travando, erro no app, tela branca, fechando sozinho, bug, não abre, falha técnica",
+      "acesso_direto": "Ir para SOP-24 (Linha 25)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-25",
       "categoria": "Dúvidas sobre utilização do aplicativo",
       "problema": "25. Empréstimo recusado",
-      "keywords": "recusado, negado, reprovado, não aprovado, crédito negado, 已拒绝",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente pergunta o motivo pelo qual sua solicitação de empréstimo foi recusada ou quando não consegue concluir o pedido.",
       "como_consultar": "Consultar a lista de pedidos e as etiquetas/histórico do cliente.",
       "caminho_sistema": "CRM → Order List (Lista de pedidos) e CRM → Customer List (Lista de clientes)",
@@ -725,14 +983,15 @@
       "msg_pronta": "Olá! Verifiquei o seu cadastro em nosso sistema e a sua solicitação atual não foi aprovada pela nossa análise automática de crédito.\n\nA avaliação considera diversos critérios internos e de perfil no momento do pedido, e infelizmente não temos acesso aos detalhes específicos da recusa nem podemos alterar o resultado manualmente.\n\nCaso você esteja enfrentando algum erro técnico que impeça a conclusão do envio da proposta no aplicativo, por favor, nos avise e envie um print da tela para verificarmos.",
       "encaminhar_supervisor": "Se houver dúvida sobre bloqueio indevido no perfil.",
       "encaminhar_operacoes": "Quando não houver registro de pedido no CRM e o cliente não conseguir avançar no aplicativo (encaminhar UID).",
-      "observacoes": "Não inventar motivos para a recusa (ex: não afirmar 'nome sujo' se o sistema não informar o motivo exato)."
+      "observacoes": "Não inventar motivos para a recusa (ex: não afirmar 'nome sujo' se o sistema não informar o motivo exato).",
+      "keywords": "recusado, negado, reprovado, não aprovado, crédito negado, 已拒绝",
+      "acesso_direto": "Ir para SOP-25 (Linha 26)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-26",
       "categoria": "Reclamações",
       "problema": "26. Cliente afirma que o empréstimo foi contratado ou liberado sem autorização",
-      "keywords": "não pedi, sem autorização, não contratei, empréstimo indevido, caiu sem pedir, fraude contratação",
-      "status_validacao": "Validar fluxo de empréstimo não autorizado",
       "quando_utilizar": "Quando o cliente alega que não solicitou ou não autorizou o empréstimo que foi contratado ou desembolsado em seu nome/conta.",
       "como_consultar": "Consultar detalhadamente todos os registros do pedido, etiquetas, logs de acesso e horários de contratação e desembolso.",
       "caminho_sistema": "CRM → Order List (Lista de pedidos) e CRM → Order Management → Disbursement List",
@@ -741,14 +1000,15 @@
       "msg_pronta": "Olá! Levamos a sua manifestação muito a sério e já registramos a sua contestação sobre a contratação deste empréstimo.\n\nEncaminhamos imediatamente o seu caso e os registros da operação para análise da nossa equipe especializada de segurança e auditoria. Pedimos que aguarde o retorno da nossa equipe com as orientações oficiais após a verificação.\n\nPor segurança, não realize nenhuma transferência para contas de terceiros ou fora dos canais oficiais enquanto analisamos o ocorrido.",
       "encaminhar_supervisor": "IMEDIATO: Escalar para supervisão, Compliance e Segurança.",
       "encaminhar_operacoes": "Encaminhar UID, ID do pedido e horários para auditoria técnica e bloqueio preventivo de cobranças durante a análise.",
-      "observacoes": "PONTO PARA VALIDAR: O procedimento original menciona condições conforme o tempo transcorrido e possíveis descontos. PROIBIDO aplicar isso automaticamente; precisa de validação jurídica e de compliance no Brasil."
+      "observacoes": "PONTO PARA VALIDAR: O procedimento original menciona condições conforme o tempo transcorrido e possíveis descontos. PROIBIDO aplicar isso automaticamente; precisa de validação jurídica e de compliance no Brasil.",
+      "keywords": "não pedi, sem autorização, não contratei, empréstimo indevido, caiu sem pedir, fraude contratação",
+      "acesso_direto": "Ir para SOP-26 (Linha 27)",
+      "status_validacao": "Validar fluxo de empréstimo não autorizado"
     },
     {
       "ref": "SOP-27",
       "categoria": "Reclamações",
       "problema": "27. Reclamação sobre valor baixo, juros altos ou prazo curto",
-      "keywords": "reclamação juros, valor muito baixo, abusivo, prazo curto demais, insatisfeito com condições",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente registra uma reclamação formal (não apenas dúvida) sobre as condições comerciais do empréstimo contratado.",
       "como_consultar": "Consultar os valores exatos e a data de vencimento do contrato no CRM.",
       "caminho_sistema": "CRM → Order List (Lista de pedidos) / CRM → Repayment Plan",
@@ -757,14 +1017,15 @@
       "msg_pronta": "Olá! Agradecemos por compartilhar sua insatisfação e compreendemos a sua preocupação em relação às condições do contrato.\n\nConforme registrado no momento da contratação, o valor total do pedido é de [VALOR TOTAL], com vencimento em [DATA DE VENCIMENTO], conforme as condições exibidas antes da confirmação no aplicativo.\n\nVou registrar sua manifestação e encaminhar suas observações para avaliação do setor responsável. Caso haja alguma alternativa aplicável ao seu contrato, entraremos em contato.",
       "encaminhar_supervisor": "Encaminhar caso o cliente solicite revisão formal ou negociação.",
       "encaminhar_operacoes": "Não aplicável, salvo aprovação de ajuste pelo supervisor.",
-      "observacoes": "PONTO PARA VALIDAR: O material original cita possibilidade de redução de 5% ou extensão de 2 dias somente após aprovação. Validar política e nunca prometer antes da autorização."
+      "observacoes": "PONTO PARA VALIDAR: O material original cita possibilidade de redução de 5% ou extensão de 2 dias somente após aprovação. Validar política e nunca prometer antes da autorização.",
+      "keywords": "reclamação juros, valor muito baixo, abusivo, prazo curto demais, insatisfeito com condições",
+      "acesso_direto": "Ir para SOP-27 (Linha 28)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-28",
       "categoria": "Reclamações",
       "problema": "28. Reclamação sobre desembolso, mas cliente recebeu cobrança",
-      "keywords": "não recebi e estão cobrando, cobrança sem desembolso, cobrando empréstimo não recebido",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente reclama que está recebendo mensagens ou ligações de cobrança referentes a um empréstimo cujo dinheiro ele afirma não ter recebido.",
       "como_consultar": "Consultar o status do desembolso e o plano de pagamento no CRM.",
       "caminho_sistema": "1) CRM → Order Management → Disbursement List\n2) CRM → Repayment Plan (Plano de pagamento)",
@@ -773,14 +1034,15 @@
       "msg_pronta": "Olá! Lamentamos o transtorno e já estamos verificando a situação do desembolso vinculado a essa cobrança.\n\nRegistrei sua reclamação com prioridade e encaminhei para nossa equipe de Operações analisar o status da transferência bancária e regularizar o cadastro, se necessário. Por favor, aguarde nosso retorno com a atualização do seu caso.",
       "encaminhar_supervisor": "Informar supervisão para acompanhar a suspensão de cobrança durante a análise.",
       "encaminhar_operacoes": "OBRIGATÓRIO: Encaminhar imediatamente para Operações verificar o desembolso e corrigir o status do pedido se houve falha.",
-      "observacoes": "Prioridade alta: cobrar um cliente por um valor que falhou no desembolso gera risco grave de reclamação externa e jurídico."
+      "observacoes": "Prioridade alta: cobrar um cliente por um valor que falhou no desembolso gera risco grave de reclamação externa e jurídico.",
+      "keywords": "não recebi e estão cobrando, cobrança sem desembolso, cobrando empréstimo não recebido",
+      "acesso_direto": "Ir para SOP-28 (Linha 29)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-29",
       "categoria": "Reclamações",
       "problema": "29. Reclamação sobre cobrança",
-      "keywords": "cobrança abusiva, ameaça, assédio, ligação excessiva, cobrança agressiva, desrespeito",
-      "status_validacao": "Validar políticas de cobrança (CDC)",
       "quando_utilizar": "Quando o cliente reclama da frequência das cobranças, de abordagem agressiva/desrespeitosa ou de cobrança após pagamento.",
       "como_consultar": "Consultar a data de vencimento, status de pagamento e histórico de cobranças no CRM.",
       "caminho_sistema": "CRM → Repayment Plan (Plano de pagamento) / Histórico de Cobrança",
@@ -789,14 +1051,15 @@
       "msg_pronta": "Olá! Lamentamos profundamente pela experiência relatada e reforçamos que não compactuamos com qualquer abordagem desrespeitosa ou inadequada.\n\nPara que possamos investigar o ocorrido e tomar as providências cabíveis junto à equipe responsável, por favor, envie capturas de tela, números de contato ou registros das mensagens recebidas.\n\nJá registrei a sua reclamação para análise urgente da nossa supervisão.",
       "encaminhar_supervisor": "IMEDIATO: Encaminhar evidências de cobrança agressiva para Supervisão e Compliance.",
       "encaminhar_operacoes": "Para verificação do agente/assessoria responsável pelo contato e bloqueio de abusos.",
-      "observacoes": "PONTO PARA VALIDAR: Revisar políticas de cobrança conforme o Código de Defesa do Consumidor (CDC) no Brasil."
+      "observacoes": "PONTO PARA VALIDAR: Revisar políticas de cobrança conforme o Código de Defesa do Consumidor (CDC) no Brasil.",
+      "keywords": "cobrança abusiva, ameaça, assédio, ligação excessiva, cobrança agressiva, desrespeito",
+      "acesso_direto": "Ir para SOP-29 (Linha 30)",
+      "status_validacao": "Validar políticas de cobrança (CDC)"
     },
     {
       "ref": "SOP-30",
       "categoria": "Reclamações",
       "problema": "30. Suspeita de fraude ou golpe",
-      "keywords": "golpe, fraude, estelionato, perfil falso, whatsapp falso, conta de terceiro, roubo de dados",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente relata ter sido abordado por golpistas usando o nome da empresa, ou suspeita que terceiros usaram seus dados para fraude.",
       "como_consultar": "Consultar o cadastro e pedidos vinculados ao CPF/telefone/UID no CRM.",
       "caminho_sistema": "CRM → Customer List (Lista de clientes) e CRM → Order List (Lista de pedidos)",
@@ -805,14 +1068,15 @@
       "msg_pronta": "Olá! Agradecemos por nos alertar imediatamente sobre essa situação.\n\nReforçamos que nossa empresa NUNCA solicita pagamentos, taxas de liberação ou transferências para contas bancárias pessoais ou fora do nosso aplicativo oficial. Por segurança, não realize nenhuma transferência ou pagamento para esses contatos.\n\nPor favor, envie capturas de tela das conversas, números de telefone ou links recebidos para que possamos encaminhar à nossa equipe de Segurança. Caso você já tenha realizado alguma transferência para terceiros, recomendamos que entre em contato imediatamente com o seu banco e registre um Boletim de Ocorrência junto às autoridades competentes.",
       "encaminhar_supervisor": "IMEDIATO: Escalar para Supervisão, Segurança e Compliance.",
       "encaminhar_operacoes": "Encaminhar todas as evidências para bloqueio de contas/pedidos fraudulentos e monitoramento.",
-      "observacoes": "Segurança máxima: jamais pedir dados sensíveis desnecessários e sempre alertar sobre canais oficiais."
+      "observacoes": "Segurança máxima: jamais pedir dados sensíveis desnecessários e sempre alertar sobre canais oficiais.",
+      "keywords": "golpe, fraude, estelionato, perfil falso, whatsapp falso, conta de terceiro, roubo de dados",
+      "acesso_direto": "Ir para SOP-30 (Linha 31)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
     },
     {
       "ref": "SOP-31",
       "categoria": "Reclamações",
       "problema": "31. Avaliação negativa na Google Play",
-      "keywords": "google play, loja de aplicativos, estrela, avaliação negativa, comentário na loja, review",
-      "status_validacao": "SUSPENSO: Validar resposta Google Play (Compliance)",
       "quando_utilizar": "Quando o cliente menciona uma avaliação negativa na Google Play ou quando o atendimento trata casos originados de avaliações na loja.",
       "como_consultar": "Consultar o cadastro do cliente (se identificado) para entender o problema relatado na avaliação.",
       "caminho_sistema": "CRM → Customer List (Lista de clientes) / Order List",
@@ -821,14 +1085,15 @@
       "msg_pronta": "Olá! Agradecemos pelo seu feedback na loja de aplicativos, pois sua opinião é muito importante para melhorarmos nossos serviços.\n\nGostaríamos de entender melhor o ocorrido para ajudar a resolver sua solicitação da melhor forma possível. Por favor, nos informe qual dificuldade você encontrou no aplicativo ou em seu pedido para que possamos verificar em nosso sistema.",
       "encaminhar_supervisor": "Encaminhar para revisão da política de resposta à Google Play pelo Jurídico e Compliance.",
       "encaminhar_operacoes": "Resolver o problema operacional apontado pelo cliente (ex: falha técnica ou desembolso).",
-      "observacoes": "PONTO PARA VALIDAR (RISCO ALTO): O material original menciona oferecer descontos em troca da alteração/remoção de avaliação negativa. ESSA PRÁTICA ESTÁ SUSPENSA e precisa ser revisada pelo Jurídico e Compliance (viola políticas da Google Play e CDC)."
+      "observacoes": "PONTO PARA VALIDAR (RISCO ALTO): O material original menciona oferecer descontos em troca da alteração/remoção de avaliação negativa. ESSA PRÁTICA ESTÁ SUSPENSA e precisa ser revisada pelo Jurídico e Compliance (viola políticas da Google Play e CDC).",
+      "keywords": "google play, loja de aplicativos, estrela, avaliação negativa, comentário na loja, review",
+      "acesso_direto": "Ir para SOP-31 (Linha 32)",
+      "status_validacao": "SUSPENSO: Validar resposta Google Play (Compliance)"
     },
     {
       "ref": "SOP-32",
       "categoria": "Reclamações",
       "problema": "32. Reclamação encaminhada ao setor de pagamentos",
-      "keywords": "setor de pagamentos, reembolso, estorno, reclamação financeira, pós-venda, 售后",
-      "status_validacao": "Validar tratamento de reclamações formais",
       "quando_utilizar": "Quando a reclamação envolve divergências financeiras, estornos, conciliação de pagamentos ou problemas de desembolso que exigem atuação do setor de pagamentos/pós-venda.",
       "como_consultar": "Consultar o histórico de desembolso e pagamentos no CRM.",
       "caminho_sistema": "CRM → Order Management → Disbursement List / Repayment Records",
@@ -837,14 +1102,15 @@
       "msg_pronta": "Olá! Registramos formalmente a sua reclamação e reunimos os dados da sua operação para encaminhamento ao nosso setor especializado de Pagamentos e Pós-venda.\n\nNossa equipe está analisando o caso e acompanharemos a tratativa até a conclusão para lhe dar um retorno claro e transparente. Agradecemos pela sua paciência.",
       "encaminhar_supervisor": "Acompanhar casos que ultrapassem o prazo interno de resposta.",
       "encaminhar_operacoes": "OBRIGATÓRIO: Encaminhar para Operações / Pós-venda (售后) com todas as evidências.",
-      "observacoes": "PONTO PARA VALIDAR: Nunca condicionar atendimento ou solução à retirada de reclamações em órgãos de defesa do consumidor ou plataformas públicas."
+      "observacoes": "PONTO PARA VALIDAR: Nunca condicionar atendimento ou solução à retirada de reclamações em órgãos de defesa do consumidor ou plataformas públicas.",
+      "keywords": "setor de pagamentos, reembolso, estorno, reclamação financeira, pós-venda, 售后",
+      "acesso_direto": "Ir para SOP-32 (Linha 33)",
+      "status_validacao": "Validar tratamento de reclamações formais"
     },
     {
       "ref": "SOP-33",
       "categoria": "Reclamações",
       "problema": "33. Outras reclamações",
-      "keywords": "outras reclamações, sugestão, elogio, reclamação geral, insatisfação, ouvidoria",
-      "status_validacao": "Fluxo padrão (revisar termos locais)",
       "quando_utilizar": "Quando o cliente apresenta uma reclamação ou manifestação que não se enquadra diretamente nos itens 26 a 32.",
       "como_consultar": "Consultar o cadastro básico do cliente para registrar o protocolo/atendimento.",
       "caminho_sistema": "CRM → Customer List (Lista de clientes)",
@@ -853,7 +1119,165 @@
       "msg_pronta": "Olá! Agradecemos por entrar em contato e compartilhar sua manifestação conosco.\n\nRegistramos os detalhes do seu relato e encaminharemos as informações ao setor responsável para análise. Caso você tenha alguma captura de tela ou informação adicional que possa ajudar na verificação, por favor, envie por aqui. Retornaremos assim que tivermos uma atualização!",
       "encaminhar_supervisor": "Encaminhar para supervisão quando o tema envolver risco jurídico, regulatório ou insatisfação grave.",
       "encaminhar_operacoes": "Direcionar para a área específica conforme a natureza da reclamação.",
-      "observacoes": "Sempre registrar o máximo de detalhes objetivos no atendimento para evitar retrabalho."
+      "observacoes": "Sempre registrar o máximo de detalhes objetivos no atendimento para evitar retrabalho.",
+      "keywords": "outras reclamações, sugestão, elogio, reclamação geral, insatisfação, ouvidoria",
+      "acesso_direto": "Ir para SOP-33 (Linha 34)",
+      "status_validacao": "Fluxo padrão (revisar termos locais)"
+    }
+  ],
+  "apps": [
+    {
+      "nome": "CredDireto",
+      "sistema": "IOS",
+      "link_descarga": "http://web.findireto.com",
+      "estado": "1",
+      "links_retirados": "http://web.findireto.com",
+      "app_id": "BR-IOS-H5",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "EmprestMais",
+      "sistema": "IOS",
+      "link_descarga": "http://web.emprestuse.com",
+      "estado": "1",
+      "links_retirados": "http://web.emprestuse.com",
+      "app_id": "BR-IOS-H5-2",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "CredNotas",
+      "sistema": "IOS",
+      "link_descarga": "https://web.sotindung.com",
+      "estado": "0",
+      "links_retirados": "https://web.sotindung.com",
+      "app_id": "BR-IOS-EMI-E01",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "CredRumo",
+      "sistema": "IOS",
+      "link_descarga": "http://web.credrumo.com",
+      "estado": "0",
+      "links_retirados": "http://web.credrumo.com",
+      "app_id": "BR-IOS-EMI-E03",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "CredCresce",
+      "sistema": "IOS",
+      "link_descarga": "http://web.credcresce.com",
+      "estado": "0",
+      "links_retirados": "http://web.credcresce.com",
+      "app_id": "BR-IOS-EMI-E04",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "ReguaCred",
+      "sistema": "IOS",
+      "link_descarga": "bit.ly/ReguaCred",
+      "estado": "0",
+      "links_retirados": "https://web.reguacred.com",
+      "app_id": "BR-IOS-EMI-E05",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "BussolaCred",
+      "sistema": "IOS",
+      "link_descarga": "bit.ly/BussolaCred",
+      "estado": "0",
+      "links_retirados": "https://web.bussolacred.com/",
+      "app_id": "BR-IOS-EMI-E07",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "CrediVigia",
+      "sistema": "IOS",
+      "link_descarga": "bit.ly/CrediVigia",
+      "estado": "1",
+      "links_retirados": "",
+      "app_id": "BR-IOS-EMI-E09",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "VertexCredito",
+      "sistema": "Android",
+      "link_descarga": "https://bit.ly/3P7SaqM",
+      "estado": "1",
+      "links_retirados": "",
+      "app_id": "BR-Android-H5",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "EmprestJa",
+      "sistema": "Android",
+      "link_descarga": "http://web.emprestja.com",
+      "estado": "0",
+      "links_retirados": "",
+      "app_id": "BR-Android-E01",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "CreditoLeve",
+      "sistema": "Android",
+      "link_descarga": "https://web.creditoleve.com",
+      "estado": "1",
+      "links_retirados": "",
+      "app_id": "BR-Android-E02",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "SaqueJa",
+      "sistema": "Android",
+      "link_descarga": "https://bit.ly/43J8rG7",
+      "estado": "1",
+      "links_retirados": "",
+      "app_id": "BR-Android-E03",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "PazCredito",
+      "sistema": "Android",
+      "link_descarga": "bit.ly/pazcredito",
+      "estado": "1",
+      "links_retirados": "",
+      "app_id": "BR-Android-E04",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "ElevaCredito",
+      "sistema": "Android",
+      "link_descarga": "bit.ly/ElevaCredito",
+      "estado": "1",
+      "links_retirados": "http://bit.ly/ElevaCredito1",
+      "app_id": "BR-Android-E05",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "ProntoCredito",
+      "sistema": "Android",
+      "link_descarga": "https://bit.ly/prontocredito",
+      "estado": "1",
+      "links_retirados": "",
+      "app_id": "BR-Android-E06",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "DinheiroJa",
+      "sistema": "Android",
+      "link_descarga": "bit.ly/4b3M3eS",
+      "estado": "0",
+      "links_retirados": "https://web.dinheirocred.com/",
+      "app_id": "BR-Android-E07",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
+    },
+    {
+      "nome": "CreditoCerto",
+      "sistema": "Android",
+      "link_descarga": "bit.ly/certocredito",
+      "estado": "1",
+      "links_retirados": "",
+      "app_id": "BR-Android-E08",
+      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
     }
   ],
   "msgs": [
@@ -1006,7 +1430,7 @@
       "categoria": "Dúvidas sobre utilização do aplicativo",
       "titulo": "17. Problemas com código de verificação, reconhecimento facial ou cadastro",
       "quando_utilizar": "Quando o cliente não recebe o código SMS/verificação, falha na validação facial ou não consegue concluir o cadastro.",
-      "texto": "Olá! Para resolver problemas com o código de verificação ou reconhecimento facial, por favor, tente os seguintes passos:\n\n1. Verifique sua conexão com a internet e o sinal da operadora (no caso de SMS, confira também mensagens bloqueadas/spam).\n2. Atualize o aplicativo para a versão mais recente na loja de aplicativos.\n3. Nas configurações do seu celular, verifique se a permissão de Câmera está ativada para o aplicativo.\n4. Ao fazer a verificação facial, esteja em um ambiente bem iluminado e sem acessórios no rosto.\n\nSe o problema continuar após essas tentativas, por favor, envie uma captura de tela ou um vídeo curto mostrando o erro para que possamos analisar!",
+      "texto": "Olá! Para resolver problemas com o código de verificação ou reconhecimento facial, por favor, tente os seguintes passos:\n\n1. Verifique sua conexão com a internet e o sinal da operadora (no caso de SMS, confira também mensagens bloqueadas/spam).\n2. Atualize o aplicativo para a versão mais recente na loja de aplicativos.\n3. Nas configurações do seu celular, verifique se a permissão de Câmera está ativada para o aplicativo.\n4. Ao fazer a verificação facial, esteja em um ambiente bem iluminado e sem acessórios no rosto.\n\nSe o problema continuar após essas tentativas, por favor, envie uma captura de tela ou vídeo mostrando o erro para que possamos analisar!",
       "orientacao": "Sempre checar no CRM se o cadastro consta como 'Não verificado' (未认证)."
     },
     {
@@ -1265,161 +1689,6 @@
       "contexto": "URLs antigas ou removidas de campanhas de divulgação."
     }
   ],
-  "apps": [
-    {
-      "nome": "CredDireto",
-      "sistema": "IOS",
-      "link_descarga": "http://web.findireto.com",
-      "estado": "1",
-      "links_retirados": "http://web.findireto.com",
-      "app_id": "BR-IOS-H5",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "EmprestMais",
-      "sistema": "IOS",
-      "link_descarga": "http://web.emprestuse.com",
-      "estado": "1",
-      "links_retirados": "http://web.emprestuse.com",
-      "app_id": "BR-IOS-H5-2",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "CredNotas",
-      "sistema": "IOS",
-      "link_descarga": "https://web.sotindung.com",
-      "estado": "0",
-      "links_retirados": "https://web.sotindung.com",
-      "app_id": "BR-IOS-EMI-E01",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "CredRumo",
-      "sistema": "IOS",
-      "link_descarga": "http://web.credrumo.com",
-      "estado": "0",
-      "links_retirados": "http://web.credrumo.com",
-      "app_id": "BR-IOS-EMI-E03",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "CredCresce",
-      "sistema": "IOS",
-      "link_descarga": "http://web.credcresce.com",
-      "estado": "0",
-      "links_retirados": "http://web.credcresce.com",
-      "app_id": "BR-IOS-EMI-E04",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "ReguaCred",
-      "sistema": "IOS",
-      "link_descarga": "bit.ly/ReguaCred",
-      "estado": "0",
-      "links_retirados": "https://web.reguacred.com",
-      "app_id": "BR-IOS-EMI-E05",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "BussolaCred",
-      "sistema": "IOS",
-      "link_descarga": "bit.ly/BussolaCred",
-      "estado": "0",
-      "links_retirados": "https://web.bussolacred.com/",
-      "app_id": "BR-IOS-EMI-E07",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "CrediVigia",
-      "sistema": "IOS",
-      "link_descarga": "bit.ly/CrediVigia",
-      "estado": "1",
-      "links_retirados": "",
-      "app_id": "BR-IOS-EMI-E09",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "VertexCredito",
-      "sistema": "Android",
-      "link_descarga": "https://bit.ly/3P7SaqM",
-      "estado": "1",
-      "links_retirados": "",
-      "app_id": "BR-Android-H5",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "EmprestJa",
-      "sistema": "Android",
-      "link_descarga": "http://web.emprestja.com",
-      "estado": "0",
-      "links_retirados": "",
-      "app_id": "BR-Android-E01",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "CreditoLeve",
-      "sistema": "Android",
-      "link_descarga": "https://web.creditoleve.com",
-      "estado": "1",
-      "links_retirados": "",
-      "app_id": "BR-Android-E02",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "SaqueJa",
-      "sistema": "Android",
-      "link_descarga": "https://bit.ly/43J8rG7",
-      "estado": "1",
-      "links_retirados": "",
-      "app_id": "BR-Android-E03",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "PazCredito",
-      "sistema": "Android",
-      "link_descarga": "bit.ly/pazcredito",
-      "estado": "1",
-      "links_retirados": "",
-      "app_id": "BR-Android-E04",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "ElevaCredito",
-      "sistema": "Android",
-      "link_descarga": "bit.ly/ElevaCredito",
-      "estado": "1",
-      "links_retirados": "http://bit.ly/ElevaCredito1",
-      "app_id": "BR-Android-E05",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "ProntoCredito",
-      "sistema": "Android",
-      "link_descarga": "https://bit.ly/prontocredito",
-      "estado": "1",
-      "links_retirados": "",
-      "app_id": "BR-Android-E06",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "DinheiroJa",
-      "sistema": "Android",
-      "link_descarga": "bit.ly/4b3M3eS",
-      "estado": "0",
-      "links_retirados": "https://web.dinheirocred.com/",
-      "app_id": "BR-Android-E07",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    },
-    {
-      "nome": "CreditoCerto",
-      "sistema": "Android",
-      "link_descarga": "bit.ly/certocredito",
-      "estado": "1",
-      "links_retirados": "",
-      "app_id": "BR-Android-E08",
-      "obs": "ATENÇÃO: O significado exato dos códigos '0' e '1' na coluna 'Estado de APP' (ex: ativo/inativo ou publicado/removido) precisa ser confirmado com Operações/Produto antes de divulgar links aos clientes."
-    }
-  ],
   "validacoes": [
     {
       "tema": "Percentuais de taxas e valores líquidos (SOP-03 e SOP-19)",
@@ -1535,7 +1804,7 @@
     function showToast(msg) {
       const toast = document.getElementById("copy-toast");
       const label = document.getElementById("copy-toast-msg");
-      label.textContent = msg || "Copiado para a área de transferência!";
+      label.textContent = msg || "Copiado!";
       toast.classList.remove("translate-y-6", "opacity-0", "pointer-events-none");
       toast.classList.add("translate-y-0", "opacity-100");
       clearTimeout(window.__toastTimer);
@@ -1565,7 +1834,7 @@
         document.execCommand("copy");
         showToast(customMsg);
       } catch (e) {
-        showToast("Não foi possível copiar automaticamente.");
+        showToast("Não foi possível copiar.");
       }
       document.body.removeChild(ta);
     }
@@ -1580,7 +1849,7 @@
     }
 
     function setTab(tabName) {
-      const tabs = ["sops", "macros", "bko", "apps", "compliance"];
+      const tabs = ["qr", "sops", "msgs", "apps", "glossario", "validacoes"];
       tabs.forEach(t => {
         document.getElementById(`section-${t}`).classList.toggle("hidden", t !== tabName);
         const btn = document.getElementById(`nav-${t}`);
@@ -1593,8 +1862,50 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
+    function openSOP(refId) {
+      currentCategory = "ALL";
+      document.querySelectorAll(".cat-pill").forEach(pill => {
+        const isActive = pill.getAttribute("data-cat") === "ALL";
+        pill.className = isActive
+          ? "cat-pill px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500 text-slate-950 cursor-pointer"
+          : "cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700 cursor-pointer";
+      });
+      document.getElementById("search-sops").value = "";
+      document.getElementById("filter-sop-ref").value = refId;
+      setTab("sops");
+      renderSOPs();
+    }
+
+    function renderQR() {
+      const q = (document.getElementById("search-qr").value || "").toLowerCase().trim();
+      const cat = document.getElementById("filter-qr-cat").value;
+      const tbody = document.getElementById("qr-tbody");
+
+      const list = MANUAL_DATA.consulta_rapida.filter(item => {
+        const matchCat = cat === "ALL" || item.categoria === cat;
+        const text = `${item.ref} ${item.categoria} ${item.problema} ${item.keywords} ${item.status_validacao}`.toLowerCase();
+        return matchCat && (!q || text.includes(q));
+      });
+
+      tbody.innerHTML = list.map(item => `
+        <tr class="hover:bg-slate-800/40">
+          <td class="p-3.5 font-mono text-cyan-300 font-extrabold whitespace-nowrap">${escapeHtml(item.ref)}</td>
+          <td class="p-3.5 text-amber-300 font-semibold">${escapeHtml(item.categoria)}</td>
+          <td class="p-3.5 text-white font-bold">${escapeHtml(item.problema)}</td>
+          <td class="p-3.5 text-slate-400">${escapeHtml(item.keywords)}</td>
+          <td class="p-3.5 text-slate-300">${escapeHtml(item.status_validacao)}</td>
+          <td class="p-3.5 text-right whitespace-nowrap">
+            <button onclick="openSOP('${escapeHtml(item.ref)}')" class="px-3 py-1.5 rounded-lg bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-300 border border-cyan-500/30 text-[11px] font-bold cursor-pointer">
+              Abrir ${escapeHtml(item.ref)}
+            </button>
+          </td>
+        </tr>
+      `).join("");
+    }
+
     function selectCategory(cat) {
       currentCategory = cat;
+      document.getElementById("filter-sop-ref").value = "ALL";
       document.querySelectorAll(".cat-pill").forEach(pill => {
         const isActive = pill.getAttribute("data-cat") === cat;
         pill.className = isActive
@@ -1604,32 +1915,23 @@
       renderSOPs();
     }
 
-    function isAlertValidation(statusText) {
-      const s = (statusText || "").toLowerCase();
-      return s.includes("validar") || s.includes("suspenso") || s.includes("risco");
-    }
-
     function renderSOPs() {
       const query = (document.getElementById("search-sops").value || "").toLowerCase().trim();
-      const valFilter = document.getElementById("filter-validacao").value;
+      const refFilter = document.getElementById("filter-sop-ref").value;
       const container = document.getElementById("sops-container");
 
       const filtered = MANUAL_DATA.sops.filter(item => {
         const matchCat = currentCategory === "ALL" || item.categoria === currentCategory;
-        const hasAlert = isAlertValidation(item.status_validacao) || /validar|suspenso|risco alto|proibido/i.test(item.observacoes);
-        const matchVal =
-          valFilter === "ALL" ||
-          (valFilter === "ALERTA" && hasAlert) ||
-          (valFilter === "PADRAO" && !hasAlert);
-
+        const matchRef = refFilter === "ALL" || item.ref === refFilter;
         const haystack = [
           item.ref, item.categoria, item.problema, item.keywords,
-          item.quando_utilizar, item.caminho_sistema, item.o_que_verificar,
-          item.o_que_fazer, item.msg_pronta, item.observacoes
+          item.quando_utilizar, item.como_consultar, item.caminho_sistema,
+          item.o_que_verificar, item.o_que_fazer, item.msg_pronta,
+          item.encaminhar_supervisor, item.encaminhar_operacoes, item.observacoes
         ].join(" ").toLowerCase();
 
         const matchQuery = !query || haystack.includes(query);
-        return matchCat && matchVal && matchQuery;
+        return matchCat && matchRef && matchQuery;
       });
 
       document.getElementById("sop-count-label").textContent =
@@ -1639,17 +1941,11 @@
         container.innerHTML = `
           <div class="glass-card p-8 rounded-2xl text-center space-y-2">
             <p class="text-sm font-bold text-white">Nenhum procedimento encontrado</p>
-            <p class="text-xs text-slate-400">Tente limpar os filtros ou buscar por outro termo (ex: pix, limite, fraude, status).</p>
           </div>`;
         return;
       }
 
-      container.innerHTML = filtered.map((item, idx) => {
-        const hasAlert = isAlertValidation(item.status_validacao) || /validar|suspenso|risco alto/i.test(item.observacoes);
-        const badgeClass = hasAlert
-          ? "bg-amber-500/15 text-amber-300 border-amber-500/35"
-          : "bg-slate-800 text-slate-300 border-slate-700";
-
+      container.innerHTML = filtered.map(item => {
         const encodedMsg = encodeURIComponent(item.msg_pronta || "");
         const encodedRoute = encodeURIComponent(item.caminho_sistema || "");
 
@@ -1660,89 +1956,91 @@
                 <div class="flex items-center gap-2 flex-wrap">
                   <span class="px-2.5 py-0.5 rounded-md bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-mono text-xs font-extrabold">${escapeHtml(item.ref)}</span>
                   <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-amber-300 text-xs font-semibold">${escapeHtml(item.categoria)}</span>
-                  <span class="px-2.5 py-0.5 rounded-md border text-[11px] font-semibold ${badgeClass}">${escapeHtml(item.status_validacao || "Fluxo padrão")}</span>
+                  ${item.status_validacao ? `<span class="px-2.5 py-0.5 rounded-md border border-slate-700 bg-slate-800/80 text-slate-300 text-[11px] font-semibold">${escapeHtml(item.status_validacao)}</span>` : ""}
                 </div>
                 <h3 class="text-base font-extrabold text-white pt-1">${escapeHtml(item.problema)}</h3>
-                <p class="text-xs text-slate-400"><strong class="text-slate-300">Quando utilizar:</strong> ${escapeHtml(item.quando_utilizar)}</p>
+                <p class="text-xs text-slate-400"><strong class="text-slate-300">Quando Utilizar o Procedimento:</strong> ${escapeHtml(item.quando_utilizar)}</p>
               </div>
 
               <div class="flex items-center gap-2 shrink-0 flex-wrap">
                 <button
-                  onclick="copyText(decodeURIComponent('${encodedRoute}'), 'Caminho do sistema copiado!')"
+                  onclick="copyText(decodeURIComponent('${encodedRoute}'), 'Caminho copiado!')"
                   class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-slate-700 text-xs font-bold transition cursor-pointer"
                 >
                   <i class="fa-solid fa-folder-tree mr-1.5"></i>Copiar Caminho
                 </button>
                 <button
-                  onclick="copyText(decodeURIComponent('${encodedMsg}'), 'Script do ${escapeHtml(item.ref)} copiado!')"
+                  onclick="copyText(decodeURIComponent('${encodedMsg}'), 'Mensagem (${escapeHtml(item.ref)}) copiada!')"
                   class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow transition cursor-pointer"
                 >
-                  <i class="fa-regular fa-copy mr-1.5"></i>Copiar Script
+                  <i class="fa-regular fa-copy mr-1.5"></i>Copiar Mensagem
                 </button>
               </div>
             </div>
 
-            <!-- Passo a Passo BKO -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
-              <div class="p-3.5 rounded-xl bg-slate-950/75 border border-slate-800/90 space-y-1.5">
-                <div class="font-bold text-cyan-400 uppercase text-[11px]"><i class="fa-solid fa-desktop mr-1.5"></i>1. Caminho & Consulta</div>
-                <p class="font-mono text-[11px] text-amber-200 bg-slate-900 p-2 rounded-lg border border-slate-800">${escapeHtml(item.caminho_sistema)}</p>
-                <p class="text-slate-300 leading-relaxed whitespace-pre-line">${escapeHtml(item.como_consultar)}</p>
+              <div class="p-3.5 rounded-xl bg-slate-950/75 border border-slate-800/90 space-y-2">
+                <div>
+                  <span class="block font-bold text-cyan-400 uppercase text-[11px] mb-1">Caminho Dentro do Sistema</span>
+                  <p class="font-mono text-[11px] text-amber-200 bg-slate-900 p-2 rounded-lg border border-slate-800 whitespace-pre-line">${escapeHtml(item.caminho_sistema)}</p>
+                </div>
+                <div>
+                  <span class="block font-bold text-cyan-400 uppercase text-[11px] mb-1">Como Consultar no CRM</span>
+                  <p class="text-slate-300 leading-relaxed whitespace-pre-line">${escapeHtml(item.como_consultar)}</p>
+                </div>
               </div>
 
               <div class="p-3.5 rounded-xl bg-slate-950/75 border border-slate-800/90 space-y-1.5">
-                <div class="font-bold text-amber-400 uppercase text-[11px]"><i class="fa-solid fa-list-check mr-1.5"></i>2. O que Verificar</div>
+                <span class="block font-bold text-amber-400 uppercase text-[11px]">O que o Atendente Deve Verificar</span>
                 <p class="text-slate-200 leading-relaxed whitespace-pre-line">${escapeHtml(item.o_que_verificar)}</p>
               </div>
 
               <div class="p-3.5 rounded-xl bg-slate-950/75 border border-slate-800/90 space-y-1.5">
-                <div class="font-bold text-emerald-400 uppercase text-[11px]"><i class="fa-solid fa-bolt mr-1.5"></i>3. O que Fazer</div>
+                <span class="block font-bold text-emerald-400 uppercase text-[11px]">O que Fazer em Cada Situação</span>
                 <p class="text-slate-200 leading-relaxed whitespace-pre-line">${escapeHtml(item.o_que_fazer)}</p>
               </div>
             </div>
 
-            <!-- Mensagem Pronta -->
             <div class="rounded-xl bg-slate-950 border border-emerald-500/25 p-3.5 space-y-2">
               <div class="flex items-center justify-between gap-2">
                 <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400">
-                  <i class="fa-regular fa-message mr-1.5"></i>Mensagem Pronta para o Cliente (PT-BR)
+                  Mensagem Pronta em Português para o Cliente
                 </span>
                 <button
-                  onclick="copyText(decodeURIComponent('${encodedMsg}'), 'Mensagem pronta copiada!')"
+                  onclick="copyText(decodeURIComponent('${encodedMsg}'), 'Mensagem copiada!')"
                   class="text-[11px] font-bold text-emerald-300 hover:text-emerald-200 cursor-pointer"
                 >
-                  <i class="fa-regular fa-copy mr-1"></i>Copiar texto
+                  <i class="fa-regular fa-copy mr-1"></i>Copiar
                 </button>
               </div>
               <pre class="text-xs text-slate-200 whitespace-pre-wrap font-sans leading-relaxed bg-slate-900/70 p-3 rounded-lg border border-slate-800/80">${escapeHtml(item.msg_pronta)}</pre>
             </div>
 
-            <!-- Escalonamento e Observações -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
               <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
-                <span class="block font-bold text-purple-300 text-[11px] mb-1">Encaminhar para Supervisor</span>
-                <p class="text-slate-300 leading-relaxed">${escapeHtml(item.encaminhar_supervisor)}</p>
+                <span class="block font-bold text-purple-300 text-[11px] mb-1">Quando Encaminhar para o Supervisor</span>
+                <p class="text-slate-300 leading-relaxed whitespace-pre-line">${escapeHtml(item.encaminhar_supervisor)}</p>
               </div>
               <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
-                <span class="block font-bold text-cyan-300 text-[11px] mb-1">Encaminhar para Operações / Outro Setor</span>
-                <p class="text-slate-300 leading-relaxed">${escapeHtml(item.encaminhar_operacoes)}</p>
+                <span class="block font-bold text-cyan-300 text-[11px] mb-1">Quando Encaminhar para Operações / Outro Setor</span>
+                <p class="text-slate-300 leading-relaxed whitespace-pre-line">${escapeHtml(item.encaminhar_operacoes)}</p>
               </div>
               <div class="p-3 rounded-xl bg-amber-950/25 border border-amber-500/25">
-                <span class="block font-bold text-amber-300 text-[11px] mb-1">Observações & Atenção</span>
-                <p class="text-amber-100/90 leading-relaxed">${escapeHtml(item.observacoes)}</p>
+                <span class="block font-bold text-amber-300 text-[11px] mb-1">Observações Importantes</span>
+                <p class="text-amber-100/90 leading-relaxed whitespace-pre-line">${escapeHtml(item.observacoes)}</p>
               </div>
             </div>
 
-            ${item.keywords ? `<p class="text-[11px] text-slate-500"><strong>Palavras-chave:</strong> ${escapeHtml(item.keywords)}</p>` : ""}
+            ${item.keywords ? `<p class="text-[11px] text-slate-500"><strong>Palavras-chave para Pesquisa:</strong> ${escapeHtml(item.keywords)}</p>` : ""}
           </article>
         `;
       }).join("");
     }
 
-    function renderMacros() {
-      const q = (document.getElementById("search-macros").value || "").toLowerCase().trim();
-      const cat = document.getElementById("filter-macro-cat").value;
-      const container = document.getElementById("macros-container");
+    function renderMsgs() {
+      const q = (document.getElementById("search-msgs").value || "").toLowerCase().trim();
+      const cat = document.getElementById("filter-msg-cat").value;
+      const container = document.getElementById("msgs-container");
 
       const list = MANUAL_DATA.msgs.filter(m => {
         const matchCat = cat === "ALL" || m.categoria === cat;
@@ -1768,12 +2066,67 @@
                 </button>
               </div>
               <h3 class="text-sm font-bold text-white">${escapeHtml(m.titulo)}</h3>
-              <p class="text-[11px] text-slate-400">${escapeHtml(m.quando_utilizar)}</p>
+              <p class="text-[11px] text-slate-400"><strong>Quando Utilizar:</strong> ${escapeHtml(m.quando_utilizar)}</p>
               <pre class="text-xs text-slate-200 whitespace-pre-wrap font-sans leading-relaxed bg-slate-950 p-3 rounded-xl border border-slate-800">${escapeHtml(m.texto)}</pre>
             </div>
-            <div class="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/25 text-[11px] text-amber-200">
-              <strong>Orientação interna:</strong> ${escapeHtml(m.orientacao)}
+            <div class="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/25 text-[11px] text-amber-200 whitespace-pre-line">
+              <strong>Orientação Interna / Ponto de Atenção:</strong> ${escapeHtml(m.orientacao)}
             </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function setAppOS(os) {
+      currentOS = os;
+      document.querySelectorAll(".os-btn").forEach(btn => {
+        const active = btn.getAttribute("data-os") === os;
+        btn.className = active
+          ? "os-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white cursor-pointer"
+          : "os-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700 cursor-pointer";
+      });
+      renderApps();
+    }
+
+    function renderApps() {
+      const q = (document.getElementById("search-apps").value || "").toLowerCase().trim();
+      const grid = document.getElementById("apps-grid");
+
+      const list = MANUAL_DATA.apps.filter(a => {
+        const matchOS = currentOS === "ALL" || a.sistema.toLowerCase() === currentOS.toLowerCase();
+        const text = `${a.nome} ${a.sistema} ${a.link_descarga} ${a.estado} ${a.links_retirados} ${a.app_id} ${a.obs}`.toLowerCase();
+        return matchOS && (!q || text.includes(q));
+      });
+
+      grid.innerHTML = list.map(a => {
+        const encLink = encodeURIComponent(a.link_descarga);
+        return `
+          <div class="glass-card rounded-2xl p-4 space-y-3">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h3 class="text-sm font-extrabold text-white">${escapeHtml(a.nome)}</h3>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-bold ${a.sistema === 'IOS' ? 'bg-sky-500/15 text-sky-300 border border-sky-500/30' : 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30'}">${escapeHtml(a.sistema)}</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800 text-amber-300 font-mono text-[11px]">Estado de APP: ${escapeHtml(a.estado)}</span>
+                </div>
+                <p class="text-[11px] text-slate-400 font-mono mt-1">APP ID: ${escapeHtml(a.app_id)}</p>
+              </div>
+              <button onclick="copyText(decodeURIComponent('${encLink}'), 'Link copiado!')" class="px-2.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold cursor-pointer shrink-0">
+                <i class="fa-regular fa-copy mr-1"></i>Link
+              </button>
+            </div>
+
+            <div class="text-xs bg-slate-950 p-2.5 rounded-xl border border-slate-800 break-all">
+              <span class="text-[10px] uppercase font-bold text-slate-400 block mb-0.5">Link de Descarga</span>
+              <span class="text-cyan-300 font-mono text-[11px]">${escapeHtml(a.link_descarga || "—")}</span>
+            </div>
+
+            <div class="text-xs bg-rose-950/25 p-2.5 rounded-xl border border-rose-500/25 break-all">
+              <span class="text-[10px] uppercase font-bold text-rose-300 block mb-0.5">Enlaces de Marketing Retirados</span>
+              <span class="text-rose-200 font-mono text-[11px]">${escapeHtml(a.links_retirados || "—")}</span>
+            </div>
+
+            <p class="text-[11px] text-amber-200/90 leading-relaxed whitespace-pre-line"><strong>Observação Interna / Validação:</strong> ${escapeHtml(a.obs)}</p>
           </div>
         `;
       }).join("");
@@ -1803,80 +2156,31 @@
       }).join("");
     }
 
-    function setAppOS(os) {
-      currentOS = os;
-      document.querySelectorAll(".os-btn").forEach(btn => {
-        const active = btn.getAttribute("data-os") === os;
-        btn.className = active
-          ? "os-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white cursor-pointer"
-          : "os-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700 cursor-pointer";
-      });
-      renderApps();
-    }
-
-    function renderApps() {
-      const q = (document.getElementById("search-apps").value || "").toLowerCase().trim();
-      const grid = document.getElementById("apps-grid");
-
-      const list = MANUAL_DATA.apps.filter(a => {
-        const matchOS = currentOS === "ALL" || a.sistema.toLowerCase() === currentOS.toLowerCase();
-        const text = `${a.nome} ${a.sistema} ${a.link_descarga} ${a.estado} ${a.links_retirados} ${a.app_id}`.toLowerCase();
-        return matchOS && (!q || text.includes(q));
-      });
-
-      grid.innerHTML = list.map(a => {
-        const encLink = encodeURIComponent(a.link_descarga);
-        return `
-          <div class="glass-card rounded-2xl p-4 space-y-3">
-            <div class="flex items-start justify-between gap-2">
-              <div>
-                <div class="flex items-center gap-2 flex-wrap">
-                  <h3 class="text-sm font-extrabold text-white">${escapeHtml(a.nome)}</h3>
-                  <span class="px-2 py-0.5 rounded text-[11px] font-bold ${a.sistema === 'IOS' ? 'bg-sky-500/15 text-sky-300 border border-sky-500/30' : 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30'}">${escapeHtml(a.sistema)}</span>
-                  <span class="px-2 py-0.5 rounded bg-slate-800 text-amber-300 font-mono text-[11px]">Estado: ${escapeHtml(a.estado)}</span>
-                </div>
-                <p class="text-[11px] text-slate-400 font-mono mt-1">APP ID: ${escapeHtml(a.app_id)}</p>
-              </div>
-              <button onclick="copyText(decodeURIComponent('${encLink}'), 'Link de ${escapeHtml(a.nome)} copiado!')" class="px-2.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold cursor-pointer shrink-0">
-                <i class="fa-regular fa-copy mr-1"></i>Link
-              </button>
-            </div>
-
-            <div class="text-xs bg-slate-950 p-2.5 rounded-xl border border-slate-800 break-all">
-              <span class="text-[10px] uppercase font-bold text-slate-400 block mb-0.5">Link de Descarga</span>
-              <span class="text-cyan-300 font-mono text-[11px]">${escapeHtml(a.link_descarga || "—")}</span>
-            </div>
-
-            ${a.links_retirados ? `
-              <div class="text-xs bg-rose-950/25 p-2.5 rounded-xl border border-rose-500/25 break-all">
-                <span class="text-[10px] uppercase font-bold text-rose-300 block mb-0.5">Link de Marketing Retirado</span>
-                <span class="text-rose-200 font-mono text-[11px]">${escapeHtml(a.links_retirados)}</span>
-              </div>
-            ` : ""}
-
-            <p class="text-[11px] text-amber-200/90 leading-relaxed">${escapeHtml(a.obs)}</p>
-          </div>
-        `;
-      }).join("");
-    }
-
     function renderValidacoes() {
+      const q = (document.getElementById("search-validacoes").value || "").toLowerCase().trim();
       const container = document.getElementById("validacoes-container");
-      container.innerHTML = MANUAL_DATA.validacoes.map((v, i) => `
+      const list = MANUAL_DATA.validacoes.filter(v =>
+        !q || `${v.tema} ${v.risco} ${v.quem_confirma} ${v.status} ${v.obs}`.toLowerCase().includes(q)
+      );
+
+      container.innerHTML = list.map((v, i) => `
         <div class="glass-card rounded-2xl p-4 space-y-2.5 border border-rose-500/20">
           <div class="flex items-start justify-between gap-2">
             <h3 class="text-sm font-extrabold text-white">${i + 1}. ${escapeHtml(v.tema)}</h3>
             <span class="px-2 py-0.5 rounded bg-rose-500/15 text-rose-300 border border-rose-500/30 text-[10px] font-bold shrink-0">${escapeHtml(v.status)}</span>
           </div>
-          <p class="text-xs text-slate-300 leading-relaxed">${escapeHtml(v.risco)}</p>
+          <div>
+            <span class="text-[11px] font-bold text-slate-400 block">Qual é a Dúvida ou Risco:</span>
+            <p class="text-xs text-slate-300 leading-relaxed whitespace-pre-line">${escapeHtml(v.risco)}</p>
+          </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 text-[11px]">
             <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800">
-              <span class="text-cyan-400 font-bold block">Quem confirma:</span>
+              <span class="text-cyan-400 font-bold block">Quem Deve Confirmar:</span>
               <span class="text-slate-200">${escapeHtml(v.quem_confirma)}</span>
             </div>
             <div class="p-2.5 rounded-xl bg-amber-950/25 border border-amber-500/25">
-              <span class="text-amber-300 font-bold block">Orientação prática:</span>
-              <span class="text-amber-100">${escapeHtml(v.obs)}</span>
+              <span class="text-amber-300 font-bold block">Observações:</span>
+              <span class="text-amber-100 whitespace-pre-line">${escapeHtml(v.obs)}</span>
             </div>
           </div>
         </div>
@@ -1884,10 +2188,19 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
+      const sopSelect = document.getElementById("filter-sop-ref");
+      MANUAL_DATA.sops.forEach(s => {
+        const opt = document.createElement("option");
+        opt.value = s.ref;
+        opt.textContent = `${s.ref} — ${s.problema}`;
+        sopSelect.appendChild(opt);
+      });
+
+      renderQR();
       renderSOPs();
-      renderMacros();
-      renderGlossario();
+      renderMsgs();
       renderApps();
+      renderGlossario();
       renderValidacoes();
     });
   </script>
